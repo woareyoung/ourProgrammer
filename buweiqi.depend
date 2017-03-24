@@ -1,0 +1,258 @@
+# depslib dependency file v1.0
+1489420948 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi\buweiqi.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489416298 c:\users\notzuonotdied\desktop\buweiqi\buweiqi\stdafx.h
+	<windows.h>
+	<string.h>
+
+1489420665 c:\users\notzuonotdied\desktop\buweiqi\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/PlayerInfo.h"
+
+1489413414 c:\users\notzuonotdied\desktop\buweiqi\buweiqi\chessboard\chessbase.h
+
+1489410282 c:\users\notzuonotdied\desktop\buweiqi\buweiqi\chessboard\playerinfo.h
+
+1489420855 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi\chessboard.cpp
+	"StdAfx.h"
+	"buweiqi.h"
+
+1489420736 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi\initializedata.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489308637 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1489413409 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1489417479 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi\paintchess.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489308637 source:d:\c++编程软件\codeblocksproject\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1489416298 d:\c++编程软件\codeblocksproject\buweiqi\stdafx.h
+	<windows.h>
+	<string.h>
+
+1489413409 source:d:\c++编程软件\codeblocksproject\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1489413414 d:\c++编程软件\codeblocksproject\buweiqi\chessboard\chessbase.h
+
+1489496638 source:d:\c++编程软件\codeblocksproject\buweiqi\buweiqi.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489496609 d:\c++编程软件\codeblocksproject\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/PlayerInfo.h"
+
+1489410282 d:\c++编程软件\codeblocksproject\buweiqi\chessboard\playerinfo.h
+
+1489496608 source:d:\c++编程软件\codeblocksproject\buweiqi\paintchess.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489467913 source:d:\c++编程软件\codeblocksproject\buweiqi\chessboard.cpp
+	"StdAfx.h"
+	"buweiqi.h"
+
+1489496395 source:d:\c++编程软件\codeblocksproject\buweiqi\initializedata.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489496608 source:d:\c++编程软件\codeblocksproject\buweiqi\winorlose.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489541966 source:d:\buweiqi\buweiqi.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489416298 d:\buweiqi\stdafx.h
+	<windows.h>
+	<string.h>
+
+1489542182 d:\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/PlayerInfo.h"
+
+1489413414 d:\buweiqi\chessboard\chessbase.h
+
+1489410282 d:\buweiqi\chessboard\playerinfo.h
+
+1489541906 source:d:\buweiqi\chessboard.cpp
+	"StdAfx.h"
+	"buweiqi.h"
+
+1489496608 source:d:\buweiqi\paintchess.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489308637 source:d:\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1489413409 source:d:\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1489538983 source:d:\buweiqi\winorlose.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489541972 source:d:\buweiqi\initializedata.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1490104852 source:d:\codeblocksproject\codeblocksproject\buweiqi\buweiqi.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489416298 d:\codeblocksproject\codeblocksproject\buweiqi\stdafx.h
+	<windows.h>
+	<string.h>
+
+1490104969 d:\codeblocksproject\codeblocksproject\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"ChessRule.h"
+
+1490104926 d:\codeblocksproject\codeblocksproject\buweiqi\chessboard\chessbase.h
+
+1490103784 d:\codeblocksproject\codeblocksproject\buweiqi\chessboard\playerinfo.h
+
+1489559341 source:d:\codeblocksproject\codeblocksproject\buweiqi\chessboard.cpp
+	"StdAfx.h"
+	"buweiqi.h"
+
+1489560955 source:d:\codeblocksproject\codeblocksproject\buweiqi\initializedata.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1490103877 source:d:\codeblocksproject\codeblocksproject\buweiqi\paintchess.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489308637 source:d:\codeblocksproject\codeblocksproject\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1489413409 source:d:\codeblocksproject\codeblocksproject\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1490104926 source:d:\codeblocksproject\codeblocksproject\buweiqi\winorlose.cpp
+	"stdafx.h"
+	"ChessRule.h"
+
+1490104969 d:\codeblocksproject\codeblocksproject\buweiqi\chessrule.h
+	"Chess.h"
+	"chessBoard/PlayerInfo.h"
+
+1490102908 d:\codeblocksproject\codeblocksproject\buweiqi\chess.h
+
+1490106140 source:c:\users\天文\desktop\buweiqi\buweiqi.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489416298 c:\users\天文\desktop\buweiqi\stdafx.h
+	<windows.h>
+	<string.h>
+
+1490104969 c:\users\天文\desktop\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"ChessRule.h"
+
+1490104926 c:\users\天文\desktop\buweiqi\chessboard\chessbase.h
+
+1490105638 c:\users\天文\desktop\buweiqi\chessrule.h
+	"Chess.h"
+	"chessBoard/PlayerInfo.h"
+
+1490102908 c:\users\天文\desktop\buweiqi\chess.h
+
+1490103784 c:\users\天文\desktop\buweiqi\chessboard\playerinfo.h
+
+1490103877 source:c:\users\天文\desktop\buweiqi\paintchess.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489308637 source:c:\users\天文\desktop\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1489413409 source:c:\users\天文\desktop\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1490105647 source:c:\users\天文\desktop\buweiqi\winorlose.cpp
+	"stdafx.h"
+	"ChessRule.h"
+
+1490106140 source:c:\users\天文\desktop\buweiqi\chessboard.cpp
+	"StdAfx.h"
+	"buweiqi.h"
+
+1490106257 source:c:\users\天文\desktop\buweiqi\initializedata.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1490106140 source:c:\users\notzuonotdied\desktop\buweiqi\buweiqi.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1490117196 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
+	<windows.h>
+	<string.h>
+
+1490116294 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/ChessRule.h"
+	"AI2_Header/AI2.h"
+
+1490115642 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
+
+1490105638 c:\users\notzuonotdied\desktop\buweiqi\chessrule.h
+	"Chess.h"
+	"chessBoard/PlayerInfo.h"
+
+1490102908 c:\users\notzuonotdied\desktop\buweiqi\chess.h
+
+1490103784 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
+
+1490106140 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
+	"StdAfx.h"
+	"buweiqi.h"
+
+1490106257 source:c:\users\notzuonotdied\desktop\buweiqi\initializedata.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1490106300 source:c:\users\notzuonotdied\desktop\buweiqi\paintchess.cpp
+	"stdafx.h"
+	"buweiqi.h"
+
+1489308637 source:c:\users\notzuonotdied\desktop\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1489413409 source:c:\users\notzuonotdied\desktop\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1490115667 source:c:\users\notzuonotdied\desktop\buweiqi\winorlose.cpp
+	"stdafx.h"
+	"chessBoard/ChessRule.h"
+
+1490115829 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessrule.h
+	"Chess.h"
+	"PlayerInfo.h"
+
+1490115968 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
+
+1490116297 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+
