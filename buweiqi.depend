@@ -225,7 +225,7 @@
 
 1490103784 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
 
-1490106140 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
+1490117157 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
 	"StdAfx.h"
 	"buweiqi.h"
 
@@ -244,7 +244,7 @@
 	"../stdafx.h"
 	"../chessBoard/ChessBase.h"
 
-1490115667 source:c:\users\notzuonotdied\desktop\buweiqi\winorlose.cpp
+1490117301 source:c:\users\notzuonotdied\desktop\buweiqi\winorlose.cpp
 	"stdafx.h"
 	"chessBoard/ChessRule.h"
 
@@ -254,5 +254,21 @@
 
 1490115968 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
-1490116297 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+1490372843 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+
+1490372729 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1490372973 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\chessboard.cpp
+	"../StdAfx.h"
+	"../buweiqi.h"
+
+1490372920 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1490373051 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessRule.h"
 
