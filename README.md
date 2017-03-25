@@ -29,4 +29,5 @@ git reset --hard HEAD^
 
 ## 7.拉取更新
 git fetch origin master
+
 git pull origin master
