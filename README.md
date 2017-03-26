@@ -31,3 +31,16 @@ git reset --hard HEAD^
 git fetch origin master
 
 git pull origin master
+
+## 假如出现了下面的错误
+``` git
+To github.com:woareyoung/ourProgrammer.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:woareyoung/ourProgrammer.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+这里表示服务器上的版本比你的还要高，有一个解决，就是将远程仓库拉取下来（方法7）之后，合并在提交上去。
