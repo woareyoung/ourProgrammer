@@ -11,6 +11,11 @@ public:
     bool Cross[10][10];
     //用于玩家点击棋盘时记录位置
     int line, column;
+
+    // 减少递归次数
+    void reduceRecursionTimes();
+    // 设置状态
+    void setStatus(int RivalLine,int RivalColumn);
 };
 
 

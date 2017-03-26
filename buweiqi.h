@@ -9,7 +9,8 @@ class ChessBoard : public ChessBase, public ChessRule
 {
 private :
 
-    //记录棋盘每列的 每一行或每一列 坐标值，数组访问从“1”开始
+    // 记录棋盘每列的 每一行或每一列 坐标值，数组访问从“1”开始
+    // 这个是棋盘的相对位置
     int CrossCross[10];
     // 行列位置
     int ChessDiameter;//棋子的直径

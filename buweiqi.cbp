@@ -38,18 +38,19 @@
 			<Add library="comctl32" />
 		</Linker>
 		<Unit filename="AI2_Header/AI2.h" />
-		<Unit filename="ChessBoard.cpp" />
-		<Unit filename="InitializeData.cpp" />
-		<Unit filename="PaintChess.cpp" />
+		<Unit filename="AI2_Source/MaxandMinFunction.cpp" />
 		<Unit filename="StdAfx.cpp" />
 		<Unit filename="StdAfx.h" />
-		<Unit filename="WinOrLose.cpp" />
-		<Unit filename="buweiqi.cpp" />
 		<Unit filename="buweiqi.h" />
 		<Unit filename="chessBoard/Chess.h" />
 		<Unit filename="chessBoard/ChessBase.h" />
 		<Unit filename="chessBoard/ChessRule.h" />
 		<Unit filename="chessBoard/PlayerInfo.h" />
+		<Unit filename="chessBoard_Source/ChessBoard.cpp" />
+		<Unit filename="chessBoard_Source/InitializeData.cpp" />
+		<Unit filename="chessBoard_Source/PrintChess.cpp" />
+		<Unit filename="chessBoard_Source/WinOrLose.cpp" />
+		<Unit filename="chessBoard_Source/buweiqi.cpp" />
 		<Unit filename="util/int2String.cpp" />
 		<Extensions>
 			<code_completion />

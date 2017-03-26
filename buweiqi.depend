@@ -206,11 +206,11 @@
 	"stdafx.h"
 	"buweiqi.h"
 
-1490117196 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
+1490445461 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
 	<windows.h>
 	<string.h>
 
-1490116294 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
+1490409345 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
 	"chessBoard/ChessBase.h"
 	"chessBoard/ChessRule.h"
 	"AI2_Header/AI2.h"
@@ -223,7 +223,8 @@
 
 1490102908 c:\users\notzuonotdied\desktop\buweiqi\chess.h
 
-1490103784 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
+1490441203 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
+	"../AI2_Header/AI2.h"
 
 1490117157 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
 	"StdAfx.h"
@@ -252,11 +253,13 @@
 	"Chess.h"
 	"PlayerInfo.h"
 
-1490115968 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
+1490526046 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
-1490372843 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+1490525413 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+	<map>
+	<cmath>
 
-1490372729 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+1490410523 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
@@ -268,7 +271,14 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1490373051 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
+1490525307 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
 	"../stdafx.h"
 	"../chessBoard/ChessRule.h"
+
+1490373112 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1490525368 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+	"../AI2_Header/AI2.h"
 

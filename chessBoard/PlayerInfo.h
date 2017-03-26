@@ -1,12 +1,21 @@
+#include "../AI2_Header/AI2.h"
 /**
  * 棋盘中的玩家的信息
  */
 class PlayerInfo {
 public:
 
-    //1表示轮到玩家1下棋，2表示轮到玩家2下棋，-1表示电脑1，-2表示电脑2
+    /**
+     * 1表示轮到玩家1下棋，2表示轮到玩家2下棋，-1表示电脑1，-2表示电脑2
+     * isPlay1onTurn 1, 当轮到玩家1的时候为1
+     * isPlay2onTurn 2，当轮到玩家2的时候为2
+     * isAI1onTurn -1，当轮到AI1的时候为-1
+     * isAI2onTurn -2，当轮到AI1的时候为-2
+     */
     int onTurn;
-
+    /**
+     * 最终的赢家
+     */
     int Winner;
     /**
      * 总时间
@@ -30,4 +39,5 @@ public:
      */
     bool AI1;//记录玩家1是否是AI
     bool AI2;//记录玩家2是否是AI
+
 };
