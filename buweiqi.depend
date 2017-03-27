@@ -255,7 +255,7 @@
 
 1490526046 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
-1490601551 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+1490606148 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
 	<map>
 	<cmath>
 	"AIPlayer.h"
@@ -291,13 +291,13 @@
 1490579023 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1490600690 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
+1490605166 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
 1490601935 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score.cpp
 	"../AI2_Header/AI2.h"
 
-1490601941 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
+1490603271 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1490601964 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp

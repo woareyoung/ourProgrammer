@@ -11,7 +11,7 @@ AI2::AI2()
             chessScore[i][j] = 0;
         }
     }
-
+    // 初始化对角数组
     this->cornerArray[0] = 101;
     this->cornerArray[1] = 102;
     this->cornerArray[2] = 201;

@@ -8,8 +8,9 @@
 #include "../StdAfx.h"
 
 #define cornerScore 60 // 边角分数
-#define tirangleScore 40 // 三角分数
-#define crossShaped 30 // 十字分数
+#define tirangleScore1 60 // 三角分数
+#define tirangleScore2 60 // 三角分数
+#define crossShaped 40 // 十字分数
 #define goodTigersMouth 120  // 优虎口，表示被包围的敌方棋子中只有1~2个
 #define badTigersMouth -120 // 劣虎口，表示被包围圈内都是敌方棋子
 #define max 32767
@@ -53,6 +54,9 @@ public:
 
     // 三角
     void Tirangle();
+    void ULTirangle();
+    void DRTirangle();
+
 
     // 十字
     void CrossShaped();
