@@ -27,6 +27,7 @@
 /// 定义黑子和白子类型
 #define isBlack 1
 #define isWhite 2
+#define noChess 0
 
 /// 定义方向
 #define up 0

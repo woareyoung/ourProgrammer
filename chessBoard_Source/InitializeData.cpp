@@ -20,7 +20,7 @@ ChessBoard::ChessBoard()
  */
 void ChessBoard::Initialize()
 {
-    int i,j;//遍历辅助变量
+    int i;//遍历辅助变量
     Width = 1366 * 800 / GetSystemMetrics(SM_CXSCREEN);//获取屏幕宽度并设置窗体宽度
     Height = 768 * 550 / GetSystemMetrics(SM_CYSCREEN);//获取屏幕高度并设置窗体高度
     Base = Width > Height ? Height : Width;//设置窗体内容规模以适应不同平台

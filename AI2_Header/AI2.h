@@ -3,13 +3,19 @@
 
 #include <map>
 #include <cmath>
+#include "AIPlayer.h"
+#include <vector>
+#include "../StdAfx.h"
 
-#define duijiaoScore 60
-#define sanjiaoScore 40
-#define shiziScore 30
+#define cornerScore 60 // 边角分数
+#define tirangleScore 40 // 三角分数
+#define crossShaped 30 // 十字分数
+#define goodTigersMouth 120  // 优虎口，表示被包围的敌方棋子中只有1~2个
+#define badTigersMouth -120 // 劣虎口，表示被包围圈内都是敌方棋子
+#define max 32767
+#define min -32767
 
-
-class isAI2
+class AI2 : public AIPlayer
 {
 private:
     //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
@@ -17,7 +23,12 @@ private:
     int cross[10][10];
     //判断胜负时用于标记有没有遍历过
     bool Cross[10][10];
+    // 分数
+    int chessScore[10][10];
+    // 边角数组
+    int cornerArray[12];
 public:
+    AI2();
     // 扫描函数
     void Scan(int cross[10][10], bool Cross[10][10]);
     // 通过数组来初始化数据
@@ -28,13 +39,33 @@ public:
     void MaxAndMin();
 
     // 获取最后着子的位置
-    void GetPosition(int &line,int &column,int player, int rival,int cross[10][10], bool Cross[10][10]);
+    void GetPosition(int &line,int &column,int player, int rival,int isExist[10][10], bool chessStatus[10][10]);
 
     // 分数计算函数
     void Score();
 
     // 判断包围情况的函数
     bool isBesieged(int RivalLine, int RivalColumn, int player, int rival);
+
+    // 对角
+    void AcrossCorners();
+    void ACScan(int line,int column,int line1,int column1,int line2,int column2);
+
+    // 三角
+    void Tirangle();
+
+    // 十字
+    void CrossShaped();
+
+  	// 优虎口
+  	void GoodTigersMouth();
+
+  	// 加分函数
+    void addScore(int line,int column, int score);
+
+  	// 初始化数组
+  	void copyArray(int isExist[10][10], bool chessStatus[10][10]);
 };
 
 #endif // AI2_H_INCLUDED
+

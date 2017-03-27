@@ -52,6 +52,7 @@
 		<Unit filename="chessBoard_Source/WinOrLose.cpp" />
 		<Unit filename="chessBoard_Source/buweiqi.cpp" />
 		<Unit filename="util/int2String.cpp" />
+		<Unit filename="util/recursion.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
