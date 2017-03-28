@@ -1,5 +1,5 @@
-#ifndef AI2_H_INCLUDED
-#define AI2_H_INCLUDED
+#ifndef ISAI2_H_INCLUDED
+#define ISAI2_H_INCLUDED
 
 #include <map>
 #include <cmath>
@@ -10,13 +10,15 @@
 #define cornerScore 60 // 边角分数
 #define tirangleScore1 60 // 三角分数
 #define tirangleScore2 60 // 三角分数
-#define crossShaped 40 // 十字分数
+#define crossShaped1 40 // 十字分数
+#define crossShaped2 80 // 十字分数
+#define crossShaped3 120 // 十字分数
 #define goodTigersMouth 120  // 优虎口，表示被包围的敌方棋子中只有1~2个
 #define badTigersMouth -120 // 劣虎口，表示被包围圈内都是敌方棋子
 #define max 32767
 #define min -32767
 
-class AI2 : public AIPlayer
+class isAI2 : public AIPlayer
 {
 private:
     //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
@@ -28,19 +30,20 @@ private:
     int chessScore[10][10];
     // 边角数组
     int cornerArray[12];
+
+    void setStatus(int RivalLine,int RivalColumn);
+    void reduceRecursionTimes();
 public:
-    AI2();
-    // 扫描函数
-    void Scan(int cross[10][10], bool Cross[10][10]);
+    isAI2();
     // 通过数组来初始化数据
     void initDataFromArray();
-    // 估价函数,主要用于
+    // 估价函数
     int Evaluation();
     // 极大极小值算法
-    void MaxAndMin();
+    void MaxAndMin(int& line,int& column);
 
     // 获取最后着子的位置
-    void GetPosition(int &line,int &column,int player, int rival,int isExist[10][10], bool chessStatus[10][10]);
+    void GetPosition(int &line,int &column,int player,int isExist[10][10], bool chessStatus[10][10]);
 
     // 分数计算函数
     void Score();
@@ -57,19 +60,26 @@ public:
     void ULTirangle();
     void DRTirangle();
 
-
     // 十字
     void CrossShaped();
+    void JudgeCShape(int line,int column);
+    void FindBlank(int line,int column);
+    void addCSScore(int line,int column,int score,int tempPos[4],int temp[4]);
 
-  	// 优虎口
-  	void GoodTigersMouth();
+    // 优虎口
+    void GoodTigersMouth();
 
-  	// 加分函数
+    // 加分函数
     void addScore(int line,int column, int score);
 
-  	// 初始化数组
-  	void copyArray(int isExist[10][10], bool chessStatus[10][10]);
+    // 初始化数组
+    void copyArray(int isExist[10][10], bool chessStatus[10][10]);
+    void initChessScore();
+
+    //
+    bool Besieged(int RivalLine, int RivalColumn, int player, int rival);
+    bool Revalute();
 };
 
-#endif // AI2_H_INCLUDED
 
+#endif // ISAI2_H_INCLUDED

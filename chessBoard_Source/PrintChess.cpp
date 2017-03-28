@@ -75,7 +75,9 @@ void ChessBoard::PaintChess()
             onTurn = isAI1onTurn;
         else
             onTurn = isPlay1onTurn;
+
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
+        ai2.GetPosition(Chess::line,Chess::column,onTurn,Chess::cross, Chess::Cross);
 
         PaintAChess(isWhite);
         //若对方是电脑，则先判断有没有分出胜负

@@ -1,18 +1,18 @@
-#include "../../AI2_Header/AI2.h"
+#include "../../AI2_Header/isAI2.h"
 
 /**
- * [AI2::Tirangle 三角围杀]
+ * [isAI2::Tirangle 三角围杀]
  */
-void AI2::Tirangle()
+void isAI2::Tirangle()
 {
     ULTirangle();
     DRTirangle();
 }
 
 /**
- * [AI2::ULTirangle 上边和左边的三角围杀加分]
+ * [isAI2::ULTirangle 上边和左边的三角围杀加分]
  */
-void AI2::ULTirangle()
+void isAI2::ULTirangle()
 {
     for (int i = 1; i < 10; i++)
     {
@@ -74,9 +74,9 @@ void AI2::ULTirangle()
 }
 
 /**
- * [AI2::DRTirangle 下边和右边的三角围杀加分]
+ * [isAI2::DRTirangle 下边和右边的三角围杀加分]
  */
-void AI2::DRTirangle()
+void isAI2::DRTirangle()
 {
     for (int i = 1; i < 10; i++)
     {
@@ -108,7 +108,7 @@ void AI2::DRTirangle()
             }
         }
         // 右边
-        if (cross[i][9]= noChess && i+2 < 10)
+        if (cross[i][9] == noChess && i+2 < 10)
         {
             if (cross[i+1][9] == (PlayerId == isBlack ? isWhite : isBlack))
             {

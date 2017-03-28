@@ -1,4 +1,4 @@
-#include "../AI2_Header/AI2.h"
+#include "../AI2_Header/isAI2.h"
 /**
  * 棋盘中的玩家的信息
  */
@@ -40,4 +40,5 @@ public:
     bool AI1;//记录玩家1是否是AI
     bool AI2;//记录玩家2是否是AI
 
+    isAI2 ai2;
 };

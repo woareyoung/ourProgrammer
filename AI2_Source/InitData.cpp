@@ -1,16 +1,15 @@
-#include "../AI2_Header/AI2.h"
+#include "../AI2_Header/isAI2.h"
 
-AI2::AI2()
+struct pos
+{
+    int line;
+    int column;
+    int status;
+};
+
+isAI2::isAI2()
 {
     this->PlayerId = isWhite;
-    // 向分数数组中填充0
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            chessScore[i][j] = 0;
-        }
-    }
     // 初始化对角数组
     this->cornerArray[0] = 101;
     this->cornerArray[1] = 102;

@@ -1,6 +1,5 @@
 # include "chessBoard/ChessBase.h"
 # include "chessBoard/ChessRule.h"
-# include "AI2_Header/AI2.h"
 /**
  * 棋盘界面类
  * 主要负责棋盘的绘制工作

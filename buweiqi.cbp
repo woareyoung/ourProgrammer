@@ -37,8 +37,16 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
-		<Unit filename="AI2_Header/AI2.h" />
+		<Unit filename="AI2_Header/AIPlayer.h" />
+		<Unit filename="AI2_Header/isAI2.h" />
+		<Unit filename="AI2_Source/InitData.cpp" />
 		<Unit filename="AI2_Source/MaxandMinFunction.cpp" />
+		<Unit filename="AI2_Source/Score.cpp" />
+		<Unit filename="AI2_Source/newScore/InitData.cpp" />
+		<Unit filename="AI2_Source/newScore/newEvalution.cpp" />
+		<Unit filename="AI2_Source/score/cornerScan.cpp" />
+		<Unit filename="AI2_Source/score/crossShapeScan.cpp" />
+		<Unit filename="AI2_Source/score/tirangleScan.cpp" />
 		<Unit filename="StdAfx.cpp" />
 		<Unit filename="StdAfx.h" />
 		<Unit filename="buweiqi.h" />

@@ -8,7 +8,7 @@
 class ChessBase
 {
 private:
-    char string[2];//用于辅助整型转换字符串
+    char str[2];//用于辅助整型转换字符串
 public :
     /**
      * 参数
