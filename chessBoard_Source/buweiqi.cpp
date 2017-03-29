@@ -180,6 +180,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                 CB.Start = true;
                 CB.PlayerTimer = SetTimer(hwnd, 2, 1000, NULL);//计时器开始
                 PostMessage(hwnd, WM_PAINT, 0, 0);
+                if(CB.AI1 == true)
+                {
+                    CB.onTurn = -1;
+                    CB.PaintChess();
+                }
             }
         }
 
@@ -197,8 +202,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                 CB.Start = false;
                 CB.reStart(hwnd);
             }
-        //  CB.updateTime(CB.AllTime1,CB.Round1,0);
-         // CB.PaintTimer();
              PostMessage(hwnd, WM_PAINT, 1, 1);
         }
         else if(CB.onTurn == 2 || CB.onTurn == -2)

@@ -303,3 +303,84 @@
 1490601964 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
 	"../../AI2_Header/AI2.h"
 
+1490716517 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
+	"../AI2_Header/AI2.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
+	<map>
+	<cmath>
+	"AIPlayer.h"
+	<vector>
+	"../StdAfx.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\aiplayer.h
+	"../StdAfx.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\stdafx.h
+	<windows.h>
+	<string.h>
+
+1490717166 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\functionpart.cpp
+	"../AI1_Header/AI1.h"
+
+1490716738 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
+	<time.h>
+	<stdlib.h>
+
+1490717198 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
+	"../AI1_Header/AI1.h"
+
+1490717230 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+	"../AI1_Header/AI1.h"
+
+1490717268 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\updatescore.cpp
+	"../AI1_Header/AI1.h"
+
+1490744875 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1490716838 d:\codeblocksproject\codeblocksproject\ourprogrammer\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/ChessRule.h"
+	"AI2_Header/AI2.h"
+	"AI1_Header/AI1.h"
+
+1490745149 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\chessbase.h
+
+1490745068 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\chessrule.h
+	"Chess.h"
+	"PlayerInfo.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\chess.h
+
+1490745986 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\playerinfo.h
+	"../AI2_Header/AI2.h"
+	"../AI1_Header/AI1.h"
+
+1490716517 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\chessboard.cpp
+	"../StdAfx.h"
+	"../buweiqi.h"
+
+1490716517 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\initializedata.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1490745986 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\printchess.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1490716518 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessRule.h"
+
+1490716518 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\recursion.cpp
+	"../chessBoard/Chess.h"
+
+1490745851 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\stdafx.cpp
+	"stdafx.h"
+
+1490745738 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+

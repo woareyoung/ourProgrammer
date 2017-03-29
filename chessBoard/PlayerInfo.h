@@ -1,4 +1,5 @@
 #include "../AI2_Header/AI2.h"
+#include "../AI1_Header/AI1.h"
 /**
  * 棋盘中的玩家的信息
  */
