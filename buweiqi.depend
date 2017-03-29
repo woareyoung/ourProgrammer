@@ -206,14 +206,14 @@
 	"stdafx.h"
 	"buweiqi.h"
 
-1490677225 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
+1490750712 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
 	<windows.h>
 
-1490676981 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
+1490707387 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
 	"chessBoard/ChessBase.h"
 	"chessBoard/ChessRule.h"
 
-1490677047 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
+1490707387 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
 
 1490105638 c:\users\notzuonotdied\desktop\buweiqi\chessrule.h
 	"Chess.h"
@@ -221,7 +221,7 @@
 
 1490102908 c:\users\notzuonotdied\desktop\buweiqi\chess.h
 
-1490625490 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
+1490707387 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
 	"../AI2_Header/isAI2.h"
 
 1490117157 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
@@ -239,7 +239,7 @@
 1489308637 source:c:\users\notzuonotdied\desktop\buweiqi\stdafx.cpp
 	"stdafx.h"
 
-1490677079 source:c:\users\notzuonotdied\desktop\buweiqi\util\int2string.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\util\int2string.cpp
 	"../stdafx.h"
 	"../chessBoard/ChessBase.h"
 
@@ -251,7 +251,7 @@
 	"Chess.h"
 	"PlayerInfo.h"
 
-1490526046 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
+1490788824 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
 1490621068 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
 	<map>
@@ -260,7 +260,7 @@
 	<vector>
 	"../StdAfx.h"
 
-1490677257 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
@@ -280,7 +280,7 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1490676645 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+1490787107 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/isAI2.h"
 	<stdlib.h>
 
@@ -290,31 +290,30 @@
 1490579023 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1490625489 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/isAI2.h"
 
-1490622657 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score.cpp
 	"../AI2_Header/isAI2.h"
 
-1490624160 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490626472 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490624095 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
+1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490615944 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
-	"../../AI2_Header/AI2.h"
+1490761616 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
+	"../../AI2_Header/isAI2.h"
 
-1490617144 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
-	"../../AI2_Header/AI2.h"
+1490787208 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
+	"../../AI2_Header/isAI2.h"
 
-1490665055 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\isai2.h
-	<map>
+1490787100 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\isai2.h
 	<cmath>
 	"AIPlayer.h"
-	<vector>
+	<list>
 	"../StdAfx.h"
 

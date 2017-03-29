@@ -39,9 +39,12 @@ void isAI2::GetPosition(int& line,int& column,int player,
 {
     copyArray(isExist, chessStatus);
     turn2Who = player;
-    initChessScore();
-    Evaluation();
-    MaxAndMin(line,column);
+//    initChessScore();
+//    Evaluation();
+//    MaxAndMin(line,column);
+    int temp = maxandmin(5);
+    line = temp/100;
+    column = temp%100;
 }
 
 void isAI2::Score()

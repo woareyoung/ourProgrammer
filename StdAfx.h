@@ -28,12 +28,13 @@
 #define isWhite 2
 #define noChess 0
 
+/*
 /// 定义方向
 #define up 0
 #define down 1
 #define right 2
 #define left 3
-
+*/
 // TODO: reference additional headers your program requires here
 
 //{{AFX_INSERT_LOCATION}}

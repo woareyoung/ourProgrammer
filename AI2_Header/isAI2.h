@@ -1,11 +1,12 @@
 #ifndef ISAI2_H_INCLUDED
 #define ISAI2_H_INCLUDED
 
-#include <map>
 #include <cmath>
 #include "AIPlayer.h"
-#include <vector>
+#include <list>
+using namespace std;
 #include "../StdAfx.h"
+
 
 #define cornerScore 60 // 边角分数
 #define tirangleScore1 60 // 三角分数
@@ -33,6 +34,8 @@ private:
 
     void setStatus(int RivalLine,int RivalColumn);
     void reduceRecursionTimes();
+
+    list<int> blankList;
 public:
     isAI2();
     // 通过数组来初始化数据
@@ -78,7 +81,14 @@ public:
 
     //
     bool Besieged(int RivalLine, int RivalColumn, int player, int rival);
-    bool Revalute();
+    void Revalute();
+    bool isBesieged(int line, int column, int onTurn);
+    void JudgeScoreType();
+    void addREScore(int score);
+    int maxandmin(int depth);
+    int MaxScore();
+    int MinScore();
+    int singleLayer();
 };
 
 
