@@ -119,7 +119,7 @@ void ChessBoard::updateTime(int AllTime,int Round,int offset)
 void ChessBoard::PrintInfo()//打印玩家的信息
 {
     char *Number;
-    if(AI1 == false)
+    if(Player1isAI == false)
     {
         Number = "    玩家1未使用AI，按F1键可使用AI    ";
         TextOut(graphicsHdc, Base, ChessDiameter * 2, Number, strlen(Number));
@@ -129,7 +129,7 @@ void ChessBoard::PrintInfo()//打印玩家的信息
         Number = "玩家1已使用AI，按F1键可取消使用AI";
         TextOut(graphicsHdc, Base, ChessDiameter * 2, Number, strlen(Number));
     }
-    if(AI2 == false)
+    if(Player2isAI == false)
     {
         Number ="    玩家2未使用AI，按F2键可使用AI    ";
         TextOut(graphicsHdc, Base, ChessDiameter * 2 + Base / 2, Number, strlen(Number));

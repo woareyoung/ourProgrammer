@@ -11,8 +11,8 @@ ChessBoard::ChessBoard()
     Round1 = 60;//步时60秒
     Round2 = 60;
     Start = false;
-    AI1 = false;
-    AI2 = false;
+    Player1isAI = false;
+    Player2isAI = false;
     onTurn = 1;//玩家1先下棋
 }
 /**

@@ -2,6 +2,7 @@
 //
 #include "../stdafx.h"
 #include "../buweiqi.h"
+#include "../chessBoard/AImessage.h"
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);//声明窗口过程函数
 bool HDCInitialize(HWND hwnd);//声明初始化设备环境句柄
@@ -81,7 +82,6 @@ int APIENTRY WinMain(HINSTANCE hInstance,
                }
         }
     }
-  //  KillTimer(CB.ParentHwnd, 2);//结束计时器
     //注销窗口
     UnregisterClass("BuWeiQi",winClass.hInstance);
     return 0;
@@ -99,18 +99,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch(message)
     {
     case WM_PAINT: //客户区重绘消息
-//        if(wParam==1&&lParam==1)
-//        CB.PaintTimer();
- //       else
-
         CB.graphicsHdc = BeginPaint(hwnd, &CB.paintStruct);//开始画图
         CB.HDCInitialize(hwnd);
         EndPaint(hwnd, &CB.paintStruct);//结束画图
         ReleaseDC(hwnd, CB.graphicsHdc);
         ValidateRect(hwnd,NULL);
         break;
-
-
     case WM_MOUSEMOVE://鼠标移动消息
         CB.point.x = LOWORD(lParam);//获取鼠标位置
         CB.point.y = HIWORD(lParam);
@@ -137,38 +131,40 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_KEYDOWN://若是键盘按下消息
         if(wParam == VK_F1) //按F1键
         {
-            if(CB.AI1 == false)
+            if(CB.Player1isAI == false)
             {
-                CB.AI1 = true;
-                if(CB.onTurn == 1)
+                CB.Player1isAI = true;
+                if(CB.onTurn == 1 && CB.Start == true)
                 {
                     CB.onTurn = -1;
+                    CB.Player1AI = &CB.ai1;
                     CB.PaintChess();
                 }
                 PostMessage(hwnd, WM_PAINT, 0, 0);
             }
             else
             {
-                CB.AI1 = false;
+                CB.Player1isAI = false;
                 PostMessage(hwnd, WM_PAINT, 0, 0);
             }
         }
 
         else if(wParam == VK_F2) //按下F2键
         {
-            if(CB.AI2 == false)
+            if(CB.Player2isAI == false)
             {
-                CB.AI2 = true;
+                CB.Player2isAI = true;
                 if(CB.onTurn == 2)
                 {
                     CB.onTurn = -2;
+                    CB.Player2AI = &CB.ai1;
                     CB.PaintChess();
                 }
                 PostMessage(hwnd, WM_PAINT, 0, 0);
             }
             else
             {
-                CB.AI2 = false;
+                CB.Player2isAI = false;
                 PostMessage(hwnd, WM_PAINT, 0, 0);
             }
         }
@@ -179,12 +175,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             {
                 CB.Start = true;
                 CB.PlayerTimer = SetTimer(hwnd, 2, 1000, NULL);//计时器开始
-                PostMessage(hwnd, WM_PAINT, 0, 0);
-                if(CB.AI1 == true)
+                if(CB.Player1isAI == true)
                 {
-                    CB.onTurn = -1;
+                    CB.onTurn = isAI1onTurn;
                     CB.PaintChess();
                 }
+                PostMessage(hwnd, WM_PAINT, 0, 0);
             }
         }
 

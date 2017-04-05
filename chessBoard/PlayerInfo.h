@@ -5,7 +5,6 @@
  */
 class PlayerInfo {
 public:
-
     /**
      * 1表示轮到玩家1下棋，2表示轮到玩家2下棋，-1表示电脑1，-2表示电脑2
      * isPlay1onTurn 1, 当轮到玩家1的时候为1
@@ -38,7 +37,7 @@ public:
     /**
      * AI
      */
-    bool AI1;//记录玩家1是否是AI
-    bool AI2;//记录玩家2是否是AI
+    bool Player1isAI;//记录玩家1是否是AI
+    bool Player2isAI;//记录玩家2是否是AI
 
 };
