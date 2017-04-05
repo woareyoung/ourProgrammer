@@ -336,9 +336,10 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491395749 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
+1491403005 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
+	"../chessBoard/AImessage.h"
 
 1491395765 d:\codeblocksproject\codeblocksproject\ourprogrammer\buweiqi.h
 	"chessBoard/ChessBase.h"
