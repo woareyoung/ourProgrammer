@@ -10,6 +10,7 @@ class AI1 : public AI
 public:
     AI1();//构造函数
     void GetPosition(int &line, int &column, int onTurn);//获取下棋位置
+    void InitializeD();
 
 private:
     int OT;//不想再想名字了，在GetPosition.cpp文件中使用
