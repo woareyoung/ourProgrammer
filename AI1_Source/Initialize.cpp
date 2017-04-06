@@ -4,18 +4,7 @@
 ///初始化数据
 AI1::AI1()
 {
-    int i, j;
-    ///初始化数组
-    for(i = 0; i < 10; i++)
-    {
-        for(j = 0; j < 10; j++)
-        {
-            Score[i][j] = 1;
-            cross[i][j] = 0;
-            Cross[i][j] = false;
-        }
-    }
-    Score[0][0] = -3;
+    InitializeD();
     ///初始化特别点分值
     PointStyle[1] = -3;//死棋点设置为-3分
     PointStyle[2] = 50;//填充对方虎口，并向外跳级降低
@@ -36,19 +25,35 @@ AI1::AI1()
     PointStyle[11] = 5;//在对方剩下一个位置时己方还差1子集群围杀
     PointStyle[12] = 6;//在对方剩下一个位置时己方还差2子集群围杀
     ///初始化层差分
-    RivalSinglePointPoor = 100;
-    RivalChipPoor = 2;
-    RivalTigerMouthPoor = 2;
+    RivalSinglePointPoor = 100;//对方单点
+    RivalChipPoor = 2;//对方缺口
+    RivalTigerMouthPoor = 10;//对方虎口
 
-    RivalFormatChipPoor = 100;
-    RivalFormatTigerMouthPoor = 2;
-    RivalFormatEyePoor = 1;
+    RivalFormatChipPoor = 100;//对方形成缺口
+    RivalFormatTigerMouthPoor = 12;//对方形成虎口
+    RivalFormatEyePoor = 20;//对方形成眼
 
-    MySinglePointPoor = 1;
-    MyChipPoor = 100;
-    MyTigerMouthPoor = 100;
+    MySinglePointPoor = 1;//己方单点
+    MyChipPoor = 100;//己方缺口
+    MyTigerMouthPoor = 100;//己方虎口
 
-    MyFormatChipPoor = 1;
-    MyFormatTigerMouthPoor = 1;
-    MyFormatEyePoor = 1;
+    MyFormatChipPoor = 1;//己方形成缺口
+    MyFormatTigerMouthPoor = 1;//己方形成虎口
+    MyFormatEyePoor = 1;//己方形成眼
+}
+///初始化数据
+void AI1::InitializeD()
+{
+    int i, j;
+    ///初始化数组
+    for(i = 0; i < 10; i++)
+    {
+        for(j = 0; j < 10; j++)
+        {
+            Score[i][j] = 1;
+            cross[i][j] = 0;
+            Cross[i][j] = false;
+        }
+    }
+    Score[0][0] = -3;
 }
