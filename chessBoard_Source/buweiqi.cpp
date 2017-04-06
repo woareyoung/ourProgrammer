@@ -173,6 +173,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             if(CB.Start == false)
             {
+                if(CB.Player1AI == &CB.ai1) CB.ai1.InitializeD();
                 CB.Start = true;
                 CB.PlayerTimer = SetTimer(hwnd, 2, 1000, NULL);//计时器开始
                 if(CB.Player1isAI == true)
