@@ -1,18 +1,18 @@
 #include "../../AI2_Header/isAI2.h"
 
 /**
- * [isAI2::CrossShaped 十字围杀]
+ * [isAI2::chessStatusShaped 十字围杀]
  * @return [无]
  */
-void isAI2::CrossShaped()
+void isAI2::chessStatusShaped()
 {
-    for (int i = 2; i < 9; i++)
-    {
-        for (int j = 2; j < 9; j++)
-        {
-            JudgeCShape(i,j);
-        }
-    }
+	for (int i = 2; i < 9; i++)
+	{
+		for (int j = 2; j < 9; j++)
+		{
+			JudgeCShape(i,j);
+		}
+	}
 }
 
 /**
@@ -22,84 +22,208 @@ void isAI2::CrossShaped()
  */
 void isAI2::JudgeCShape(int line,int column)
 {
-    int num = 0;
-    if (cross[line][column] == (PlayerId == isWhite ? isBlack : isWhite))
-    {
-        FindBlank(line,column);
-    }
+	if (line < 1 || column < 1 || line > 9 || column > 9) {
+		return ;
+	}
+	// 已经形成了十字围杀了
+	if (cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
+		chessScore[line][column] = min;
+		chessStatus[line][column] = true;
+ 	}
+ 	if (cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
+		chessScore[line][column] = min;
+		chessStatus[line][column] = true;
+ 	}
+ 	// 缺一形成十字围杀-- 白子-- 中间没有棋子的情况
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	if (cross[line][column] == noChess &&
+ 		cross[line - 1][column] == noChess && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
+		chessScore[line - 1][column] += crossShaped3;
+		chessStatus[line - 1][column] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
+		chessScore[line + 1][column] += crossShaped3;
+		chessStatus[line + 1][column] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isWhite) {
+		chessScore[line][column - 1] += crossShaped3;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == noChess) {
+		chessScore[line][column + 1] += crossShaped3;
+		chessStatus[line][column + 1] = true;
+ 	}
+ 	// 缺一形成十字围杀-- 黑子-- 中间没有棋子的情况
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
+		chessScore[line - 1][column] += crossShaped3;
+		chessStatus[line - 1][column] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
+		chessScore[line + 1][column] += crossShaped3;
+		chessStatus[line + 1][column] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isBlack) {
+		chessScore[line][column - 1] += crossShaped3;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
+		chessScore[line][column + 1] += crossShaped3;
+		chessStatus[line][column + 1] = true;
+ 	}
+
+ 	// 缺一形成十字围杀-- 白子-- 中间有棋子的情况
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	if (cross[line][column] != noChess &&
+ 		cross[line - 1][column] == noChess && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
+		chessScore[line - 1][column] = min;
+		chessStatus[line - 1][column] = true;
+ 	} else if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
+		chessScore[line + 1][column] = min;
+		chessStatus[line + 1][column] = true;
+ 	} else if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isWhite) {
+		chessScore[line][column - 1] = min;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == noChess) {
+		chessScore[line][column + 1] = min;
+		chessStatus[line][column + 1] = true;
+ 	}
+ 	// 缺一形成十字围杀-- 黑子-- 中间有棋子的情况
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
+		chessScore[line - 1][column] = min;
+		chessStatus[line - 1][column] = true;
+ 	} else if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
+		chessScore[line + 1][column] = min;
+		chessStatus[line + 1][column] = true;
+ 	} else if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isBlack) {
+		chessScore[line][column - 1] = min;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] != noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
+		chessScore[line][column + 1] = min;
+		chessStatus[line][column + 1] = true;
+ 	}
+
+ 	// 缺二形成十字围杀-- 白子-- 中间没有棋子的情况
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
+		chessScore[line - 1][column] += crossShaped2;
+		chessStatus[line - 1][column] = true;
+		chessScore[line + 1][column] += crossShaped2;
+		chessStatus[line + 1][column] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isWhite) {
+		chessScore[line - 1][column] += crossShaped2;
+		chessStatus[line - 1][column] = true;
+		chessScore[line][column - 1] += crossShaped2;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == noChess) {
+		chessScore[line - 1][column] += crossShaped2;
+		chessStatus[line - 1][column] = true;
+		chessScore[line][column + 1] += crossShaped2;
+		chessStatus[line][column + 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isWhite) {
+		chessScore[line + 1][column] += crossShaped2;
+		chessStatus[line + 1][column] = true;
+		chessScore[line][column - 1] += crossShaped2;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == noChess) {
+		chessScore[line + 1][column] += crossShaped2;
+		chessStatus[line + 1][column] = true;
+		chessScore[line][column + 1] += crossShaped2;
+		chessStatus[line][column + 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == noChess) {
+		chessScore[line][column - 1] += crossShaped2;
+		chessStatus[line][column - 1] = true;
+		chessScore[line][column + 1] += crossShaped2;
+		chessStatus[line][column + 1] = true;
+ 	}
+	// 缺二形成十字围杀-- 黑子-- 中间没有棋子的情况
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
+		chessScore[line - 1][column] += crossShaped2;
+		chessStatus[line - 1][column] = true;
+		chessScore[line + 1][column] += crossShaped2;
+		chessStatus[line + 1][column] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isBlack) {
+		chessScore[line - 1][column] += crossShaped2;
+		chessStatus[line - 1][column] = true;
+		chessScore[line][column - 1] += crossShaped2;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == noChess && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
+		chessScore[line - 1][column] += crossShaped2;
+		chessStatus[line - 1][column] = true;
+		chessScore[line][column + 1] += crossShaped2;
+		chessStatus[line][column + 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isBlack) {
+		chessScore[line + 1][column] += crossShaped2;
+		chessStatus[line + 1][column] = true;
+		chessScore[line][column - 1] += crossShaped2;
+		chessStatus[line][column - 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == noChess
+		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
+		chessScore[line + 1][column] += crossShaped2;
+		chessStatus[line + 1][column] = true;
+		chessScore[line][column + 1] += crossShaped2;
+		chessStatus[line][column + 1] = true;
+ 	} else if (cross[line][column] == noChess &&
+ 		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
+		&& cross[line][column - 1] == noChess && cross[line][column + 1] == noChess) {
+		chessScore[line][column - 1] += crossShaped2;
+		chessStatus[line][column - 1] = true;
+		chessScore[line][column + 1] += crossShaped2;
+		chessStatus[line][column + 1] = true;
+ 	}
+ 	// 缺三形成十字围杀
+ 	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
+ 	// 这玩意没有意义了吧，感觉
 }
 
-/**
- * [isAI2::FindBlank 找出十字围杀的空白着子点]
- * @param line   [行]
- * @param column [列]
- */
-void isAI2::FindBlank(int line,int column)
-{
-    int temp[4];
-    temp[0] = (line-1)*100 + column;
-    temp[1] = line*100 + column + 1;
-    temp[2] = (line + 1)*100 + column;
-    temp[3] = line*100 + column - 1;
 
-    int tempPos[4] = {0,0,0,0};
-    for (int i=0; i < 4; i++)
-    {
-        tempPos[i] = cross[temp[i]/100][temp[i]%100];
-    }
-
-    int blacknum = 0;
-    int whitenum = 0;
-    int blanknum = 0;
-    for (int i=0; i < 4; i++)
-    {
-        if (tempPos[i] == isWhite)
-        {
-            ++whitenum;
-        }
-        else if (tempPos[i] == isBlack)
-        {
-            ++blacknum;
-        }
-        else
-        {
-            ++blanknum;
-        }
-    }
-
-    if (cross[line][column] == noChess)
-    {
-        if ((blacknum == 3 && whitenum == 0) || (whitenum == 3 && blacknum == 0))
-        {
-            addCSScore(line,column,crossShaped3,tempPos,temp);
-        }
-        else if ((blacknum == 2 && whitenum == 0) || (whitenum == 2 && blacknum == 0))
-        {
-            addCSScore(line,column,crossShaped2,tempPos,temp);
-        }
-        else if ((blacknum == 1 && whitenum == 0) || (whitenum == 1 && blacknum == 0))
-        {
-            addCSScore(line,column,crossShaped1,tempPos,temp);
-        }
-    }
-}
-
-/**
- * [isAI2::FindBlank 找出十字围杀的空白着子点]
- * @param line          [行]
- * @param column        [列]
- * @param score         [分数]
- * @param tempPos[4]    [位置保存数组]
- * @param temp[4]       [坐标位置]
- */
-void isAI2::addCSScore(int line,int column,int score,int tempPos[4],int temp[4])
-{
-    for (int i = 0; i < 4; i++)
-    {
-        if (tempPos[i] == noChess)
-        {
-            cross[temp[i]/100][temp[i]%100] = score;
-        }
-    }
-}
 

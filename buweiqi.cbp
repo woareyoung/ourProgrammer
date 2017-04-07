@@ -46,6 +46,7 @@
 		<Unit filename="AI2_Source/newScore/newEvalution.cpp" />
 		<Unit filename="AI2_Source/score/cornerScan.cpp" />
 		<Unit filename="AI2_Source/score/crossShapeScan.cpp" />
+		<Unit filename="AI2_Source/score/isGo2Dead.cpp" />
 		<Unit filename="AI2_Source/score/tirangleScan.cpp" />
 		<Unit filename="StdAfx.cpp" />
 		<Unit filename="StdAfx.h" />

@@ -175,7 +175,8 @@ void ChessRule::reStart(HWND ParentHwnd)
     Round1 = 60;//≤Ω ±60√Î
     Round2 = 60;
     Start = false;
-    AI1 = false;
-    AI2 = false;
+    Player1isAI = false;
+    Player2isAI = false;
     PostMessage(ParentHwnd, WM_PAINT, 0, 0);
 }
+

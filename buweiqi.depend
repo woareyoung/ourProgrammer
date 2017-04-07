@@ -206,7 +206,7 @@
 	"stdafx.h"
 	"buweiqi.h"
 
-1490750712 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
+1491400171 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
 	<windows.h>
 
 1490707387 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
@@ -221,7 +221,7 @@
 
 1490102908 c:\users\notzuonotdied\desktop\buweiqi\chess.h
 
-1490707387 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
+1491404562 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
 	"../AI2_Header/isAI2.h"
 
 1490117157 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
@@ -251,7 +251,7 @@
 	"Chess.h"
 	"PlayerInfo.h"
 
-1490788824 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
+1490789441 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
 1490621068 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
 	<map>
@@ -260,60 +260,61 @@
 	<vector>
 	"../StdAfx.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+1491404771 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1490372973 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\chessboard.cpp
+1491404719 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\chessboard.cpp
 	"../StdAfx.h"
 	"../buweiqi.h"
 
-1490579102 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
+1491404731 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1490525992 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
+1491404781 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
 	"../stdafx.h"
 	"../chessBoard/ChessRule.h"
 
-1490373112 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
+1491404686 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1490787107 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+1491538743 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/isAI2.h"
-	<stdlib.h>
 
 1490525945 source:c:\users\notzuonotdied\desktop\buweiqi\util\recursion.cpp
 	"../chessBoard/Chess.h"
 
-1490579023 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\aiplayer.h
+1491399581 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
+1491538192 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/isAI2.h"
 
 1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score.cpp
 	"../AI2_Header/isAI2.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
+1491535481 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
+1491535505 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
+1491539351 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490761616 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
+1491401338 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490787208 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
+1491535629 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
 	"../../AI2_Header/isAI2.h"
 
-1490787100 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\isai2.h
-	<cmath>
+1491538613 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\isai2.h
 	"AIPlayer.h"
-	<list>
+	<vector>
 	"../StdAfx.h"
+
+1491540480 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
+	"../../AI2_Header/isAI2.h"
 

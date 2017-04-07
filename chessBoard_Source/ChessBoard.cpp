@@ -14,12 +14,41 @@ void ChessBoard::PaintBoard()
     //设置每个交叉点的情况，“0”表示没有棋子，“1”表示黑子，“2”表示白字
     if(Start == false)
     {
-        for(i = 1; i < 10; i++)
+/*        for(i = 1; i < 10; i++)
         {
             for(j = 1; j < 10; j++)
             {
                 cross[i][j] = 0;//棋盘上无子，所以设“0”
             }
+        }*/
+        int temp[10][10] =
+        {
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,1,0,1,0,0,0,2},
+            {0,1,0,0,0,0,0,0,2,0},
+            {0,1,0,0,0,0,0,0,0,0},
+            {0,0,0,2,0,0,0,2,0,0},
+            {0,1,0,0,2,1,2,0,2,0},
+            {0,0,1,0,0,2,0,0,0,0},
+            {0,0,0,0,2,1,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0}
+        };
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                Chess::cross[i][j] = temp[i][j];
+                if (temp[i][j] != 0)
+                {
+                    Chess::Cross[i][j] = true;
+                }
+                else
+                {
+                    Chess::Cross[i][j] = false;
+                }
+            }
+
         }
     }
     SetTextColor(graphicsHdc, RGB(0,0,0));//设置文本颜色为黑色
@@ -94,7 +123,7 @@ void ChessBoard::PaintTimer()
 {
     updateTime(AllTime1,Round1,0);
     updateTime(AllTime2,Round2,Base / 2);
-   // BitBlt(graphicsHdc, 0, 0, Width, Height, hdcBuffer, 0, 0, SRCCOPY);
+    // BitBlt(graphicsHdc, 0, 0, Width, Height, hdcBuffer, 0, 0, SRCCOPY);
 }
 
 void ChessBoard::updateTime(int AllTime,int Round,int offset)
@@ -119,7 +148,7 @@ void ChessBoard::updateTime(int AllTime,int Round,int offset)
 void ChessBoard::PrintInfo()//打印玩家的信息
 {
     char *Number;
-    if(AI1 == false)
+    if(!Player1isAI)
     {
         Number = "    玩家1未使用AI，按F1键可使用AI    ";
         TextOut(graphicsHdc, Base, ChessDiameter * 2, Number, strlen(Number));
@@ -129,7 +158,7 @@ void ChessBoard::PrintInfo()//打印玩家的信息
         Number = "玩家1已使用AI，按F1键可取消使用AI";
         TextOut(graphicsHdc, Base, ChessDiameter * 2, Number, strlen(Number));
     }
-    if(AI2 == false)
+    if(!Player2isAI)
     {
         Number ="    玩家2未使用AI，按F2键可使用AI    ";
         TextOut(graphicsHdc, Base, ChessDiameter * 2 + Base / 2, Number, strlen(Number));

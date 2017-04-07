@@ -37,8 +37,8 @@ public:
     /**
      * AI
      */
-    bool AI1;//记录玩家1是否是AI
-    bool AI2;//记录玩家2是否是AI
+    bool Player1isAI;//记录玩家1是否是AI
+    bool Player2isAI;//记录玩家2是否是AI
 
     isAI2 ai2;
 };

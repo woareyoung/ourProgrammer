@@ -137,9 +137,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_KEYDOWN://若是键盘按下消息
         if(wParam == VK_F1) //按F1键
         {
-            if(CB.AI1 == false)
+            if(CB.Player1isAI == false)
             {
-                CB.AI1 = true;
+                CB.Player1isAI = true;
                 if(CB.onTurn == 1)
                 {
                     CB.onTurn = -1;
@@ -149,16 +149,16 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
             else
             {
-                CB.AI1 = false;
+                CB.Player1isAI = false;
                 PostMessage(hwnd, WM_PAINT, 0, 0);
             }
         }
 
         else if(wParam == VK_F2) //按下F2键
         {
-            if(CB.AI2 == false)
+            if(CB.Player2isAI == false)
             {
-                CB.AI2 = true;
+                CB.Player2isAI = true;
                 if(CB.onTurn == 2)
                 {
                     CB.onTurn = -2;
@@ -168,7 +168,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
             else
             {
-                CB.AI2 = false;
+                CB.Player2isAI = false;
                 PostMessage(hwnd, WM_PAINT, 0, 0);
             }
         }

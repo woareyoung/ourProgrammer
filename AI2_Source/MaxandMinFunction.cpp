@@ -1,102 +1,120 @@
 #include "../AI2_Header/isAI2.h"
-#include <stdlib.h>
+
 /**
- * 这一个类主要是实现isAI2的主要算法Max、Min算法的
+ * [isAI2::GetPosition AI对外接口]
+ * @param line 			着子位置的行坐标
+ * @param column 		着子位置的行坐标
+ * @param player 		当前轮到的玩家的ID
+ * @param isExist[10][10]		棋盘着子情况数组
  */
-
-int isAI2::Evaluation()
+void isAI2::GetPosition(int& line,int& column,int player, int isExist[10][10])
 {
-    AcrossCorners();
-    Tirangle();
-    CrossShaped();
-}
-
-void isAI2::initDataFromArray()
-{
-
-}
-
-void isAI2::MaxAndMin(int& line,int& column)
-{
-    int temp = chessScore[1][1];
-    int tempLine = 1;
-    int tempColumn = 1;
-    for (int i = 1;i < 10;i++) {
-        for (int j = 1;j < 10;j++) {
-            if (chessScore[i][j] > temp) {
-                temp = chessScore[i][j];
-                tempLine = i;
-                tempColumn = j;
-            }
-        }
-    }
-    line = tempLine;
-    column = tempColumn;
-}
-
-void isAI2::GetPosition(int& line,int& column,int player,
-                         int isExist[10][10], bool chessStatus[10][10])
-{
-    copyArray(isExist, chessStatus);
-    turn2Who = player;
-//    initChessScore();
-//    Evaluation();
-//    MaxAndMin(line,column);
-    int temp = maxandmin(5);
-    line = temp/100;
-    column = temp%100;
-}
-
-void isAI2::Score()
-{
-
+    copyArray(isExist);
+	turn2Who = player;
+	Rival = turn2Who == isBlack ? isWhite : isBlack;
+	// 设置遍历的深度
+	int temp = maxandmin(1);
+	line = temp/100;
+	column = temp%100;
 }
 
 /**
- * [isAI2::isBesieged 判断是否被包围了]
- * @param  RivalLine   [当前准备着子的位置的行]
- * @param  RivalColumn [当前准备着子的位置的列]
- * @param  onTurn      [轮到谁，参数可以在PlayerInfo.h中查看]
- * @return             [是否被包围，被包围就返回true，没有被包围就返回false]
+ * [isAI2::maxandmin 极大极小函数]
+ * @param depth 		执行的深度
  */
-bool isAI2::isBesieged(int RivalLine, int RivalColumn, int player, int rival)
-{
-    return true;
+int isAI2::maxandmin(int depth) {
+	int tempArray[10] = {
+		2,1,2,1,2,1,2,1,2,1
+	};
+	int temp;
+	for (int i = 0;i < depth; i++) {
+		turn2Who = tempArray[i];
+		Rival = turn2Who == isBlack ? isWhite : isBlack;
+		temp = singleLayer();
+	}
+	return temp;
 }
 
-void isAI2::copyArray(int isExist[10][10], bool chessStatus[10][10])
-{
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            this->cross[i][j] = isExist[i][j];
-            this->Cross[i][j] = chessStatus[i][j];
-        }
-    }
+/**
+ * [isAI2::singleLayer 单层执行]
+ */
+int isAI2::singleLayer() {
+	Revalute();
+	if (turn2Who == PlayerId) {
+		return MaxScore();
+	} else {
+		return MinScore();
+	}
 }
 
-void isAI2::initChessScore()
+/**
+ * [isAI2::MaxScore 获取极大值]
+ */
+int isAI2::MaxScore()
 {
-    int temp[10][10] =
-    {
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,1,1,1,1,1,1,1,1,1},
-        {0,1,2,2,2,2,2,2,2,1},
-        {0,1,2,3,3,3,3,3,2,1},
-        {0,1,2,3,4,4,4,3,2,1},
-        {0,1,2,3,4,5,4,3,2,1},
-        {0,1,2,3,4,4,4,3,2,1},
-        {0,1,2,3,3,3,3,3,2,1},
-        {0,1,2,2,2,2,2,2,2,1},
-        {0,1,1,1,1,1,1,1,1,1}
-    };
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            chessScore[i][j] = temp[i][j];
-        }
+	int temp = chessScore[1][1];
+	int tempLine = 1;
+	int tempColumn = 1;
+	for (int i = 1;i < 10; i++) {
+		for (int j = 1;j < 10; j++) {
+			if (temp < chessScore[i][j] && cross[i][j] == noChess) {
+				temp = chessScore[i][j];
+				tempLine = i;
+				tempColumn = j;
+			}
+		}
+	}
+	cross[tempLine][tempColumn] = turn2Who;
+	chessStatus[tempLine][tempColumn] = true;
+	return tempLine*100 + tempColumn;
+}
 
-    }
+/**
+ * [isAI2::MaxScore 获取极小值]
+ */
+int isAI2::MinScore()
+{
+	int temp = chessScore[1][1];
+	int tempLine = 1;
+	int tempColumn = 1;
+	// 输出分数
+	for (int i = 1;i < 10; i++) {
+		for (int j = 1;j < 10; j++) {
+			if (temp > chessScore[i][j] && cross[i][j] == noChess) {
+				temp = chessScore[i][j];
+				tempLine = i;
+				tempColumn = j;
+			}
+		}
+	}
+	cross[tempLine][tempColumn] = turn2Who;
+	chessStatus[tempLine][tempColumn] = true;
+	return tempLine*100 + tempColumn;
+}
+
+/**
+ * [isAI2::Revalute 估值函数]
+ */
+void isAI2::Revalute()
+{
+	initChessScore();
+
+	AcrossCorners();
+	Tirangle();
+	chessStatusShaped();
+	isGo2Dead();
+	// for (int i = 1; i < 10; i++)
+	// {
+	// 	for (int j = 1; j < 10; j++)
+	// 	{
+	// 		if (chessStatus[i][j] == noChess)
+	// 		{
+	// 			if (isBesieged(i, j)) {
+	// 				chessScore[i][j] = min;
+	// 			} else {
+	// 				JudgeScoreType();// 判断分数的多少
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

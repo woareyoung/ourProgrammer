@@ -15,7 +15,7 @@ void ChessBoard::PaintChess()
                 Cross[i][j] = false;
         if(cross[line][column] == 0)
         {
-            if(AI2 == false)
+            if(Player2isAI == false)
                 onTurn = isPlay2onTurn;
             else
                 onTurn = isAI2onTurn;
@@ -26,6 +26,9 @@ void ChessBoard::PaintChess()
                 Start = false;
                 reStart(ParentHwnd);
             }
+            else if (Player2isAI) {
+                PaintChess();
+            }
         };
         break;
     case isPlay2onTurn://画白色棋子
@@ -34,7 +37,7 @@ void ChessBoard::PaintChess()
                 Cross[i][j] = false;
         if(cross[line][column] == 0)
         {
-            if(AI1 == false)
+            if(Player1isAI == false)
                 onTurn = isPlay1onTurn;
             else
                 onTurn = isAI1onTurn;
@@ -45,21 +48,26 @@ void ChessBoard::PaintChess()
                 Start = false;
                 reStart(ParentHwnd);
             }
+            else if (Player1isAI) {
+                PaintChess();
+            }
         };
         break;
     //画黑色棋子
     case isAI1onTurn:
     {
-        if(AI2 == true)
+        if(Player2isAI == true)
             onTurn = isAI2onTurn;
         else
             onTurn = isPlay2onTurn;
 
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
+
+
         PaintAChess(isBlack);
         //若对方是电脑，则先判断有没有分出胜负
         bool win = WinOrLose();
-        if(AI2 == true && !win) PaintChess();//若对方是电脑，则递归
+        if(Player2isAI == true && !win) PaintChess();//若对方是电脑，则递归
         else if(win)
         {
             Winner = 2;
@@ -71,18 +79,18 @@ void ChessBoard::PaintChess()
     //画白色棋子
     case isAI2onTurn:
     {
-        if(AI1 == true)
+        if(Player1isAI == true)
             onTurn = isAI1onTurn;
         else
             onTurn = isPlay1onTurn;
 
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
-        ai2.GetPosition(Chess::line,Chess::column,onTurn,Chess::cross, Chess::Cross);
+        ai2.GetPosition(line, column, onTurn, cross);
 
         PaintAChess(isWhite);
         //若对方是电脑，则先判断有没有分出胜负
         bool win = WinOrLose();
-        if(AI1 == true && !win)
+        if(Player1isAI == true && !win)
             PaintChess();//若对方是电脑，则递归
         else if(win)
         {

@@ -11,8 +11,8 @@ ChessBoard::ChessBoard()
     Round1 = 60;//步时60秒
     Round2 = 60;
     Start = false;
-    AI1 = false;
-    AI2 = false;
+    Player1isAI = false;
+    Player2isAI = false;
     onTurn = 1;//玩家1先下棋
 }
 /**
@@ -30,6 +30,7 @@ void ChessBoard::Initialize()
     {
         CrossCross[i] = i * ChessDiameter;
     }
+
 }
 
 /**
@@ -39,8 +40,8 @@ void ChessBoard::Initialize()
 void ChessBoard::HDCInitialize(HWND hwnd)
 {
     graphicsHdc = GetDC(ParentHwnd);//获取设备环境句柄
-   // hdcBuffer = CreateCompatibleDC(graphicsHdc);//建立和grapgicsHdc兼容的内存DC
-   // bitmap = CreateCompatibleBitmap(hdcBuffer, Width, Height);//建立一个和窗口兼容的空的位图对象
+    // hdcBuffer = CreateCompatibleDC(graphicsHdc);//建立和grapgicsHdc兼容的内存DC
+    // bitmap = CreateCompatibleBitmap(hdcBuffer, Width, Height);//建立一个和窗口兼容的空的位图对象
 
     PrintInfo();
     PaintTimer();

@@ -1,19 +1,18 @@
 #include "../../AI2_Header/isAI2.h"
+
 /**
  * [isAI2::AcrossCorners 边角扫描]
+ * 实现逻辑，通过扫描边角的实现分数加法
  * @return [无]
  */
 void isAI2::AcrossCorners()
 {
     // 轮到本方的时候
-    //if (PlayerId == turn2Who)
-    {
-        for (int i = 0;i < 4;i += 3) {
-            ACScan(cornerArray[i]/100,cornerArray[i]%100,
-                     cornerArray[i+1]/100,cornerArray[i+1]%100,
-                     cornerArray[i+2]/100,cornerArray[i+2]%100);
-        }
-    }
+	for (int i = 0;i < 12;i += 3) {
+		ACScan(cornerArray[i]/100,cornerArray[i]%100,
+			cornerArray[i+1]/100,cornerArray[i+1]%100,
+			cornerArray[i+2]/100,cornerArray[i+2]%100);
+	}
 }
 
 /**
@@ -25,44 +24,39 @@ void isAI2::AcrossCorners()
  * @param line2   [边角棋子周围的棋子的行]
  * @param column2 [边角棋子周围的棋子的列]
  */
-void isAI2::ACScan(int line,int column,
-    int line1,int column1,int line2,int column2)
+void isAI2::ACScan(int line,int column, int line1,int column1,int line2,int column2)
 {
-    if (cross[line][column] == noChess) {
-        if ((cross[line1][column1] == isWhite && cross[line2][column2] == isWhite)
-            || (cross[line1][column1] == isBlack && cross[line2][column2] == isBlack)) {
-            chessScore[line][column] = min;
-        } else if ((cross[line1][column1] == isWhite && cross[line2][column2] == noChess)
-            || (cross[line1][column1] == isBlack && cross[line2][column2] == noChess)
-            || (cross[line1][column1] == noChess && cross[line2][column2] == isBlack)
-            || (cross[line1][column1] == noChess && cross[line2][column2] == isWhite)){
-            addScore(line,column,cornerScore);
-        }
+	if (cross[line][column] == noChess) {
+		// 边角已经形成包围圈的情况
+		if (cross[line1][column1] == isBlack && cross[line2][column2] == isBlack) {
+			chessScore[line][column] = min;
+			chessStatus[line][column] = true;
+		} else if (cross[line1][column1] == isWhite && cross[line2][column2] == isWhite) {
+			chessScore[line][column] = min;
+			chessStatus[line2][column2] = true;
+		}
+		// 边角两个位置单子的情况
+		else if (cross[line1][column1] == noChess && cross[line2][column2] == isWhite){
+			chessStatus[line1][column1] = true;
+			chessScore[line1][column1] += cornerScoreFull;
+		} else if (cross[line1][column1] == isWhite && cross[line2][column2] == noChess) {
+			chessStatus[line2][column2] = true;
+			chessScore[line2][column2] += cornerScoreFull;
+		} else if (cross[line1][column1] == isBlack && cross[line2][column2] == noChess) {
+			chessStatus[line2][column2] = true;
+			chessScore[line2][column2] += cornerScoreFull;
+		} else if (cross[line1][column1] == noChess && cross[line2][column2] == isBlack) {
+			chessStatus[line1][column1] = true;
+			chessScore[line1][column1] += cornerScoreFull;
+		}
+		// 边角构成的三角行上面一个棋子都没有，这种情况的话，需要加分
+		else if (cross[line1][column1] == noChess && cross[line2][column2] == noChess) {
+			chessStatus[line1][column1] = true;
+			chessScore[line1][column1] += cornerScore;
+			chessScore[line2][column2] += cornerScore;
+			chessStatus[line2][column2] = true;
+		}
+
     }// 注意：边角有子无意义
 }
 
-/**
- * [isAI2::addScore 边角加分]
- * @param line   [行]
- * @param column [列]
- * @param score  [分数]
- */
-void isAI2::addScore(int line,int column, int score)
-{
-    if (line - 1 > 0)
-    {
-        chessScore[line - 1][column] += score;
-    }
-    if (column + 1 < 10)
-    {
-        chessScore[line][column + 1] += score;
-    }
-    if (line + 1 < 10)
-    {
-        chessScore[line + 1][column] += score;
-    }
-    if (column - 1 > 0)
-    {
-        chessScore[line][column - 1] += score;
-    }
-}

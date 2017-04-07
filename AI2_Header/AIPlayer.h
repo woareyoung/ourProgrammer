@@ -7,9 +7,11 @@ class AIPlayer {
 private:
 protected:
     // 当前AI的身份是黑子还是白子
-    int PlayerId;
+	int PlayerId;
     // 轮到谁
-    int turn2Who;
+	int turn2Who;
+	// 队手
+	int Rival;
 public:
 
 };
