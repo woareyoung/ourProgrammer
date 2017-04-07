@@ -328,7 +328,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491376291 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+1491486225 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
@@ -336,7 +336,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491403005 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
+1491480891 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 	"../chessBoard/AImessage.h"
@@ -361,7 +361,7 @@
 	"../AI2_Header/AI2.h"
 	"../AI1_Header/AI1.h"
 
-1491097733 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\chessboard.cpp
+1491572469 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\chessboard.cpp
 	"../StdAfx.h"
 	"../buweiqi.h"
 
@@ -369,7 +369,7 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1491395716 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\printchess.cpp
+1491572405 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 

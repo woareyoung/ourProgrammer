@@ -37,17 +37,18 @@ void ChessBoard::PaintBoard()
         TextOut(graphicsHdc, CrossCross[i] - 2, 0, Number, 1);//写文本，棋盘的行的数字标号
         TextOut(graphicsHdc, 0, CrossCross[i] - 5, Number, 1);//写文本，棋盘的列的数字标号
     }
-
-//用于重绘
+    HBRUSH rush;
+    //用于重绘
     //画棋子
     for(i = 0; i < 10; i++)
+    {
         for(j = 0; j < 10; j++)
         {
             // 黑子
             if(cross[i][j] == isBlack)
             {
                 // 画笔
-                HBRUSH rush = CreateSolidBrush(RGB(0, 0, 0));
+                rush = CreateSolidBrush(RGB(0, 0, 0));
                 // 引入画笔到场景中
                 SelectObject(graphicsHdc, rush);
                 // 描绘一个椭圆
@@ -58,14 +59,12 @@ void ChessBoard::PaintBoard()
                 // 第五个参数是棋盘Y2的位置-棋子Y2的偏移量/2
                 Ellipse(graphicsHdc, CrossCross[j] - ChessDiameter / 2, CrossCross[i] - ChessDiameter / 2,
                         CrossCross[j] + ChessDiameter / 2, CrossCross[i] + ChessDiameter / 2);
-                // 释放GUI对象
-                DeleteObject(rush);
             }
             // 白子
             else if(cross[i][j] == isWhite)
             {
                 // 画笔
-                HBRUSH rush = CreateSolidBrush(RGB(255, 255, 255));
+                rush = CreateSolidBrush(RGB(255, 255, 255));
                 // 引入画笔到场景中
                 SelectObject(graphicsHdc, rush);
                 // 描绘一个椭圆
@@ -76,11 +75,18 @@ void ChessBoard::PaintBoard()
                 // 第五个参数是棋盘Y2的位置-棋子Y2的偏移量/2
                 Ellipse(graphicsHdc, CrossCross[j] - ChessDiameter / 2, CrossCross[i] - ChessDiameter / 2,
                         CrossCross[j] + ChessDiameter / 2, CrossCross[i] + ChessDiameter / 2);
-                // 释放GUI对象
-                DeleteObject(rush);
             }
         }
-
+    }
+    if(Start == true && line != 0 && column != 0)
+    {
+        rush = CreateSolidBrush(RGB(255, 0, 0));
+        SelectObject(graphicsHdc, rush);
+        Ellipse(graphicsHdc, CrossCross[column] - ChessDiameter / 5, CrossCross[line] - ChessDiameter / 5,
+            CrossCross[column] + ChessDiameter / 5, CrossCross[line] + ChessDiameter / 5);
+    }
+    // 释放GUI对象
+    DeleteObject(rush);
     //标注玩家信息
     Number = "Player1";
     //HDC X Y 信息 信息长度
@@ -88,13 +94,25 @@ void ChessBoard::PaintBoard()
     Number = "Player2";
     //HDC X Y 信息 信息长度
     TextOut(graphicsHdc, Base + ChessDiameter * 200 / 130, ChessDiameter + Base / 2, Number, strlen(Number));
+    SetTextColor(graphicsHdc, RGB(255, 0, 0));//设置文本颜色为红色
+    if(onTurn == isPlay1onTurn || onTurn == isAI1onTurn)
+    {
+        Number = "Player1";
+        //HDC X Y 信息 信息长度
+        TextOut(graphicsHdc, Base + ChessDiameter * 200 / 130, ChessDiameter, Number, strlen(Number));
+    }
+    else
+    {
+        Number = "Player2";
+        //HDC X Y 信息 信息长度
+        TextOut(graphicsHdc, Base + ChessDiameter * 200 / 130, ChessDiameter + Base / 2, Number, strlen(Number));
+    }
 }
 
 void ChessBoard::PaintTimer()
 {
     updateTime(AllTime1,Round1,0);
     updateTime(AllTime2,Round2,Base / 2);
-   // BitBlt(graphicsHdc, 0, 0, Width, Height, hdcBuffer, 0, 0, SRCCOPY);
 }
 
 void ChessBoard::updateTime(int AllTime,int Round,int offset)

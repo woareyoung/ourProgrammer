@@ -106,8 +106,6 @@ void ChessBoard::PaintChess()
 void ChessBoard::PaintAChess(int type)
 {
     HBRUSH rush;//画刷句柄
-    // KillTimer(ParentHwnd, 2);//结束计时器
-    //  PlayerTimer = SetTimer(ParentHwnd, 1, 1000, NULL);//计时器开始
     cross[line][column] = type;//将从AI程序获取到的行和列数记录到line和column
     if (type == isBlack)
     {
@@ -124,6 +122,7 @@ void ChessBoard::PaintAChess(int type)
     Ellipse(graphicsHdc, CrossCross[column] - ChessDiameter / 2, CrossCross[line] - ChessDiameter / 2,
             CrossCross[column] + ChessDiameter / 2, CrossCross[line] + ChessDiameter / 2);
     DeleteObject(rush);
+    PostMessage(ParentHwnd, WM_PAINT, 0, 0);
 }
 
 

@@ -8,14 +8,14 @@ AI1::AI1()
     ///初始化特别点分值
     PointStyle[1] = -3;//死棋点设置为-3分
     PointStyle[2] = 50;//填充对方虎口，并向外跳级降低
-    PointStyle[17] = 11;//填充对方缺口，并向外跳级降低
+    PointStyle[17] = 26;//填充对方缺口，并向外跳级降低
     PointStyle[13] = -2;//填充己方的眼设置为-2分
     PointStyle[3] = 6;//形成己方虎口，并向外逐级降低
     PointStyle[4] = 8;//形成己方眼，并向外逐级降低
     PointStyle[5] = 4;//形成己方缺口，并向外逐级降低
-    PointStyle[6] = 28;//阻止对方形成虎口，并向外跳级降低
-    PointStyle[7] = 40;//阻止对方形成眼，并向外逐级降低
-    PointStyle[8] = 7;//阻止对方形成缺口、填充对方单点
+    PointStyle[6] = 33;//阻止对方形成虎口，并向外跳级降低
+    PointStyle[7] = 45;//阻止对方形成眼，并向外逐级降低
+    PointStyle[8] = 20;//阻止对方形成缺口、填充对方单点
     PointStyle[14] = -1;//填充己方虎口设置为-1分
     PointStyle[15] = 1;//填充己方单点，并向外逐级降低
     PointStyle[16] = -8;//填充己方缺口
@@ -26,12 +26,12 @@ AI1::AI1()
     PointStyle[12] = 6;//在对方剩下一个位置时己方还差2子集群围杀
     ///初始化层差分
     RivalSinglePointPoor = 100;//对方单点
-    RivalChipPoor = 2;//对方缺口
-    RivalTigerMouthPoor = 10;//对方虎口
+    RivalChipPoor = 20;//对方缺口
+    RivalTigerMouthPoor = 13;//对方虎口
 
-    RivalFormatChipPoor = 100;//对方形成缺口
-    RivalFormatTigerMouthPoor = 12;//对方形成虎口
-    RivalFormatEyePoor = 20;//对方形成眼
+    RivalFormatChipPoor = 10;//对方形成缺口
+    RivalFormatTigerMouthPoor = 14;//对方形成虎口
+    RivalFormatEyePoor = 18;//对方形成眼
 
     MySinglePointPoor = 1;//己方单点
     MyChipPoor = 100;//己方缺口
