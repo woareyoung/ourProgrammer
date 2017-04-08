@@ -9,9 +9,9 @@
  */
 void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 {
-    //copyArray(isExist);
     if (line != 0 && column != 0) {
         cross[line][column] = onTurn;
+        copyArray(cross);
     }
 	turn2Who = onTurn;
 	Rival = turn2Who == isBlack ? isWhite : isBlack;

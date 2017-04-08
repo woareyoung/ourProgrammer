@@ -48,7 +48,7 @@ void AI2::copyArray(int isExist[10][10])
 	{
 		for (int j = 0; j < 10; j++)
 		{
-			this->cross[i][j] = isExist[i][j];
+			//this->cross[i][j] = isExist[i][j];
 			if (isExist[i][j] != noChess) {
 				this->chessStatus[i][j] = true;
 			} else {
