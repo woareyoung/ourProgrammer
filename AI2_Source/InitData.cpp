@@ -1,6 +1,6 @@
-#include "../AI2_Header/isAI2.h"
+#include "../AI2_Header/AI2.h"
 
-isAI2::isAI2()
+AI2::AI2()
 {
     this->PlayerId = isWhite;
     // 初始化对角数组
@@ -18,7 +18,7 @@ isAI2::isAI2()
     this->cornerArray[11] = 908;
 }
 
-void isAI2::initChessScore()
+void AI2::initChessScore()
 {
 	int temp[10][10] =
 	{
@@ -42,7 +42,7 @@ void isAI2::initChessScore()
 	}
 }
 
-void isAI2::copyArray(int isExist[10][10])
+void AI2::copyArray(int isExist[10][10])
 {
 	for (int i = 0; i < 10; i++)
 	{

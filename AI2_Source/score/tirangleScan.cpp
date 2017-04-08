@@ -1,9 +1,9 @@
-#include "../../AI2_Header/isAI2.h"
+#include "../../AI2_Header/AI2.h"
 
 /**
- * [isAI2::Tirangle 三角围杀]
+ * [AI2::Tirangle 三角围杀]
  */
-void isAI2::Tirangle()
+void AI2::Tirangle()
 {
 	UTirangle();
 	RTirangle();
@@ -12,9 +12,9 @@ void isAI2::Tirangle()
 }
 
 /**
- * [isAI2::RTirangle 右界面的三角围杀]
+ * [AI2::RTirangle 右界面的三角围杀]
  */
-void isAI2::RTirangle() {
+void AI2::RTirangle() {
 	for (int i = 1;i < 8;i++) {
 		 // --------------右边--------------------
         if (cross[i+1][9] != noChess) {
@@ -63,9 +63,9 @@ void isAI2::RTirangle() {
 }
 
 /**
- * [isAI2::RTirangle 左界面的三角围杀]
+ * [AI2::RTirangle 左界面的三角围杀]
  */
-void isAI2::LTirangle() {
+void AI2::LTirangle() {
 	for (int i = 1;i < 8;i++) {
 		// --------------左边--------------------
         if (cross[i+1][1] != noChess) {
@@ -114,9 +114,9 @@ void isAI2::LTirangle() {
 }
 
 /**
- * [isAI2::RTirangle 上界面的三角围杀]
+ * [AI2::RTirangle 上界面的三角围杀]
  */
-void isAI2::UTirangle()
+void AI2::UTirangle()
 {
     for (int i = 1; i < 8; i++)
     {
@@ -171,9 +171,9 @@ void isAI2::UTirangle()
 
 
 /**
- * [isAI2::DTirangle 下边界的三角围杀]
+ * [AI2::DTirangle 下边界的三角围杀]
  */
-void isAI2::DTirangle()
+void AI2::DTirangle()
 {
     for (int i = 1; i < 10; i++)
     {

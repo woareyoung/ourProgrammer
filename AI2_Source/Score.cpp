@@ -1,7 +1,7 @@
-#include "../AI2_Header/isAI2.h"
+#include "../AI2_Header/AI2.h"
 
 // 虎口
-void  isAI2::GoodTigersMouth()
+void  AI2::GoodTigersMouth()
 {
 
 }

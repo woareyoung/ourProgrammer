@@ -1,10 +1,10 @@
-#include "../../AI2_Header/isAI2.h"
+#include "../../AI2_Header/AI2.h"
 
 /**
- * [isAI2::chessStatusShaped 十字围杀]
+ * [AI2::chessStatusShaped 十字围杀]
  * @return [无]
  */
-void isAI2::chessStatusShaped()
+void AI2::chessStatusShaped()
 {
 	for (int i = 2; i < 9; i++)
 	{
@@ -16,11 +16,11 @@ void isAI2::chessStatusShaped()
 }
 
 /**
- * [isAI2::JudgeCShape 判断是否形成十字围杀]
+ * [AI2::JudgeCShape 判断是否形成十字围杀]
  * @param line   [行]
  * @param column [列]
  */
-void isAI2::JudgeCShape(int line,int column)
+void AI2::JudgeCShape(int line,int column)
 {
 	if (line < 1 || column < 1 || line > 9 || column > 9) {
 		return ;

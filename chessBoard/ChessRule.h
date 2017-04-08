@@ -6,14 +6,14 @@
 class ChessRule: public Chess, public PlayerInfo
 {
 public:
-    bool Start;//¿ªÊ¼ÓÎÏ·
+    bool Start;//å¼€å§‹æ¸¸æˆ
 
 
-    //ÅĞ¶ÏÊ¤¸ºÊÇ·ñÒÑ·Ö£¬Èô·Ö³öÊ¤¸º·µ»Øtrue£¬·ñÔò·µ»Øfalse
+    //åˆ¤æ–­èƒœè´Ÿæ˜¯å¦å·²åˆ†ï¼Œè‹¥åˆ†å‡ºèƒœè´Ÿè¿”å›trueï¼Œå¦åˆ™è¿”å›false
     bool WinOrLose();
-    //ÅĞ¶Ï¶Ô·½µÄÆå×ÓÓĞÃ»ÓĞ±»Î§ËÀ£¬ÓÃÓÚÒ»¶ÑÆå×Ó±»Î§ËÀµÄÇé¿ö
+    //åˆ¤æ–­å¯¹æ–¹çš„æ£‹å­æœ‰æ²¡æœ‰è¢«å›´æ­»ï¼Œç”¨äºä¸€å †æ£‹å­è¢«å›´æ­»çš„æƒ…å†µ
     bool Besieged(int RivalLine, int RivalColumn, int player, int rival);
-    //Ê¤¸º¾ö³öÖ®ºó
+    //èƒœè´Ÿå†³å‡ºä¹‹å
     void reStart(HWND ParentHwnd);
 };
 

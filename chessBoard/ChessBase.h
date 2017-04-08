@@ -2,13 +2,13 @@
 #define CHESSBASE_H_INCLUDED
 
 /**
- * ÆåÅÌUtil
- * Ö÷ÒªÊÇÒ»Ğ©´¦Àíº¯Êı
+ * æ£‹ç›˜Util
+ * ä¸»è¦æ˜¯ä¸€äº›å¤„ç†å‡½æ•°
  */
 class ChessBase
 {
 private:
-    char str[2];//ÓÃÓÚ¸¨ÖúÕûĞÍ×ª»»×Ö·û´®
+    char string[2];//ÓÃÓÚ¸¨ÖúÕûĞÍ×ª»»×Ö·û´®
 public :
     /**
      * ²ÎÊı

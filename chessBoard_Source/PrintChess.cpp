@@ -26,9 +26,7 @@ void ChessBoard::PaintChess()
                 Start = false;
                 reStart(ParentHwnd);
             }
-            else if (Player2isAI) {
-                PaintChess();
-            }
+            else if(Player2isAI == true) PaintChess();
         };
         break;
     case isPlay2onTurn://画白色棋子
@@ -48,9 +46,7 @@ void ChessBoard::PaintChess()
                 Start = false;
                 reStart(ParentHwnd);
             }
-            else if (Player1isAI) {
-                PaintChess();
-            }
+            else if(Player1isAI == true) PaintChess();
         };
         break;
     //画黑色棋子
@@ -62,7 +58,7 @@ void ChessBoard::PaintChess()
             onTurn = isPlay2onTurn;
 
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
-
+        Player1AI->GetPosition(line, column, onTurn);
 
         PaintAChess(isBlack);
         //若对方是电脑，则先判断有没有分出胜负
@@ -85,7 +81,7 @@ void ChessBoard::PaintChess()
             onTurn = isPlay1onTurn;
 
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
-        ai2.GetPosition(line, column, onTurn, cross);
+        Player2AI->GetPosition(line, column, onTurn);
 
         PaintAChess(isWhite);
         //若对方是电脑，则先判断有没有分出胜负
@@ -110,8 +106,6 @@ void ChessBoard::PaintChess()
 void ChessBoard::PaintAChess(int type)
 {
     HBRUSH rush;//画刷句柄
-    // KillTimer(ParentHwnd, 2);//结束计时器
-    //  PlayerTimer = SetTimer(ParentHwnd, 1, 1000, NULL);//计时器开始
     cross[line][column] = type;//将从AI程序获取到的行和列数记录到line和column
     if (type == isBlack)
     {
@@ -128,6 +122,7 @@ void ChessBoard::PaintAChess(int type)
     Ellipse(graphicsHdc, CrossCross[column] - ChessDiameter / 2, CrossCross[line] - ChessDiameter / 2,
             CrossCross[column] + ChessDiameter / 2, CrossCross[line] + ChessDiameter / 2);
     DeleteObject(rush);
+    PostMessage(ParentHwnd, WM_PAINT, 0, 0);
 }
 
 

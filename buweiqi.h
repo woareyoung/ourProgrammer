@@ -1,5 +1,9 @@
 # include "chessBoard/ChessBase.h"
 # include "chessBoard/ChessRule.h"
+# include "AI2_Header/AI2.h"
+# include "AI1_Header/AI1.h"
+# include "AI3_Header/AI3.h"
+# include "chessBoard/AImessage.h"
 /**
  * 棋盘界面类
  * 主要负责棋盘的绘制工作
@@ -15,14 +19,16 @@ private :
     int ChessDiameter;//棋子的直径
     // 画笔工具
     HPEN pen;
-
-
     void updateTime(int AllTime,int Round,int offset);
 public :
     int Width;//窗口的宽度
     int Height;//窗口的高度
     int Base;//窗口内容规模的基准
-
+    AI1 ai1;
+    AI2 ai2;
+    AI3 ai3;
+    AI *Player1AI;
+    AI *Player2AI;
     /**
      * --------界面生成必须参数---------
      */

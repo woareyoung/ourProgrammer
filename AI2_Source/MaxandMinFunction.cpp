@@ -1,16 +1,19 @@
-#include "../AI2_Header/isAI2.h"
+#include "../AI2_Header/AI2.h"
 
 /**
- * [isAI2::GetPosition AI对外接口]
+ * [AI2::GetPosition AI对外接口]
  * @param line 			着子位置的行坐标
  * @param column 		着子位置的行坐标
- * @param player 		当前轮到的玩家的ID
+ * @param onTurn 		当前轮到的玩家的ID
  * @param isExist[10][10]		棋盘着子情况数组
  */
-void isAI2::GetPosition(int& line,int& column,int player, int isExist[10][10])
+void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 {
-    copyArray(isExist);
-	turn2Who = player;
+    //copyArray(isExist);
+    if (line != 0 && column != 0) {
+        cross[line][column] = onTurn;
+    }
+	turn2Who = onTurn;
 	Rival = turn2Who == isBlack ? isWhite : isBlack;
 	// 设置遍历的深度
 	int temp = maxandmin(1);
@@ -19,10 +22,10 @@ void isAI2::GetPosition(int& line,int& column,int player, int isExist[10][10])
 }
 
 /**
- * [isAI2::maxandmin 极大极小函数]
+ * [AI2::maxandmin 极大极小函数]
  * @param depth 		执行的深度
  */
-int isAI2::maxandmin(int depth) {
+int AI2::maxandmin(int depth) {
 	int tempArray[10] = {
 		2,1,2,1,2,1,2,1,2,1
 	};
@@ -36,9 +39,9 @@ int isAI2::maxandmin(int depth) {
 }
 
 /**
- * [isAI2::singleLayer 单层执行]
+ * [AI2::singleLayer 单层执行]
  */
-int isAI2::singleLayer() {
+int AI2::singleLayer() {
 	Revalute();
 	if (turn2Who == PlayerId) {
 		return MaxScore();
@@ -48,9 +51,9 @@ int isAI2::singleLayer() {
 }
 
 /**
- * [isAI2::MaxScore 获取极大值]
+ * [AI2::MaxScore 获取极大值]
  */
-int isAI2::MaxScore()
+int AI2::MaxScore()
 {
 	int temp = chessScore[1][1];
 	int tempLine = 1;
@@ -70,9 +73,9 @@ int isAI2::MaxScore()
 }
 
 /**
- * [isAI2::MaxScore 获取极小值]
+ * [AI2::MaxScore 获取极小值]
  */
-int isAI2::MinScore()
+int AI2::MinScore()
 {
 	int temp = chessScore[1][1];
 	int tempLine = 1;
@@ -93,9 +96,9 @@ int isAI2::MinScore()
 }
 
 /**
- * [isAI2::Revalute 估值函数]
+ * [AI2::Revalute 估值函数]
  */
-void isAI2::Revalute()
+void AI2::Revalute()
 {
 	initChessScore();
 

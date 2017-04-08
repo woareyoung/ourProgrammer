@@ -1,10 +1,10 @@
-#include "../../AI2_Header/isAI2.h"
+#include "../../AI2_Header/AI2.h"
 
 /**
- * [isAI2::addREScore 加分函数]
+ * [AI2::addREScore 加分函数]
  * @param score [分数]
  */
-void isAI2::addREScore(int score)
+void AI2::addREScore(int score)
 {
 	for (int i = 0;i < vec.size();i++) {
 		int temp = vec[i];
@@ -17,7 +17,7 @@ void isAI2::addREScore(int score)
 	vec.clear();
 }
 
-bool isAI2::isBesieged(int line ,int column) {
+bool AI2::isBesieged(int line ,int column) {
 
 	bool directionStatus[4] = {false, false, false, false};
 	if (vec.size() > 3 || line < 1 || column < 1 || line > 9 || column > 9) {
@@ -71,7 +71,7 @@ bool isAI2::isBesieged(int line ,int column) {
 	return directionStatus[0] && directionStatus[1] && directionStatus[2] && directionStatus[3];
 }
 
-bool isAI2::diffDirect(int line , int column) {
+bool AI2::diffDirect(int line , int column) {
 	if (vec.size() > 3 || line < 1 || column < 1 || line > 9 || column > 9) {
 		return false;
 	}

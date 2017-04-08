@@ -9,7 +9,6 @@
 bool ChessRule::WinOrLose()
 {
     bool Position[4] = {false, false, false, false};
-    int i, j;
     int player;//记录己方的编号（是1还是2）
     int rival;//记录对方的编号（是1还是2）
     //onTurn的值是先变化了再调用该函数（WinOrLose）的
@@ -162,7 +161,7 @@ void ChessRule::reStart(HWND ParentHwnd)
     lstrcat(buffer, "恭喜玩家");
     lstrcat(buffer, buf);
     lstrcat(buffer, "胜出");
-    MessageBox(ParentHwnd, buffer, "凯旋", MB_OK);
+    int button = MessageBox(ParentHwnd, buffer, "凯旋", MB_OK);
     for(int i = 1; i < 10; i++)
     {
         for(int j = 1; j < 10; j++)
@@ -177,6 +176,5 @@ void ChessRule::reStart(HWND ParentHwnd)
     Start = false;
     Player1isAI = false;
     Player2isAI = false;
-    PostMessage(ParentHwnd, WM_PAINT, 0, 0);
+    if(button == IDOK) PostMessage(ParentHwnd, WM_PAINT, 0, 0);
 }
-

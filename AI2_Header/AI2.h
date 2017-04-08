@@ -1,6 +1,7 @@
-#ifndef ISAI2_H_INCLUDED
-#define ISAI2_H_INCLUDED
+#ifndef AI2_H_INCLUDED
+#define AI2_H_INCLUDED
 
+#include "../chessBoard/AImessage.h"
 #include "AIPlayer.h"
 #include <vector>
 using namespace std;
@@ -24,7 +25,7 @@ using namespace std;
 #define isMax 0
 #define isMin 1
 
-class isAI2 : public AIPlayer
+class AI2 : public AIPlayer, public AI
 {
 private:
      //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
@@ -42,9 +43,9 @@ private:
 
 	std::vector<int> vec;
 public:
-    isAI2();
+    AI2();
     // 获取最后着子的位置
-    void GetPosition(int& line,int& column,int player, int isExist[10][10]);
+    void GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/);
 
     // 对角
 	void AcrossCorners();
@@ -85,5 +86,5 @@ public:
 	int singleLayer();
 };
 
+#endif // AI2_H_INCLUDED
 
-#endif // ISAI2_H_INCLUDED

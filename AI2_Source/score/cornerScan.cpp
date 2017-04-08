@@ -1,11 +1,11 @@
-#include "../../AI2_Header/isAI2.h"
+#include "../../AI2_Header/AI2.h"
 
 /**
- * [isAI2::AcrossCorners 边角扫描]
+ * [AI2::AcrossCorners 边角扫描]
  * 实现逻辑，通过扫描边角的实现分数加法
  * @return [无]
  */
-void isAI2::AcrossCorners()
+void AI2::AcrossCorners()
 {
     // 轮到本方的时候
 	for (int i = 0;i < 12;i += 3) {
@@ -16,7 +16,7 @@ void isAI2::AcrossCorners()
 }
 
 /**
- * [isAI2::ACScan 扫描函数，用于判断边角（最边边）是否有棋子]
+ * [AI2::ACScan 扫描函数，用于判断边角（最边边）是否有棋子]
  * @param line    [边角棋子的行]
  * @param column  [边角棋子的列]
  * @param line1   [边角棋子周围的棋子的行]
@@ -24,7 +24,7 @@ void isAI2::AcrossCorners()
  * @param line2   [边角棋子周围的棋子的行]
  * @param column2 [边角棋子周围的棋子的列]
  */
-void isAI2::ACScan(int line,int column, int line1,int column1,int line2,int column2)
+void AI2::ACScan(int line,int column, int line1,int column1,int line2,int column2)
 {
 	if (cross[line][column] == noChess) {
 		// 边角已经形成包围圈的情况

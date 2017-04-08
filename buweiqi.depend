@@ -206,14 +206,18 @@
 	"stdafx.h"
 	"buweiqi.h"
 
-1491400171 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
+1491628666 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
 	<windows.h>
 
-1490707387 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
+1491627520 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
 	"chessBoard/ChessBase.h"
 	"chessBoard/ChessRule.h"
+	"AI2_Header/AI2.h"
+	"AI1_Header/AI1.h"
+	"AI3_Header/AI3.h"
+	"chessBoard/AImessage.h"
 
-1490707387 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
+1491627202 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
 
 1490105638 c:\users\notzuonotdied\desktop\buweiqi\chessrule.h
 	"Chess.h"
@@ -221,8 +225,9 @@
 
 1490102908 c:\users\notzuonotdied\desktop\buweiqi\chess.h
 
-1491404562 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
-	"../AI2_Header/isAI2.h"
+1491628623 c:\users\notzuonotdied\desktop\buweiqi\chessboard\playerinfo.h
+	"../AI2_Header/AI2.h"
+	"../AI1_Header/AI1.h"
 
 1490117157 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard.cpp
 	"StdAfx.h"
@@ -236,10 +241,10 @@
 	"stdafx.h"
 	"buweiqi.h"
 
-1489308637 source:c:\users\notzuonotdied\desktop\buweiqi\stdafx.cpp
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\stdafx.cpp
 	"stdafx.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\util\int2string.cpp
+1491628584 source:c:\users\notzuonotdied\desktop\buweiqi\util\int2string.cpp
 	"../stdafx.h"
 	"../chessBoard/ChessBase.h"
 
@@ -247,74 +252,207 @@
 	"stdafx.h"
 	"chessBoard/ChessRule.h"
 
-1490115829 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessrule.h
+1491626779 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessrule.h
 	"Chess.h"
 	"PlayerInfo.h"
 
 1490789441 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
-1490621068 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
-	<map>
-	<cmath>
+1491628776 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+	"../chessBoard/AImessage.h"
 	"AIPlayer.h"
 	<vector>
 	"../StdAfx.h"
 
-1491404771 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+1491628665 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1491404719 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\chessboard.cpp
+1491627879 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\chessboard.cpp
 	"../StdAfx.h"
 	"../buweiqi.h"
 
-1491404731 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1491404781 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
+1491628666 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\winorlose.cpp
 	"../stdafx.h"
 	"../chessBoard/ChessRule.h"
 
-1491404686 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
+1491628163 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
+	"../chessBoard/AImessage.h"
 
-1491538743 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
-	"../AI2_Header/isAI2.h"
+1491628473 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+	"../AI2_Header/AI2.h"
 
 1490525945 source:c:\users\notzuonotdied\desktop\buweiqi\util\recursion.cpp
 	"../chessBoard/Chess.h"
 
-1491399581 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\aiplayer.h
+1491616661 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1491538192 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
-	"../AI2_Header/isAI2.h"
+1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\initdata.cpp
+	"../AI2_Header/AI2.h"
 
-1490707387 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score.cpp
-	"../AI2_Header/isAI2.h"
+1491628521 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score.cpp
+	"../AI2_Header/AI2.h"
 
-1491535481 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
-	"../../AI2_Header/isAI2.h"
+1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
+	"../../AI2_Header/AI2.h"
 
-1491535505 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
-	"../../AI2_Header/isAI2.h"
+1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\cornerscan.cpp
+	"../../AI2_Header/AI2.h"
 
-1491539351 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
-	"../../AI2_Header/isAI2.h"
+1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
+	"../../AI2_Header/AI2.h"
 
-1491401338 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
-	"../../AI2_Header/isAI2.h"
+1491627658 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
+	"../../AI2_Header/AI2.h"
 
-1491535629 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
-	"../../AI2_Header/isAI2.h"
+1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
+	"../../AI2_Header/AI2.h"
 
 1491538613 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\isai2.h
 	"AIPlayer.h"
 	<vector>
 	"../StdAfx.h"
 
-1491540480 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
-	"../../AI2_Header/isAI2.h"
+1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
+	"../../AI2_Header/AI2.h"
+
+1491394723 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
+
+1491394805 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
+	"../chessBoard/AImessage.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\aiplayer.h
+	"../StdAfx.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\stdafx.h
+	<windows.h>
+	<string.h>
+
+1491291283 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\functionpart.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491483225 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
+	<time.h>
+	<stdlib.h>
+	"../chessBoard/AImessage.h"
+
+1491351203 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491486225 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491396365 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\updatescore.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491480891 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+	"../chessBoard/AImessage.h"
+
+1491395765 d:\codeblocksproject\codeblocksproject\ourprogrammer\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/ChessRule.h"
+	"AI2_Header/AI2.h"
+	"AI1_Header/AI1.h"
+	"AI3_Header/AI3.h"
+	"chessBoard/AImessage.h"
+
+1490745149 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\chessbase.h
+
+1490745068 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\chessrule.h
+	"Chess.h"
+	"PlayerInfo.h"
+
+1490716517 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\chess.h
+
+1491097679 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\playerinfo.h
+	"../AI2_Header/AI2.h"
+	"../AI1_Header/AI1.h"
+
+1491572469 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\chessboard.cpp
+	"../StdAfx.h"
+	"../buweiqi.h"
+
+1491097873 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\initializedata.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1491572405 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\printchess.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1491297787 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessRule.h"
+
+1490716518 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\recursion.cpp
+	"../chessBoard/Chess.h"
+
+1490745851 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\stdafx.cpp
+	"stdafx.h"
+
+1490745738 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1491395168 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\aimessage.h
+
+1491394887 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_header\ai3.h
+	"../chessBoard/AImessage.h"
+
+1491306693 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\deadcheck.cpp
+	"../AI1_Header/AI1.h"
+
+1491395484 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\getposition.cpp
+	"../AI2_Header/AI2.h"
+
+1491395544 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_source\getposition.cpp
+	"../AI3_Header/AI3.h"
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai1_source\deadcheck.cpp
+	"../AI1_Header/AI1.h"
+
+1491626779 c:\users\notzuonotdied\desktop\buweiqi\ai1_header\ai1.h
+	<time.h>
+	<stdlib.h>
+	"../chessBoard/AImessage.h"
+
+1491626779 c:\users\notzuonotdied\desktop\buweiqi\chessboard\aimessage.h
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai1_source\functionpart.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai1_source\getposition.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai1_source\initialize.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai1_source\updatescore.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\getposition.cpp
+	"../AI2_Header/AI2.h"
+
+1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai3_source\getposition.cpp
+	"../AI3_Header/AI3.h"
+
+1491626779 c:\users\notzuonotdied\desktop\buweiqi\ai3_header\ai3.h
+	"../chessBoard/AImessage.h"
 

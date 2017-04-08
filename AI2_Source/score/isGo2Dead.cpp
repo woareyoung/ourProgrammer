@@ -1,9 +1,9 @@
-#include "../../AI2_Header/isAI2.h"
+#include "../../AI2_Header/AI2.h"
 
 /**
- * [isAI2::isGo2Dead 判断着子点是否有自杀倾向]
+ * [AI2::isGo2Dead 判断着子点是否有自杀倾向]
  */
-void isAI2::isGo2Dead() {
+void AI2::isGo2Dead() {
 	int stack[81][2] = {0}; //存储栈元素，0为x,1为y
 	int top = 0;// 栈顶元素
 	int treated = 0;// 处理过的元素
@@ -69,7 +69,7 @@ void isAI2::isGo2Dead() {
  * @param stach[][2] 栈
  * @param len 栈的元素占用的长度
  */
-bool isAI2::IsDeadChess(int stack[][2],int len)
+bool AI2::IsDeadChess(int stack[][2],int len)
 {
     int x,y;
     for(int i=0; i<len; i++)
@@ -101,7 +101,7 @@ bool isAI2::IsDeadChess(int stack[][2],int len)
  * @param stach[][2] 栈
  * @param len 栈的元素占用的长度
  */
-void isAI2::AddDeadChessScore(int stack[][2],int len)
+void AI2::AddDeadChessScore(int stack[][2],int len)
 {
     for(int i=0; i<len; i++) {
     	chessScore[stack[i][0]][stack[i][1]] = min;
