@@ -55,12 +55,17 @@ int AI2::singleLayer() {
  */
 int AI2::MaxScore()
 {
-	int temp = chessScore[1][1];
+    bool isFirst = true;
+	int temp;
 	int tempLine = 1;
 	int tempColumn = 1;
 	for (int i = 1;i < 10; i++) {
 		for (int j = 1;j < 10; j++) {
-			if (temp < chessScore[i][j] && cross[i][j] == noChess) {
+            if (isFirst && cross[i][j] == noChess) {
+                temp = chessScore[i][j];
+                isFirst = false;
+            }
+			if (!isFirst && temp < chessScore[i][j] && cross[i][j] == noChess) {
 				temp = chessScore[i][j];
 				tempLine = i;
 				tempColumn = j;
@@ -77,13 +82,18 @@ int AI2::MaxScore()
  */
 int AI2::MinScore()
 {
-	int temp = chessScore[1][1];
+    bool isFirst = true;
+	int temp;
 	int tempLine = 1;
 	int tempColumn = 1;
 	// Êä³ö·ÖÊý
 	for (int i = 1;i < 10; i++) {
 		for (int j = 1;j < 10; j++) {
-			if (temp > chessScore[i][j] && cross[i][j] == noChess) {
+            if (isFirst && cross[i][j] == noChess) {
+                temp = chessScore[i][j];
+                isFirst = false;
+            }
+			if (!isFirst && temp > chessScore[i][j] && cross[i][j] == noChess) {
 				temp = chessScore[i][j];
 				tempLine = i;
 				tempColumn = j;
