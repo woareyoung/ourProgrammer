@@ -9,8 +9,11 @@
  */
 void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 {
-    if (line != 0 && column != 0) {
-        cross[line][column] = onTurn;
+    // 这里需要判断是否有正确传参数进来
+	if (line != 0 && column != 0) {
+        cross[line][column] = onTurn == isWhite ? isBlack : isWhite;
+        chessStatus[line][column] = true;
+        chessScore[line][column] = min;
         copyArray(cross);
     }
 	turn2Who = onTurn;
@@ -19,6 +22,7 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 	int temp = maxandmin(1);
 	line = temp/100;
 	column = temp%100;
+	chessScore[line][column] = min;
 }
 
 /**
@@ -64,8 +68,7 @@ int AI2::MaxScore()
             if (isFirst && cross[i][j] == noChess) {
                 temp = chessScore[i][j];
                 isFirst = false;
-            }
-			if (!isFirst && temp < chessScore[i][j] && cross[i][j] == noChess) {
+            } else if (!isFirst && temp < chessScore[i][j] && cross[i][j] == noChess) {
 				temp = chessScore[i][j];
 				tempLine = i;
 				tempColumn = j;
@@ -92,8 +95,7 @@ int AI2::MinScore()
             if (isFirst && cross[i][j] == noChess) {
                 temp = chessScore[i][j];
                 isFirst = false;
-            }
-			if (!isFirst && temp > chessScore[i][j] && cross[i][j] == noChess) {
+            } else if (!isFirst && temp > chessScore[i][j] && cross[i][j] == noChess) {
 				temp = chessScore[i][j];
 				tempLine = i;
 				tempColumn = j;
@@ -110,12 +112,14 @@ int AI2::MinScore()
  */
 void AI2::Revalute()
 {
+    // 初始化棋盘的分数
 	initChessScore();
-
+    // 估值并加分
 	AcrossCorners();
 	Tirangle();
 	chessStatusShaped();
 	isGo2Dead();
+
 	// for (int i = 1; i < 10; i++)
 	// {
 	// 	for (int j = 1; j < 10; j++)
