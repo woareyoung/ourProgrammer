@@ -22,7 +22,9 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 	int temp = maxandmin(1);
 	line = temp/100;
 	column = temp%100;
+	// 将计算出的位置的分数设为最小值
 	chessScore[line][column] = min;
+	cross[line][column] = PlayerId;
 }
 
 /**
