@@ -122,7 +122,9 @@ void AI2::Revalute()
 	AcrossCorners();
 	Tirangle();
 	chessStatusShaped();
-	isGo2Dead();
+	isGo2Dead(isWhite);
+	isGo2Dead(isBlack);
+
 
 	// for (int i = 1; i < 10; i++)
 	// {

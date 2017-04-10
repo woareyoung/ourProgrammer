@@ -4,7 +4,6 @@
 # include "AI1_Header/AI1.h"
 # include "AI3_Header/AI3.h"
 # include "chessBoard/AImessage.h"
-#include<conio.h>
 /**
  * 棋盘界面类
  * 主要负责棋盘的绘制工作

@@ -206,17 +206,17 @@
 	"stdafx.h"
 	"buweiqi.h"
 
-1491628666 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
+1491825816 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
 	<windows.h>
+	<conio.h>
 
-1491810540 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
+1491825813 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
 	"chessBoard/ChessBase.h"
 	"chessBoard/ChessRule.h"
 	"AI2_Header/AI2.h"
 	"AI1_Header/AI1.h"
 	"AI3_Header/AI3.h"
 	"chessBoard/AImessage.h"
-	<conio.h>
 
 1491627202 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
 
@@ -259,7 +259,7 @@
 
 1490789441 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
-1491628776 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+1491830696 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
 	"../chessBoard/AImessage.h"
 	"AIPlayer.h"
 	<vector>
@@ -286,7 +286,7 @@
 	"../buweiqi.h"
 	"../chessBoard/AImessage.h"
 
-1491821206 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+1491825378 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1490525945 source:c:\users\notzuonotdied\desktop\buweiqi\util\recursion.cpp
@@ -313,7 +313,7 @@
 1491627658 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\initdata.cpp
 	"../../AI2_Header/AI2.h"
 
-1491628524 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
+1491825160 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
 	"../../AI2_Header/AI2.h"
 
 1491538613 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\isai2.h
@@ -321,7 +321,7 @@
 	<vector>
 	"../StdAfx.h"
 
-1491820780 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
+1491821361 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
 1491394723 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp

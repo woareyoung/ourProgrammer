@@ -10,10 +10,11 @@ using namespace std;
 #define cornerScore 60 // 边角分数
 #define cornerScoreFull 120 // 完整构成边角的分数
 #define tirangleScore1 60 // 三角分数
-#define tirangleScore2 60 // 三角分数
+#define tirangleScore2 120 // 三角分数
+#define tirangleScore2 140 // 三角分数
 #define crossShaped1 40 // 十字分数
 #define crossShaped2 80 // 十字分数
-#define crossShaped3 120 // 十字分数
+#define crossShaped3  120// 十字分数
 #define goodTigersMouth 120  // 优虎口，表示被包围的敌方棋子中只有1~2个
 #define badTigersMouth -120 // 劣虎口，表示被包围圈内都是敌方棋子
 #define max 32766
@@ -63,9 +64,9 @@ public:
 	void JudgeCShape(int line,int column);
 
     // 是否构成死棋
-	void isGo2Dead();
-	void AddDeadChessScore(int stack[][2],int len);
-    bool IsDeadChess(int stack[][2],int len);
+	void isGo2Dead(int type);
+	void AddDeadChessScore(int stack[][2], int len);
+    bool IsDeadChess(int stack[][2], int len, int type);
 
     // 优虎口
     void GoodTigersMouth();
@@ -84,6 +85,7 @@ public:
 	int MaxScore();
 	int MinScore();
 	int singleLayer();
+
 };
 
 #endif // AI2_H_INCLUDED

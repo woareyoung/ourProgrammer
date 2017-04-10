@@ -85,3 +85,4 @@ bool AI2::diffDirect(int line , int column) {
 	}
 	return false;
 }
+
