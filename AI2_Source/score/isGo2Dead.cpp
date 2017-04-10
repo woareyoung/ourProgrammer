@@ -7,6 +7,8 @@ void AI2::isGo2Dead() {
 	int stack[81][2] = {0}; //存储栈元素，0为x,1为y
 	int top = 0;// 栈顶元素
 	int treated = 0;// 处理过的元素
+
+	// 重置所有的状态位
 	for (int i = 1;i < 10;i++) {
         for (int j = 1;j < 10;j++) {
             chessStatus[i][j] = false;
