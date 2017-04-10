@@ -209,13 +209,14 @@
 1491628666 c:\users\notzuonotdied\desktop\buweiqi\stdafx.h
 	<windows.h>
 
-1491627520 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
+1491810540 c:\users\notzuonotdied\desktop\buweiqi\buweiqi.h
 	"chessBoard/ChessBase.h"
 	"chessBoard/ChessRule.h"
 	"AI2_Header/AI2.h"
 	"AI1_Header/AI1.h"
 	"AI3_Header/AI3.h"
 	"chessBoard/AImessage.h"
+	<conio.h>
 
 1491627202 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chessbase.h
 
@@ -264,7 +265,7 @@
 	<vector>
 	"../StdAfx.h"
 
-1491628665 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+1491815453 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
@@ -272,7 +273,7 @@
 	"../StdAfx.h"
 	"../buweiqi.h"
 
-1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
+1491810540 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\initializedata.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
@@ -280,12 +281,12 @@
 	"../stdafx.h"
 	"../chessBoard/ChessRule.h"
 
-1491628163 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
+1491810033 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\buweiqi.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 	"../chessBoard/AImessage.h"
 
-1491736828 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+1491738101 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1490525945 source:c:\users\notzuonotdied\desktop\buweiqi\util\recursion.cpp
@@ -455,4 +456,127 @@
 
 1491626779 c:\users\notzuonotdied\desktop\buweiqi\ai3_header\ai3.h
 	"../chessBoard/AImessage.h"
+
+1491626779 source:c:\users\super\desktop\buweiqi\ai1_source\deadcheck.cpp
+	"../AI1_Header/AI1.h"
+
+1491626779 c:\users\super\desktop\buweiqi\ai1_header\ai1.h
+	<time.h>
+	<stdlib.h>
+	"../chessBoard/AImessage.h"
+
+1491626779 c:\users\super\desktop\buweiqi\chessboard\aimessage.h
+
+1491626779 source:c:\users\super\desktop\buweiqi\ai1_source\functionpart.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491628666 c:\users\super\desktop\buweiqi\stdafx.h
+	<windows.h>
+
+1491626779 source:c:\users\super\desktop\buweiqi\ai1_source\getposition.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491626779 source:c:\users\super\desktop\buweiqi\ai1_source\initialize.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491626779 source:c:\users\super\desktop\buweiqi\ai1_source\updatescore.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+
+1491736552 source:c:\users\super\desktop\buweiqi\ai2_source\initdata.cpp
+	"../AI2_Header/AI2.h"
+
+1491628776 c:\users\super\desktop\buweiqi\ai2_header\ai2.h
+	"../chessBoard/AImessage.h"
+	"AIPlayer.h"
+	<vector>
+	"../StdAfx.h"
+
+1491616661 c:\users\super\desktop\buweiqi\ai2_header\aiplayer.h
+	"../StdAfx.h"
+
+1491738101 source:c:\users\super\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+	"../AI2_Header/AI2.h"
+
+1491627658 source:c:\users\super\desktop\buweiqi\ai2_source\newscore\initdata.cpp
+	"../../AI2_Header/AI2.h"
+
+1491628524 source:c:\users\super\desktop\buweiqi\ai2_source\newscore\newevalution.cpp
+	"../../AI2_Header/AI2.h"
+
+1491628521 source:c:\users\super\desktop\buweiqi\ai2_source\score.cpp
+	"../AI2_Header/AI2.h"
+
+1491628524 source:c:\users\super\desktop\buweiqi\ai2_source\score\cornerscan.cpp
+	"../../AI2_Header/AI2.h"
+
+1491628524 source:c:\users\super\desktop\buweiqi\ai2_source\score\crossshapescan.cpp
+	"../../AI2_Header/AI2.h"
+
+1491628524 source:c:\users\super\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
+	"../../AI2_Header/AI2.h"
+
+1491628524 source:c:\users\super\desktop\buweiqi\ai2_source\score\tiranglescan.cpp
+	"../../AI2_Header/AI2.h"
+
+1491626779 source:c:\users\super\desktop\buweiqi\ai3_source\getposition.cpp
+	"../AI3_Header/AI3.h"
+
+1491626779 c:\users\super\desktop\buweiqi\ai3_header\ai3.h
+	"../chessBoard/AImessage.h"
+
+1491810033 source:c:\users\super\desktop\buweiqi\chessboard_source\buweiqi.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+	"../chessBoard/AImessage.h"
+
+1491810540 c:\users\super\desktop\buweiqi\buweiqi.h
+	"chessBoard/ChessBase.h"
+	"chessBoard/ChessRule.h"
+	"AI2_Header/AI2.h"
+	"AI1_Header/AI1.h"
+	"AI3_Header/AI3.h"
+	"chessBoard/AImessage.h"
+	<conio.h>
+
+1491627202 c:\users\super\desktop\buweiqi\chessboard\chessbase.h
+
+1491626779 c:\users\super\desktop\buweiqi\chessboard\chessrule.h
+	"Chess.h"
+	"PlayerInfo.h"
+
+1490789441 c:\users\super\desktop\buweiqi\chessboard\chess.h
+
+1491628623 c:\users\super\desktop\buweiqi\chessboard\playerinfo.h
+	"../AI2_Header/AI2.h"
+	"../AI1_Header/AI1.h"
+
+1491627879 source:c:\users\super\desktop\buweiqi\chessboard_source\chessboard.cpp
+	"../StdAfx.h"
+	"../buweiqi.h"
+
+1491810540 source:c:\users\super\desktop\buweiqi\chessboard_source\initializedata.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1491810416 source:c:\users\super\desktop\buweiqi\chessboard_source\printchess.cpp
+	"../stdafx.h"
+	"../buweiqi.h"
+
+1491628666 source:c:\users\super\desktop\buweiqi\chessboard_source\winorlose.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessRule.h"
+
+1491626779 source:c:\users\super\desktop\buweiqi\stdafx.cpp
+	"stdafx.h"
+
+1491628584 source:c:\users\super\desktop\buweiqi\util\int2string.cpp
+	"../stdafx.h"
+	"../chessBoard/ChessBase.h"
+
+1490525945 source:c:\users\super\desktop\buweiqi\util\recursion.cpp
+	"../chessBoard/Chess.h"
 

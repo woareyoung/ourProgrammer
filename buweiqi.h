@@ -4,6 +4,7 @@
 # include "AI1_Header/AI1.h"
 # include "AI3_Header/AI3.h"
 # include "chessBoard/AImessage.h"
+#include<conio.h>
 /**
  * 棋盘界面类
  * 主要负责棋盘的绘制工作
@@ -11,7 +12,7 @@
 class ChessBoard : public ChessBase, public ChessRule
 {
 private :
-
+    int Round;
     // 记录棋盘每列的 每一行或每一列 坐标值，数组访问从“1”开始
     // 这个是棋盘的相对位置
     int CrossCross[10];

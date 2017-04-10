@@ -6,6 +6,7 @@
  */
 ChessBoard::ChessBoard()
 {
+    Round = 0;
     AllTime1 = 900;//总时长15分钟
     AllTime2 = 900;
     Round1 = 60;//步时60秒
