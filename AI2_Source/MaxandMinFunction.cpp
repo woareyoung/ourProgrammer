@@ -78,7 +78,6 @@ int AI2::MaxScore()
 		}
 	}
 	cross[tempLine][tempColumn] = turn2Who;
-	chessStatus[tempLine][tempColumn] = true;
 	return tempLine*100 + tempColumn;
 }
 
@@ -105,7 +104,6 @@ int AI2::MinScore()
 		}
 	}
 	cross[tempLine][tempColumn] = turn2Who;
-	chessStatus[tempLine][tempColumn] = true;
 	return tempLine*100 + tempColumn;
 }
 

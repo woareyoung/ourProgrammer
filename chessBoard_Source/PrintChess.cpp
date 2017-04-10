@@ -2,15 +2,14 @@
 #include "../buweiqi.h"
 
 /**
- * [ChessBoard::PaintChess »æÖÆÆå×Ó]
+ * [ChessBoard::PaintChess ç»˜åˆ¶æ£‹å­]
  */
 void ChessBoard::PaintChess()
 {
-    _cprintf("%d:  line=%d, column=%d\n", Round, line, column);
-    // ÅĞ¶ÏÂÖµ½ÄÄÒ»·½
+    // åˆ¤æ–­è½®åˆ°å“ªä¸€æ–¹
     switch(onTurn)
     {
-    case isPlay1onTurn://»­ºÚÉ«Æå×Ó
+    case isPlay1onTurn://ç”»é»‘è‰²æ£‹å­
         for(int i = 0; i < 10; i++)
             for(int j = 0; j < 10; j++)
                 Cross[i][j] = false;
@@ -21,7 +20,7 @@ void ChessBoard::PaintChess()
             else
                 onTurn = isAI2onTurn;
             PaintAChess(1);
-            //ÈôÒÑ·ÖÊ¤¸º£¬Ôò½áÊøÓÎÏ·
+            //è‹¥å·²åˆ†èƒœè´Ÿï¼Œåˆ™ç»“æŸæ¸¸æˆ
             if(WinOrLose() == true)
             {
                 Start = false;
@@ -30,7 +29,7 @@ void ChessBoard::PaintChess()
             else if(Player2isAI == true) PaintChess();
         };
         break;
-    case isPlay2onTurn://»­°×É«Æå×Ó
+    case isPlay2onTurn://ç”»ç™½è‰²æ£‹å­
         for(int i = 0; i < 10; i++)
             for(int j = 0; j < 10; j++)
                 Cross[i][j] = false;
@@ -41,7 +40,7 @@ void ChessBoard::PaintChess()
             else
                 onTurn = isAI1onTurn;
             PaintAChess(2);
-            //ÈôÒÑ·ÖÊ¤¸º£¬Ôò½áÊøÓÎÏ·
+            //è‹¥å·²åˆ†èƒœè´Ÿï¼Œåˆ™ç»“æŸæ¸¸æˆ
             if(WinOrLose() == true)
             {
                 Start = false;
@@ -50,7 +49,7 @@ void ChessBoard::PaintChess()
             else if(Player1isAI == true) PaintChess();
         };
         break;
-    //»­ºÚÉ«Æå×Ó
+    //ç”»é»‘è‰²æ£‹å­
     case isAI1onTurn:
     {
         if(Player2isAI == true)
@@ -58,12 +57,13 @@ void ChessBoard::PaintChess()
         else
             onTurn = isPlay2onTurn;
 
-        ///ÔÚ´Ëµ÷ÓÃAI³ÌĞò£¬·µ»ØÏÂÆåµÄÎ»ÖÃ£¨µÚ¼¸ĞĞ£¬µÚ¼¸ÁĞ£©
+        ///åœ¨æ­¤è°ƒç”¨AIç¨‹åºï¼Œè¿”å›ä¸‹æ£‹çš„ä½ç½®ï¼ˆç¬¬å‡ è¡Œï¼Œç¬¬å‡ åˆ—ï¼‰
         Player1AI->GetPosition(line, column, onTurn);
+        _cprintf("BlackAI:  line=%d, column=%d\n", line, column);
         PaintAChess(isBlack);
-        //Èô¶Ô·½ÊÇµçÄÔ£¬ÔòÏÈÅĞ¶ÏÓĞÃ»ÓĞ·Ö³öÊ¤¸º
+        //è‹¥å¯¹æ–¹æ˜¯ç”µè„‘ï¼Œåˆ™å…ˆåˆ¤æ–­æœ‰æ²¡æœ‰åˆ†å‡ºèƒœè´Ÿ
         bool win = WinOrLose();
-        if(Player2isAI == true && !win) PaintChess();//Èô¶Ô·½ÊÇµçÄÔ£¬Ôòµİ¹é
+        if(Player2isAI == true && !win) PaintChess();//è‹¥å¯¹æ–¹æ˜¯ç”µè„‘ï¼Œåˆ™é€’å½’
         else if(win)
         {
             Winner = 2;
@@ -72,7 +72,7 @@ void ChessBoard::PaintChess()
         }
     };
     break;
-    //»­°×É«Æå×Ó
+    //ç”»ç™½è‰²æ£‹å­
     case isAI2onTurn:
     {
         if(Player1isAI == true)
@@ -80,13 +80,14 @@ void ChessBoard::PaintChess()
         else
             onTurn = isPlay1onTurn;
 
-        ///ÔÚ´Ëµ÷ÓÃAI³ÌĞò£¬·µ»ØÏÂÆåµÄÎ»ÖÃ£¨µÚ¼¸ĞĞ£¬µÚ¼¸ÁĞ£©
+        ///åœ¨æ­¤è°ƒç”¨AIç¨‹åºï¼Œè¿”å›ä¸‹æ£‹çš„ä½ç½®ï¼ˆç¬¬å‡ è¡Œï¼Œç¬¬å‡ åˆ—ï¼‰
         Player2AI->GetPosition(line, column, onTurn);
+        _cprintf("WhiteAI:  line=%d, column=%d\n", line, column);
         PaintAChess(isWhite);
-        //Èô¶Ô·½ÊÇµçÄÔ£¬ÔòÏÈÅĞ¶ÏÓĞÃ»ÓĞ·Ö³öÊ¤¸º
+        //è‹¥å¯¹æ–¹æ˜¯ç”µè„‘ï¼Œåˆ™å…ˆåˆ¤æ–­æœ‰æ²¡æœ‰åˆ†å‡ºèƒœè´Ÿ
         bool win = WinOrLose();
         if(Player1isAI == true && !win)
-            PaintChess();//Èô¶Ô·½ÊÇµçÄÔ£¬Ôòµİ¹é
+            PaintChess();//è‹¥å¯¹æ–¹æ˜¯ç”µè„‘ï¼Œåˆ™é€’å½’
         else if(win)
         {
             Winner = 1;
@@ -99,13 +100,13 @@ void ChessBoard::PaintChess()
 }
 
 /**
- * [ChessBoard::PaintAChess »æÖÆÒ»¸öÆå×Ó]
- * @param type [ÀàĞÍ--°××Ó¡¢ºÚ×Ó]
+ * [ChessBoard::PaintAChess ç»˜åˆ¶ä¸€ä¸ªæ£‹å­]
+ * @param type [ç±»å‹--ç™½å­ã€é»‘å­]
  */
 void ChessBoard::PaintAChess(int type)
 {
-    HBRUSH rush;//»­Ë¢¾ä±ú
-    cross[line][column] = type;//½«´ÓAI³ÌĞò»ñÈ¡µ½µÄĞĞºÍÁĞÊı¼ÇÂ¼µ½lineºÍcolumn
+    HBRUSH rush;//ç”»åˆ·å¥æŸ„
+    cross[line][column] = type;//å°†ä»AIç¨‹åºè·å–åˆ°çš„è¡Œå’Œåˆ—æ•°è®°å½•åˆ°lineå’Œcolumn
     if (type == isBlack)
     {
         Round2 = 60;
@@ -117,7 +118,7 @@ void ChessBoard::PaintAChess(int type)
         rush = CreateSolidBrush(RGB(255, 255, 255));
     }
     SelectObject(graphicsHdc, rush);
-    //»­Æå×Ó
+    //ç”»æ£‹å­
     Ellipse(graphicsHdc, CrossCross[column] - ChessDiameter / 2, CrossCross[line] - ChessDiameter / 2,
             CrossCross[column] + ChessDiameter / 2, CrossCross[line] + ChessDiameter / 2);
     DeleteObject(rush);
@@ -126,18 +127,18 @@ void ChessBoard::PaintAChess(int type)
 
 
 /**
- * [ChessBoard::getPosition »ñÈ¡Êó±êÔÚÆåÅÌµÄÎ»ÖÃ£¨µÚ¼¸ĞĞµÚ¼¸ÁĞ£©]
- * @param  lParam [ÎŞ·ûºÅ³¤ÕûĞÍ]
- * @return        [µ±Êó±êµÄÎ»ÖÃÃ»ÓĞÔ½½çµÄÊ±ºò·µ»Øtrue£¬·´Ö®·µ»Øfalse]
+ * [ChessBoard::getPosition è·å–é¼ æ ‡åœ¨æ£‹ç›˜çš„ä½ç½®ï¼ˆç¬¬å‡ è¡Œç¬¬å‡ åˆ—ï¼‰]
+ * @param  lParam [æ— ç¬¦å·é•¿æ•´å‹]
+ * @return        [å½“é¼ æ ‡çš„ä½ç½®æ²¡æœ‰è¶Šç•Œçš„æ—¶å€™è¿”å›trueï¼Œåä¹‹è¿”å›false]
  */
 bool ChessBoard::getPosition(DWORD lParam)
 {
-    point.x = LOWORD(lParam);// µÃµ½Ò»¸ö32bitÊıµÄµÍ16bit
-    point.y = HIWORD(lParam);// µÃµ½Ò»¸ö32bitÊıµÄ¸ß16bit
+    point.x = LOWORD(lParam);// å¾—åˆ°ä¸€ä¸ª32bitæ•°çš„ä½16bit
+    point.y = HIWORD(lParam);// å¾—åˆ°ä¸€ä¸ª32bitæ•°çš„é«˜16bit
     int a, b;
     b = (point.x - ChessDiameter / 2) / ChessDiameter + 1;
     a = (point.y - ChessDiameter / 2) / ChessDiameter + 1;
-    // ÅĞ¶ÏÊÇ·ñÔ½½ç
+    // åˆ¤æ–­æ˜¯å¦è¶Šç•Œ
     if(a < 10 && b < 10 && a > 0 && b > 0)
     {
         line = a;

@@ -265,7 +265,7 @@
 	<vector>
 	"../StdAfx.h"
 
-1491815453 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
+1491816383 source:c:\users\notzuonotdied\desktop\buweiqi\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
@@ -286,7 +286,7 @@
 	"../buweiqi.h"
 	"../chessBoard/AImessage.h"
 
-1491738101 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
+1491815971 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1490525945 source:c:\users\notzuonotdied\desktop\buweiqi\util\recursion.cpp
