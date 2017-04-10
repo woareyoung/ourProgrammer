@@ -1,73 +1,78 @@
 #include "../../AI2_Header/AI2.h"
 
 /**
- * [AI2::isGo2Dead ÅĞ¶Ï×Å×ÓµãÊÇ·ñÓĞ×ÔÉ±ÇãÏò]
+ * [AI2::isGo2Dead åˆ¤æ–­ç€å­ç‚¹æ˜¯å¦æœ‰è‡ªæ€å€¾å‘]
  */
 void AI2::isGo2Dead() {
-	int stack[81][2] = {0}; //´æ´¢Õ»ÔªËØ£¬0Îªx,1Îªy
-	int top = 0;// Õ»¶¥ÔªËØ
-	int treated = 0;// ´¦Àí¹ıµÄÔªËØ
+	int stack[81][2] = {0}; //å­˜å‚¨æ ˆå…ƒç´ ï¼Œ0ä¸ºx,1ä¸ºy
+	int top = 0;// æ ˆé¡¶å…ƒç´ 
+	int treated = 0;// å¤„ç†è¿‡çš„å…ƒç´ 
+	for (int i = 1;i < 10;i++) {
+        for (int j = 1;j < 10;j++) {
+            chessStatus[i][j] = false;
+        }
+	}
 	for (int i = 1;i < 10;i++) {
 		for (int j = 1;j < 10;j++) {
-			if (/*cross[i][j] != turn2Who || */ !chessStatus[i][j]) {
-				continue;
-			}
+//			if (/*cross[i][j] != turn2Who || */ !chessStatus[i][j]) {
+//				continue;
+//			}
 			chessStatus[i][j] = true;
-			// ³õÊ¼»¯Õ»¶¥ÔªËØ
+			// åˆå§‹åŒ–æ ˆé¡¶å…ƒç´ 
 			stack[top][0] = i;
 			stack[top][1] = j;
 			top++;
-			// µ±Õ»¶¥ÔªËØµÄÊıÁ¿¼¶Ğ¡ÓÚ´¦Àí¹ıµÄÔªËØµÄÊıÁ¿µÄÊ±ºò£¬Ñ­»·ÖÕÖ¹
+			// å½“æ ˆé¡¶å…ƒç´ çš„æ•°é‡çº§å°äºå¤„ç†è¿‡çš„å…ƒç´ çš„æ•°é‡çš„æ—¶å€™ï¼Œå¾ªç¯ç»ˆæ­¢
 			while(treated < top) {
 				int x = stack[treated][0];
                 int y = stack[treated][1];
-                //Èç¹ûµ±Ç°ÔªËØÉÏ±ßÓĞÎ´´¦ÀíÔªËØ£¬ÇÒ¸ÃÔªËØÓëµ±Ç°ÔªËØÍ¬Àà£¬Ôò½«ÆäÈëÕ»
+                //å¦‚æœå½“å‰å…ƒç´ ä¸Šè¾¹æœ‰æœªå¤„ç†å…ƒç´ ï¼Œä¸”è¯¥å…ƒç´ ä¸å½“å‰å…ƒç´ åŒç±»ï¼Œåˆ™å°†å…¶å…¥æ ˆ
                 if(x > 0 && !chessStatus[x-1][y] && cross[i][j] == cross[x-1][y])
                 {
-                    chessStatus[x-1][y] = true;//±ê¼Çµ±Ç°Î»ÖÃµÄ×ÓÒÑ¾­±»´¦Àí¹ı
+                    chessStatus[x-1][y] = true;//æ ‡è®°å½“å‰ä½ç½®çš„å­å·²ç»è¢«å¤„ç†è¿‡
                     stack[top][0] = x-1;
                     stack[top][1] = y;
                     top++;
                 }
-                //Èç¹ûµ±Ç°ÔªËØÏÂ±ßÓĞÎ´´¦ÀíÔªËØ£¬ÇÒ¸ÃÔªËØÓëµ±Ç°ÔªËØÍ¬Àà£¬Ôò½«ÆäÈëÕ»
+                //å¦‚æœå½“å‰å…ƒç´ ä¸‹è¾¹æœ‰æœªå¤„ç†å…ƒç´ ï¼Œä¸”è¯¥å…ƒç´ ä¸å½“å‰å…ƒç´ åŒç±»ï¼Œåˆ™å°†å…¶å…¥æ ˆ
                 if(x < 10 && !chessStatus[x+1][y] && cross[i][j] == cross[x+1][y])
                 {
-                    chessStatus[x+1][y] = true;//±ê¼Çµ±Ç°Î»ÖÃµÄ×ÓÒÑ¾­±»´¦Àí¹ı
+                    chessStatus[x+1][y] = true;//æ ‡è®°å½“å‰ä½ç½®çš„å­å·²ç»è¢«å¤„ç†è¿‡
                     stack[top][0] = x+1;
                     stack[top][1] = y;
                     top++;
                 }
-                //Èç¹ûµ±Ç°ÔªËØ×ó±ßÓĞÎ´´¦ÀíÔªËØ£¬ÇÒ¸ÃÔªËØÓëµ±Ç°ÔªËØÍ¬Àà£¬Ôò½«ÆäÈëÕ»
+                //å¦‚æœå½“å‰å…ƒç´ å·¦è¾¹æœ‰æœªå¤„ç†å…ƒç´ ï¼Œä¸”è¯¥å…ƒç´ ä¸å½“å‰å…ƒç´ åŒç±»ï¼Œåˆ™å°†å…¶å…¥æ ˆ
                 if(y > 0 && !chessStatus[x][y-1] && cross[i][j] == cross[x][y-1])
                 {
-                    chessStatus[x][y-1] = true;//±ê¼Çµ±Ç°Î»ÖÃµÄ×ÓÒÑ¾­±»´¦Àí¹ı
+                    chessStatus[x][y-1] = true;//æ ‡è®°å½“å‰ä½ç½®çš„å­å·²ç»è¢«å¤„ç†è¿‡
                     stack[top][0] = x;
                     stack[top][1] = y-1;
                     top++;
                 }
-                //Èç¹ûµ±Ç°ÔªËØÓÒ±ßÓĞÎ´´¦ÀíÔªËØ£¬ÇÒ¸ÃÔªËØÓëµ±Ç°ÔªËØÍ¬Àà£¬Ôò½«ÆäÈëÕ»
+                //å¦‚æœå½“å‰å…ƒç´ å³è¾¹æœ‰æœªå¤„ç†å…ƒç´ ï¼Œä¸”è¯¥å…ƒç´ ä¸å½“å‰å…ƒç´ åŒç±»ï¼Œåˆ™å°†å…¶å…¥æ ˆ
                 if(y < 10 && !chessStatus[x][y+1] && cross[i][j] == cross[x][y+1])
                 {
-                    chessStatus[x][y+1] = true;//±ê¼Çµ±Ç°Î»ÖÃµÄ×ÓÒÑ¾­±»´¦Àí¹ı
+                    chessStatus[x][y+1] = true;//æ ‡è®°å½“å‰ä½ç½®çš„å­å·²ç»è¢«å¤„ç†è¿‡
                     stack[top][0] = x;
                     stack[top][1] = y+1;
                     top++;
                 }
-                treated++;//´¦ÀíÏÂÒ»¸öÕ»ÔªËØ
+                treated++;//å¤„ç†ä¸‹ä¸€ä¸ªæ ˆå…ƒç´ 
             }
-            // ¼ÙÈçÊÇ×ÔÉ±ĞĞÎª£¬¾Í½«Õâ¸ö×Å×ÓµãµÄ·ÖÊıÉèÖÃÎªmin
+            // å‡å¦‚æ˜¯è‡ªæ€è¡Œä¸ºï¼Œå°±å°†è¿™ä¸ªç€å­ç‚¹çš„åˆ†æ•°è®¾ç½®ä¸ºmin
             if(top > 0 && IsDeadChess(stack,top)) {
                 AddDeadChessScore(stack,top);
             }
-            top=treated=0;//Çå¿Õ
+            top=treated=0;//æ¸…ç©º
 		}
 	}
 }
 
 /**
- * ÅĞ¶ÏÕ»ÄÚÔªËØËù×é³ÉµÄ´®ÊÇ·ñÊÇ×ÔÉ±ĞĞÎª
- * @param stach[][2] Õ»
- * @param len Õ»µÄÔªËØÕ¼ÓÃµÄ³¤¶È
+ * åˆ¤æ–­æ ˆå†…å…ƒç´ æ‰€ç»„æˆçš„ä¸²æ˜¯å¦æ˜¯è‡ªæ€è¡Œä¸º
+ * @param stach[][2] æ ˆ
+ * @param len æ ˆçš„å…ƒç´ å ç”¨çš„é•¿åº¦
  */
 bool AI2::IsDeadChess(int stack[][2],int len)
 {
@@ -76,19 +81,19 @@ bool AI2::IsDeadChess(int stack[][2],int len)
     {
         x=stack[i][0];
         y=stack[i][1];
-        //ÉÏ±ßÓĞ¿Õ¸ñ
+        //ä¸Šè¾¹æœ‰ç©ºæ ¼
         if(x > 0 && cross[x-1][y] == noChess) {
         	return false;
         }
-        //ÉÏ±ßÓĞ¿Õ¸ñ
+        //ä¸Šè¾¹æœ‰ç©ºæ ¼
         if(x < 10 && cross[x+1][y] == noChess) {
         	return false;
         }
-        //×ó±ßÓĞ¿Õ¸ñ
+        //å·¦è¾¹æœ‰ç©ºæ ¼
         if(y > 0 && cross[x][y-1] == noChess) {
         	 return false;
         }
-        //ÓÒ±ßÓĞ¿Õ¸ñ
+        //å³è¾¹æœ‰ç©ºæ ¼
         if(y < 10 && cross[x][y+1] == noChess) {
         	return false;
         }
@@ -97,9 +102,9 @@ bool AI2::IsDeadChess(int stack[][2],int len)
 }
 
 /**
- * ÎªËÀÆåÎ»¼Ó·Ö
- * @param stach[][2] Õ»
- * @param len Õ»µÄÔªËØÕ¼ÓÃµÄ³¤¶È
+ * ä¸ºæ­»æ£‹ä½åŠ åˆ†
+ * @param stach[][2] æ ˆ
+ * @param len æ ˆçš„å…ƒç´ å ç”¨çš„é•¿åº¦
  */
 void AI2::AddDeadChessScore(int stack[][2],int len)
 {

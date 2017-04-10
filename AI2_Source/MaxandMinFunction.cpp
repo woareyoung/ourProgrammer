@@ -1,15 +1,15 @@
 #include "../AI2_Header/AI2.h"
 
 /**
- * [AI2::GetPosition AI¶ÔÍâ½Ó¿Ú]
- * @param line 			×Å×ÓÎ»ÖÃµÄĞĞ×ø±ê
- * @param column 		×Å×ÓÎ»ÖÃµÄĞĞ×ø±ê
- * @param onTurn 		µ±Ç°ÂÖµ½µÄÍæ¼ÒµÄID
- * @param isExist[10][10]		ÆåÅÌ×Å×ÓÇé¿öÊı×é
+ * [AI2::GetPosition AIå¯¹å¤–æ¥å£]
+ * @param line 			ç€å­ä½ç½®çš„è¡Œåæ ‡
+ * @param column 		ç€å­ä½ç½®çš„è¡Œåæ ‡
+ * @param onTurn 		å½“å‰è½®åˆ°çš„ç©å®¶çš„ID
+ * @param isExist[10][10]		æ£‹ç›˜ç€å­æƒ…å†µæ•°ç»„
  */
 void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 {
-    // ÕâÀïĞèÒªÅĞ¶ÏÊÇ·ñÓĞÕıÈ·´«²ÎÊı½øÀ´
+    // è¿™é‡Œéœ€è¦åˆ¤æ–­æ˜¯å¦æœ‰æ­£ç¡®ä¼ å‚æ•°è¿›æ¥
 	if (line != 0 && column != 0) {
         cross[line][column] = onTurn == isWhite ? isBlack : isWhite;
         chessStatus[line][column] = true;
@@ -18,18 +18,18 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     }
 	turn2Who = onTurn;
 	Rival = turn2Who == isBlack ? isWhite : isBlack;
-	// ÉèÖÃ±éÀúµÄÉî¶È
+	// è®¾ç½®éå†çš„æ·±åº¦
 	int temp = maxandmin(1);
 	line = temp/100;
 	column = temp%100;
-	// ½«¼ÆËã³öµÄÎ»ÖÃµÄ·ÖÊıÉèÎª×îĞ¡Öµ
+	// å°†è®¡ç®—å‡ºçš„ä½ç½®çš„åˆ†æ•°è®¾ä¸ºæœ€å°å€¼
 	chessScore[line][column] = min;
 	cross[line][column] = PlayerId;
 }
 
 /**
- * [AI2::maxandmin ¼«´ó¼«Ğ¡º¯Êı]
- * @param depth 		Ö´ĞĞµÄÉî¶È
+ * [AI2::maxandmin æå¤§æå°å‡½æ•°]
+ * @param depth 		æ‰§è¡Œçš„æ·±åº¦
  */
 int AI2::maxandmin(int depth) {
 	int tempArray[10] = {
@@ -45,7 +45,7 @@ int AI2::maxandmin(int depth) {
 }
 
 /**
- * [AI2::singleLayer µ¥²ãÖ´ĞĞ]
+ * [AI2::singleLayer å•å±‚æ‰§è¡Œ]
  */
 int AI2::singleLayer() {
 	Revalute();
@@ -57,18 +57,20 @@ int AI2::singleLayer() {
 }
 
 /**
- * [AI2::MaxScore »ñÈ¡¼«´óÖµ]
+ * [AI2::MaxScore è·å–æå¤§å€¼]
  */
 int AI2::MaxScore()
 {
     bool isFirst = true;
 	int temp;
-	int tempLine = 1;
-	int tempColumn = 1;
+	int tempLine;
+	int tempColumn;
 	for (int i = 1;i < 10; i++) {
 		for (int j = 1;j < 10; j++) {
             if (isFirst && cross[i][j] == noChess) {
                 temp = chessScore[i][j];
+                tempLine = i;
+                tempColumn = j;
                 isFirst = false;
             } else if (!isFirst && temp < chessScore[i][j] && cross[i][j] == noChess) {
 				temp = chessScore[i][j];
@@ -82,19 +84,21 @@ int AI2::MaxScore()
 }
 
 /**
- * [AI2::MaxScore »ñÈ¡¼«Ğ¡Öµ]
+ * [AI2::MaxScore è·å–æå°å€¼]
  */
 int AI2::MinScore()
 {
     bool isFirst = true;
 	int temp;
-	int tempLine = 1;
-	int tempColumn = 1;
-	// Êä³ö·ÖÊı
+	int tempLine;
+	int tempColumn;
+	// è¾“å‡ºåˆ†æ•°
 	for (int i = 1;i < 10; i++) {
 		for (int j = 1;j < 10; j++) {
             if (isFirst && cross[i][j] == noChess) {
                 temp = chessScore[i][j];
+                tempLine = i;
+                tempColumn = j;
                 isFirst = false;
             } else if (!isFirst && temp > chessScore[i][j] && cross[i][j] == noChess) {
 				temp = chessScore[i][j];
@@ -108,13 +112,13 @@ int AI2::MinScore()
 }
 
 /**
- * [AI2::Revalute ¹ÀÖµº¯Êı]
+ * [AI2::Revalute ä¼°å€¼å‡½æ•°]
  */
 void AI2::Revalute()
 {
-    // ³õÊ¼»¯ÆåÅÌµÄ·ÖÊı
+    // åˆå§‹åŒ–æ£‹ç›˜çš„åˆ†æ•°
 	initChessScore();
-    // ¹ÀÖµ²¢¼Ó·Ö
+    // ä¼°å€¼å¹¶åŠ åˆ†
 	AcrossCorners();
 	Tirangle();
 	chessStatusShaped();
@@ -129,7 +133,7 @@ void AI2::Revalute()
 	// 			if (isBesieged(i, j)) {
 	// 				chessScore[i][j] = min;
 	// 			} else {
-	// 				JudgeScoreType();// ÅĞ¶Ï·ÖÊıµÄ¶àÉÙ
+	// 				JudgeScoreType();// åˆ¤æ–­åˆ†æ•°çš„å¤šå°‘
 	// 			}
 	// 		}
 	// 	}
