@@ -7,18 +7,19 @@
 using namespace std;
 #include "../StdAfx.h"
 
-#define cornerScore 60 // 边角分数
-#define cornerScoreFull 120 // 完整构成边角的分数
+#define cornerScore 120 // 边角分数
+#define cornerScoreFull 160 // 完整构成边角的分数
 #define tirangleScore1 60 // 三角分数
 #define tirangleScore2 120 // 三角分数
 #define tirangleScore2 140 // 三角分数
 #define crossShaped1 40 // 十字分数
 #define crossShaped2 80 // 十字分数
 #define crossShaped3  120// 十字分数
+#define crossShaped4 160 // 十字分数
 #define goodTigersMouth 120  // 优虎口，表示被包围的敌方棋子中只有1~2个
 #define badTigersMouth -120 // 劣虎口，表示被包围圈内都是敌方棋子
-#define max 32766
-#define min -32766
+#define max 32767
+#define min -32767
 
 #define isParent 1
 #define isSiblings 2
@@ -67,6 +68,8 @@ public:
 	void isGo2Dead(int type);
 	void AddDeadChessScore(int stack[][2], int len);
     bool IsDeadChess(int stack[][2], int len, int type);
+
+    int priority_score(int scoreBase, int scorePRI, int type);
 
     // 优虎口
     void GoodTigersMouth();

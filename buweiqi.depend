@@ -259,7 +259,7 @@
 
 1490789441 c:\users\notzuonotdied\desktop\buweiqi\chessboard\chess.h
 
-1491830696 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
+1491832129 c:\users\notzuonotdied\desktop\buweiqi\ai2_header\ai2.h
 	"../chessBoard/AImessage.h"
 	"AIPlayer.h"
 	<vector>
@@ -321,7 +321,7 @@
 	<vector>
 	"../StdAfx.h"
 
-1491821361 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
+1491830662 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
 1491394723 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
