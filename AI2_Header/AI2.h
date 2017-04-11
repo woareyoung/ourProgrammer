@@ -11,7 +11,7 @@ using namespace std;
 #define cornerScoreFull 160 // 完整构成边角的分数
 #define tirangleScore1 60 // 三角分数
 #define tirangleScore2 120 // 三角分数
-#define tirangleScore2 140 // 三角分数
+#define tirangleScore3 140 // 三角分数
 #define crossShaped1 40 // 十字分数
 #define crossShaped2 80 // 十字分数
 #define crossShaped3  120// 十字分数

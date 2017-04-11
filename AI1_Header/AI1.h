@@ -3,57 +3,33 @@
 
 #include <time.h>
 #include <stdlib.h>
+#include <conio.h>
 #include "../chessBoard/AImessage.h"
+#include "PointStyle.h"
+#include "Arithmatic.h"
 ///AI类
-class AI1 : public AI
+class AI1 : public AI, private PointStyle, private Arithmatic
 {
 public:
     AI1();//构造函数
     void GetPosition(int &line, int &column, int onTurn);//获取下棋位置
     void InitializeD();
 
+
 private:
     int OT;//不想再想名字了，在GetPosition.cpp文件中使用
-    int AttackPerformance;//记录对手的进攻性能（满值为100）
-    int Winner;//用来记录模拟下棋时的胜负结果
-    ///记录“当前点”的特殊点类型与级差分
-    //加分
-    int CurrentFormatPointStyle;
-    int CurrentFormatScorePoor;
-    int CurrentPointStyle;
-    int CurrentScorePoor;
-    //减分
-    int LastFormatPointStyle;
-    int LastFormatScorePoor;
-    int LastSpecialPointStyle;
-    int LastSpecialScorePoor;
-    //层差分
-    int RivalSinglePointPoor;//对方单点
-    int RivalChipPoor;//对方缺口
-    int RivalTigerMouthPoor;//对方虎口
-
-    int RivalFormatChipPoor;//对方形成缺口
-    int RivalFormatTigerMouthPoor;//对方形成虎口
-    int RivalFormatEyePoor;//对方形成眼
-
-    int MySinglePointPoor;//己方单点
-    int MyChipPoor;//己方缺口
-    int MyTigerMouthPoor;//己方虎口
-
-    int MyFormatChipPoor;//己方形成缺口
-    int MyFormatTigerMouthPoor;//己方形成虎口
-    int MyFormatEyePoor;//己方形成眼
 
     //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
     //“0”表示没有棋子，“1”表示黑子，“2”表示白子
-    int cross[10][10];
-    bool Cross[10][10];
-    int PointStyle[18];//记录每种特殊点类型的分值
+    int cross[10][10];//棋盘状态
+    bool Cross[10][10];//遍历标识
+    float PointStyle[18];//记录每种特殊点类型的分值
     int PlayerNumber;//记录该AI是玩家1还是玩家2
-    int Score[10][10];//记录每个位置上的分值
+    float Score[10][10];//记录每个位置上的分值
     int MaxScorePosition;//最大分值的位置
-    int MaxScore;//记录最大分值
+    float MaxScore;//记录最大分值
 
+    void Display(int n, int line, int column);
     ///各功能函数 集中在FunctionPart.cpp文件中
     int GetChessAmount(int row1, int row2, int who);//查看特定位置的四个方向有多少个棋子
     void GetMaxScorePosition();//获取最大分值的位置
@@ -73,6 +49,9 @@ private:
     bool Besieg(int RivalLine, int RivalColumn, int player, int rival);
     void reduceRecursionTimes();
     void setStatus(int RivalLine,int RivalColumn);
+
+    //在RateResetScore.cpp文件中
+    void RateResetScore(float ResetRate);//按比例更新分值
 };
 
 

@@ -327,7 +327,7 @@
 1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
-1491890367 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
+1491908744 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
 	"../chessBoard/AImessage.h"
 	"AIPlayer.h"
 	<vector>
@@ -344,24 +344,28 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491890367 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
+1491917962 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
 	<time.h>
 	<stdlib.h>
+	<conio.h>
 	"../chessBoard/AImessage.h"
+	"PointStyle.h"
+	"Arithmatic.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
+1491918136 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+1491918397 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+	"../stdafx.h"
+	"../AI1_Header/AI1.h"
+	"../AI1_Header/Arithmatic.h"
+
+1491918290 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\updatescore.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\updatescore.cpp
-	"../stdafx.h"
-	"../AI1_Header/AI1.h"
-
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
+1491890759 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\buweiqi.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 	"../chessBoard/AImessage.h"
@@ -394,11 +398,11 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\printchess.cpp
+1491918193 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\printchess.cpp
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
+1491890759 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
 	"../stdafx.h"
 	"../chessBoard/ChessRule.h"
 
@@ -610,4 +614,11 @@
 
 1491890635 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
+
+1491917962 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\pointstyle.h
+
+1491917962 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\arithmatic.h
+
+1491918008 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\rateresetscore.cpp
+	"../AI1_Header/AI1.h"
 

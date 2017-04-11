@@ -59,7 +59,7 @@ void ChessBoard::PaintChess()
 
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
         Player1AI->GetPosition(line, column, onTurn);
-        _cprintf("BlackAI:  line=%d, column=%d\n", line, column);
+
         PaintAChess(isBlack);
         //若对方是电脑，则先判断有没有分出胜负
         bool win = WinOrLose();
@@ -82,7 +82,7 @@ void ChessBoard::PaintChess()
 
         ///在此调用AI程序，返回下棋的位置（第几行，第几列）
         Player2AI->GetPosition(line, column, onTurn);
-        _cprintf("WhiteAI:  line=%d, column=%d\n", line, column);
+
         PaintAChess(isWhite);
         //若对方是电脑，则先判断有没有分出胜负
         bool win = WinOrLose();

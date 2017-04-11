@@ -6,7 +6,11 @@ void AI1::GetPosition(int &line, int &column, int onTurn)
     OT = (onTurn == 1 || onTurn == -1) ? 1 : 2;//OT = (unsigned)onTurn，但是强制类型转换出问题
     PlayerNumber = OT == 1 ? 2 : 1;//设置该AI的玩家编号
     cross[line][column] = OT;//先更新棋盘信息数组
+    ///按比例缩小分值
+    if(line < 3 || line > 7 || column < 3 || column > 7) RateResetScore(0.3);
+    else RateResetScore(0.5);
     UpdateScore(line, column, OT);//更新分值
+    if(line != 0) Display(OT, line, column);//输出棋盘分值
     ///若是死棋位置则一直循环，直到不是死棋位置
     while(true)
     {
@@ -33,4 +37,21 @@ void AI1::GetPosition(int &line, int &column, int onTurn)
         else break;
     }
     UpdateScore(line, column, PlayerNumber);
+    Display(PlayerNumber, line, column);//输出棋盘分值
+}
+///控制台显示信息函数
+void AI1::Display(int n, int line, int column)
+{
+    _cprintf("Player %d:  line:%d  column:%d\n\t", n, line, column);
+    for(int i = 0; i < 10; )
+    {
+        for(int j = 1; j < 10; j++)
+        {
+            if(i == 0) _cprintf("%d\t", j);
+            else _cprintf("%.2f\t", Score[i][j]);
+            if(j == 9) _cprintf("\n");
+        }
+        if(++i < 10) _cprintf("%d\t", i);
+    }
+    _cprintf("\n");
 }

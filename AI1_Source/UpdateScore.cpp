@@ -92,11 +92,7 @@ void AI1::RecordSpecialPoint(int row1, int row2, int who)
         break;
         //上、下都有棋子
     case 12:
-        if(who == PlayerNumber)
-        {
-            SetCurrentPoint(3, MyFormatTigerMouthPoor, 16, MyChipPoor, 5, MyFormatChipPoor, 15, MySinglePointPoor);
-            Score[row1][row2] = PointStyle[14];
-        }
+        if(who == PlayerNumber) SetCurrentPoint(3, MyFormatTigerMouthPoor, 16, MyChipPoor, 5, MyFormatChipPoor, 15, MySinglePointPoor);
         else SetCurrentPoint(6, RivalFormatTigerMouthPoor, 17, RivalChipPoor, 8, RivalFormatChipPoor, 8, RivalSinglePointPoor);
         AddRecord(n, n + 10, n - 10, 0, 0, 2);
         break;
@@ -162,6 +158,19 @@ void AI1::SetCurrentPoint(int ThisFormatStyle, int ThisFormatScorePoor, int This
 void AI1::AddRecord(int n, int n1, int n2, int n3, int n4, int amo)
 {
     if(n / 10 > 0 && n / 10 < 10 && n % 10 > 0) ResetScore(n / 10, n % 10, PointStyle[CurrentPointStyle], CurrentScorePoor);
+    switch(amo)
+    {
+        case 4:
+            if(n / 10 > 0 && n / 10 < 10 && n % 10 > 0) ResetScore(n / 10, n % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);
+            break;
+        case 5:;
+        case 3:
+            if(n3 / 10 > 0 && n3 / 10 < 10 && n3 % 10 > 0) ResetScore(n3 / 10, n3 % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);
+        case 2:
+            if(n2 / 10 > 0 && n2 / 10 < 10 && n2 % 10 > 0) ResetScore(n2 / 10, n2 % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);
+        case 1:
+            if(n1 / 10 > 0 && n1 / 10 < 10 && n1 % 10 > 0) ResetScore(n1 / 10, n1 % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);break;
+    }
     if(amo < 5)
     {
         if(n / 10 > 0 && n / 10 < 10 && n % 10 > 0) ResetScore(n / 10, n % 10, PointStyle[LastSpecialPointStyle], LastSpecialScorePoor, false);
@@ -176,19 +185,6 @@ void AI1::AddRecord(int n, int n1, int n2, int n3, int n4, int amo)
         case 1:
             if(n1 / 10 > 0 && n1 / 10 < 10 && n1 % 10 > 0 && cross[n1 / 10][n1 % 10] == 0) ResetScore(n1 / 10, n1 % 10, PointStyle[LastFormatPointStyle], LastFormatScorePoor, false);
         }
-    }
-    switch(amo)
-    {
-        case 4:
-            if(n / 10 > 0 && n / 10 < 10 && n % 10 > 0) ResetScore(n / 10, n % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);
-            break;
-        case 5:;
-        case 3:
-            if(n3 / 10 > 0 && n3 / 10 < 10 && n3 % 10 > 0) ResetScore(n3 / 10, n3 % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);
-        case 2:
-            if(n2 / 10 > 0 && n2 / 10 < 10 && n2 % 10 > 0) ResetScore(n2 / 10, n2 % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);
-        case 1:
-            if(n1 / 10 > 0 && n1 / 10 < 10 && n1 % 10 > 0) ResetScore(n1 / 10, n1 % 10, PointStyle[CurrentFormatPointStyle], CurrentFormatScorePoor);break;
     }
 }
 ///设置特殊点影响的分值
@@ -235,7 +231,6 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angely1 < angely2; angely1++)
                 {
-                    if(angely1 == angely2) break;
                     if(Score[angelx1][angely1] > 0)
                     {
                         Score[angelx1][angely1] += score;
@@ -246,10 +241,10 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angely1 < angely2; angely1++)
                 {
-                    if(angely1 == angely2) break;
                     if(Score[angelx1][angely1] > 0)
                     {
                         Score[angelx1][angely1] -= score;
+                        if(Score[angelx1][angely1] < 0.01) Score[angelx1][angely1] = 0.01;
                     }
                 }
             }
@@ -261,7 +256,6 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angelx2 < angelx3; angelx2++)
                 {
-                    if(angelx2 == angelx3) break;
                     if(Score[angelx2][angely2] > 0)
                     {
                         Score[angelx2][angely2] += score;
@@ -272,10 +266,10 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angelx2 < angelx3; angelx2++)
                 {
-                    if(angelx2 == angelx3) break;
                     if(Score[angelx2][angely2] > 0)
                     {
                         Score[angelx2][angely2] -= score;
+                        if(Score[angelx2][angely2] < 0.01) Score[angelx2][angely2] = 0.01;
                     }
                 }
             }
@@ -287,7 +281,6 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angely3 > angely4; angely3--)
                 {
-                    if(angely3 == angely4) break;
                     if(Score[angelx3][angely3] > 0)
                     {
                         Score[angelx3][angely3] += score;
@@ -298,10 +291,10 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angely3 > angely4; angely3--)
                 {
-                    if(angely3 == angely4) break;
                     if(Score[angelx3][angely3] > 0)
                     {
                         Score[angelx3][angely3] -= score;
+                        if(Score[angelx3][angely3] < 0.01) Score[angelx3][angely3] = 0.01;
                     }
                 }
             }
@@ -313,7 +306,6 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angelx4 > angelx1; angelx4--)
                 {
-                    if(angelx4 == angelx1) break;
                     if(Score[angelx4][angely4] > 0)
                     {
                         Score[angelx4][angely4] += score;
@@ -324,10 +316,10 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
             {
                 for(; angelx4 > angelx1; angelx4--)
                 {
-                    if(angelx4 == angelx1) break;
                     if(Score[angelx4][angely4] > 0)
                     {
                         Score[angelx4][angely4] -= score;
+                        if(Score[angelx4][angely4] < 0.01) Score[angelx4][angely4] = 0.01;
                     }
                 }
             }
@@ -336,25 +328,41 @@ void AI1::ResetScore(int row1, int row2, int score, int NumberPoor, bool isAddSc
         if(edge[0] == false && edge[1] == true && Score[angelx1][angely1] > 0)
         {
             if(isAddScore == true) Score[angelx1][angely1] += score;
-            else Score[angelx1][angely1] -= score;
+            else
+            {
+                Score[angelx1][angely1] -= score;
+                if(Score[angelx1][angely1] < 0.01) Score[angelx1][angely1] = 0.01;
+            }
         }
         ///在未到达上边缘时，继续为右边缘的一个位置加分/减分
         if(edge[1] == false && edge[2] == true && Score[angelx2][angely2] > 0)
         {
             if(isAddScore == true) Score[angelx2][angely2] += score;
-            else Score[angelx2][angely2] -= score;
+            else
+            {
+                Score[angelx2][angely2] -= score;
+                if(Score[angelx2][angely2] < 0.01) Score[angelx2][angely2] = 0.01;
+            }
         }
         ///在未到达右边缘时，继续为下边缘的一个位置加分/加分
         if(edge[2] == false && edge[3] == true && Score[angelx3][angely3] > 0)
         {
             if(isAddScore == true) Score[angelx3][angely3] += score;
-            else Score[angelx3][angely3] -= score;
+            else
+            {
+                Score[angelx3][angely3] -= score;
+                if(Score[angelx3][angely3] < 0.01) Score[angelx3][angely3] = 0.01;
+            }
         }
         ///在未到达下边缘时，继续为左边缘的一个位置加分/减分
         if(edge[3] == false && edge[0] == true && Score[angelx4][angely4] > 0)
         {
             if(isAddScore == true) Score[angelx4][angely4] += score;
-            else Score[angelx4][angely4] -= score;
+            else
+            {
+                Score[angelx4][angely4] -= score;
+                if(Score[angelx4][angely4] < 0.01) Score[angelx4][angely4] = 0.01;
+            }
         }
         //当加分区域扩散到左边缘时
         if(row2 - level < 2) edge[0] = true;

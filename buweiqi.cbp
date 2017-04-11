@@ -38,10 +38,13 @@
 			<Add library="comctl32" />
 		</Linker>
 		<Unit filename="AI1_Header/AI1.h" />
+		<Unit filename="AI1_Header/Arithmatic.h" />
+		<Unit filename="AI1_Header/PointStyle.h" />
 		<Unit filename="AI1_Source/DeadCheck.cpp" />
 		<Unit filename="AI1_Source/FunctionPart.cpp" />
 		<Unit filename="AI1_Source/GetPosition.cpp" />
 		<Unit filename="AI1_Source/Initialize.cpp" />
+		<Unit filename="AI1_Source/RateResetScore.cpp" />
 		<Unit filename="AI1_Source/UpdateScore.cpp" />
 		<Unit filename="AI2_Header/AI2.h" />
 		<Unit filename="AI2_Header/AIPlayer.h" />
