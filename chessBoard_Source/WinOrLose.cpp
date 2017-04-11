@@ -176,5 +176,7 @@ void ChessRule::reStart(HWND ParentHwnd)
     Start = false;
     Player1isAI = false;
     Player2isAI = false;
+    line = 0;
+    column = 0;
     if(button == IDOK) PostMessage(ParentHwnd, WM_PAINT, 0, 0);
 }

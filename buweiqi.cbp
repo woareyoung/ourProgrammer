@@ -53,6 +53,7 @@
 		<Unit filename="AI2_Source/score/cornerScan.cpp" />
 		<Unit filename="AI2_Source/score/crossShapeScan.cpp" />
 		<Unit filename="AI2_Source/score/isGo2Dead.cpp" />
+		<Unit filename="AI2_Source/score/priority.cpp" />
 		<Unit filename="AI2_Source/score/tirangleScan.cpp" />
 		<Unit filename="AI3_Header/AI3.h" />
 		<Unit filename="AI3_Source/GetPosition.cpp" />

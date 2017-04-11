@@ -135,7 +135,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             {
                 CB.Player1isAI = true;
                 CB.Player1AI = &CB.ai1;//想用哪个AI就在这里改CB.ai就行
-                if(CB.onTurn == 1 && CB.Start == true)
+                if((CB.onTurn == 1 || CB.onTurn == -1) && CB.Start == true)
                 {
                     CB.onTurn = -1;
                     CB.PaintChess();
@@ -155,7 +155,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             {
                 CB.Player2isAI = true;
                 CB.Player2AI = &CB.ai2;//想用哪个AI就在这里改CB.ai就行
-                if(CB.onTurn == 2)
+                if(CB.onTurn == 2 || CB.onTurn == -2)
                 {
                     CB.onTurn = -2;
                     CB.PaintChess();
