@@ -40,6 +40,8 @@
 		<Unit filename="AI1_Header/AI1.h" />
 		<Unit filename="AI1_Header/Arithmatic.h" />
 		<Unit filename="AI1_Header/PointStyle.h" />
+		<Unit filename="AI1_Source/ArithmaticCore/CalculatePerf.cpp" />
+		<Unit filename="AI1_Source/ArithmaticCore/Forecast.cpp" />
 		<Unit filename="AI1_Source/DeadCheck.cpp" />
 		<Unit filename="AI1_Source/FunctionPart.cpp" />
 		<Unit filename="AI1_Source/GetPosition.cpp" />
@@ -62,19 +64,22 @@
 		<Unit filename="AI3_Source/GetPosition.cpp" />
 		<Unit filename="StdAfx.cpp" />
 		<Unit filename="StdAfx.h" />
-		<Unit filename="buweiqi.h" />
-		<Unit filename="chessBoard/AImessage.h" />
-		<Unit filename="chessBoard/Chess.h" />
-		<Unit filename="chessBoard/ChessBase.h" />
-		<Unit filename="chessBoard/ChessRule.h" />
-		<Unit filename="chessBoard/PlayerInfo.h" />
-		<Unit filename="chessBoard_Source/ChessBoard.cpp" />
-		<Unit filename="chessBoard_Source/InitializeData.cpp" />
-		<Unit filename="chessBoard_Source/PrintChess.cpp" />
+		<Unit filename="chessBoard_Header/AI.h" />
+		<Unit filename="chessBoard_Header/Chess.h" />
+		<Unit filename="chessBoard_Header/ChessBoard.h" />
+		<Unit filename="chessBoard_Header/PlayerInfo.h" />
+		<Unit filename="chessBoard_Header/WindowHwnd.h" />
+		<Unit filename="chessBoard_Header/WindowSize.h" />
+		<Unit filename="chessBoard_Source/InitData.cpp" />
+		<Unit filename="chessBoard_Source/PaintBoard.cpp" />
+		<Unit filename="chessBoard_Source/PaintChess.cpp" />
+		<Unit filename="chessBoard_Source/PaintTimer.cpp" />
+		<Unit filename="chessBoard_Source/RePaint.cpp" />
+		<Unit filename="chessBoard_Source/ReStart.cpp" />
 		<Unit filename="chessBoard_Source/WinOrLose.cpp" />
-		<Unit filename="chessBoard_Source/buweiqi.cpp" />
-		<Unit filename="util/int2String.cpp" />
-		<Unit filename="util/recursion.cpp" />
+		<Unit filename="chessBoard_Source/util/int2String.cpp" />
+		<Unit filename="chessBoard_Source/util/recursion.cpp" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

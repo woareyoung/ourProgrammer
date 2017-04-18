@@ -9,6 +9,13 @@
  */
 void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
 {
+    //用于响应主窗口对AI的检查
+    if(onTurn == 0)
+    {
+        line++;
+        column++;
+        return;
+    }
     // 这里需要判断是否有正确传参数进来
 	if (line != 0 && column != 0) {
         cross[line][column] = onTurn == isWhite ? isBlack : isWhite;

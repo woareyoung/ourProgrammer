@@ -1,7 +1,7 @@
 #ifndef AI2_H_INCLUDED
 #define AI2_H_INCLUDED
 
-#include "../chessBoard/AImessage.h"
+#include "../chessBoard_Header/AI.h"
 #include "AIPlayer.h"
 #include <vector>
 using namespace std;

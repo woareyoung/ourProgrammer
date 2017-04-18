@@ -1,7 +1,7 @@
 #ifndef AI3_H_INCLUDED
 #define AI3_H_INCLUDED
 
-#include "../chessBoard/AImessage.h"
+#include "../chessBoard_Header/AI.h"
 
 class AI3 : public AI
 {

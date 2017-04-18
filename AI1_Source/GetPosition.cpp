@@ -3,7 +3,15 @@
 ///获取下棋位置
 void AI1::GetPosition(int &line, int &column, int onTurn)
 {
-    OT = (onTurn == 1 || onTurn == -1) ? 1 : 2;//OT = (unsigned)onTurn，但是强制类型转换出问题
+    //用于响应主窗口对AI的检查
+    if(onTurn == 0)
+    {
+        line++;
+        column++;
+        return;
+    }
+    CalculatePerf(line, column);//先计算对手进攻性能
+    OT = (onTurn == 1 || onTurn == -1) ? 1 : 2;
     PlayerNumber = OT == 1 ? 2 : 1;//设置该AI的玩家编号
     cross[line][column] = OT;//先更新棋盘信息数组
     ///按比例缩小分值

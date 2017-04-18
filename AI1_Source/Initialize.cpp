@@ -41,6 +41,8 @@ AI1::AI1()
     MyFormatChipPoor = 2;//己方形成缺口
     MyFormatTigerMouthPoor = 1;//己方形成虎口
     MyFormatEyePoor = 1;//己方形成眼
+
+    BoundryRate = 0.3;//预测界限
 }
 ///初始化数据
 void AI1::InitializeD()
@@ -57,4 +59,10 @@ void AI1::InitializeD()
         }
     }
     Score[0][0] = -3;
+    for(i = 1; i < 3; i++)
+    {
+        spa[i].Chip = 0;
+        spa[i].TigerMouth = 0;
+        spa[i].Eye = 0;
+    }
 }

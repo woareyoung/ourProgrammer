@@ -1,12 +1,12 @@
-#include "../stdafx.h"
-#include "../chessBoard/ChessRule.h"
+#include "../ChessBoard_Header/ChessBoard.h"
+
 /*胜负条件
 * 1、超时。该条件判断由窗口过程函数实现
 * 2、空手。先忽略
 * 3、围死。基本思想：假设黑子下一个棋子，则判断该黑子周围的四个位置上有没有白子被围死，还有该黑子是否被围死
 */
 //注：调用该函数（即下棋的玩家）的那个人或AI是“己方”
-bool ChessRule::WinOrLose()
+bool ChessBoard::WinOrLose()
 {
     bool Position[4] = {false, false, false, false};
     int player;//记录己方的编号（是1还是2）
@@ -109,7 +109,7 @@ bool ChessRule::WinOrLose()
 //判断对方的棋子是否被围死，两个参数表示对方棋子的位置
 //该函数用于一堆棋子被围死的情况，用递归的方法检查一堆棋子的情况
 //若棋子被围死，则返回true，只要棋子周围有一个空位就返回false
-bool ChessRule::Besieged(int RivalLine, int RivalColumn, int player, int rival)
+bool ChessBoard::Besieged(int RivalLine, int RivalColumn, int player, int rival)
 {
     bool tie[4] = {false, false, false, false};
     // 设置Cross数组状态
@@ -148,35 +148,4 @@ bool ChessRule::Besieged(int RivalLine, int RivalColumn, int player, int rival)
     else tie[3] = true;
     if(tie[0] && tie[1] && tie[2] && tie[3]) return true;
     return false;
-}
-//分出胜负后事
-void ChessRule::reStart(HWND ParentHwnd)
-{
-    KillTimer(ParentHwnd, PlayerTimer);
-    char buffer[2];
-    buffer[0] = NULL, buffer[1] = NULL;
-    char *buf;
-    if(Winner == isBlack) buf = "黑子";
-    else buf = "白子";
-    lstrcat(buffer, "恭喜玩家");
-    lstrcat(buffer, buf);
-    lstrcat(buffer, "胜出");
-    int button = MessageBox(ParentHwnd, buffer, "凯旋", MB_OK);
-    for(int i = 1; i < 10; i++)
-    {
-        for(int j = 1; j < 10; j++)
-        {
-            cross[i][j] = 0;
-        }
-    }
-    AllTime1 = 900;//总时长15分钟
-    AllTime2 = 900;
-    Round1 = 60;//步时60秒
-    Round2 = 60;
-    Start = false;
-    Player1isAI = false;
-    Player2isAI = false;
-    line = 0;
-    column = 0;
-    if(button == IDOK) PostMessage(ParentHwnd, WM_PAINT, 0, 0);
 }

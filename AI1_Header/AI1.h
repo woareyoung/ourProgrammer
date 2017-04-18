@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
-#include "../chessBoard/AImessage.h"
+#include "../chessBoard_Header/AI.h"
 #include "PointStyle.h"
 #include "Arithmatic.h"
 ///AI类
@@ -14,7 +14,6 @@ public:
     AI1();//构造函数
     void GetPosition(int &line, int &column, int onTurn);//获取下棋位置
     void InitializeD();
-
 
 private:
     int OT;//不想再想名字了，在GetPosition.cpp文件中使用
@@ -50,8 +49,14 @@ private:
     void reduceRecursionTimes();
     void setStatus(int RivalLine,int RivalColumn);
 
-    //在RateResetScore.cpp文件中
-    void RateResetScore(float ResetRate);//按比例更新分值
+    ///在RateResetScore.cpp文件中
+    void RateResetScore(float ResetRate);//按比例缩小分值，减少分差，精确定位
+
+    /* 预测系统 */
+    ///在CalculatePerf.cpp文件中
+    void CalculatePerf(int line, int column);//计算对手进攻性能
+    ///在Forecast.cpp文件中
+    void Forecast(int player);
 };
 
 
