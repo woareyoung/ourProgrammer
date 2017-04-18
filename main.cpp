@@ -21,7 +21,6 @@ bool ShowSelect1 = false;//是否显示AI
 bool ShowSelect2 = false;//是否显示AI
 bool ShowSelect3 = false;//是否显示AI
 LPARAM Param;
-RECT MainWinRect;//记录主窗口位置
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;//窗口过程函数
 LRESULT CALLBACK WndProcB (HWND, UINT, WPARAM, LPARAM) ;//窗口过程函数
@@ -92,11 +91,13 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
     case WM_PAINT://重绘消息
-        HANDLE handle;
-        handle = CreateThread(NULL, 0, ThreadProc, NULL, 0, NULL);
-//        CB.RePaint();
-        CloseHandle(handle);
-        Sleep(80);
+        BeginPaint(hwnd, &CB.ps);
+//        HANDLE handle;
+//        handle = CreateThread(NULL, 0, ThreadProc, NULL, 0, NULL);
+        CB.RePaint();
+//        CloseHandle(handle);
+//        Sleep(80);
+        EndPaint(hwnd, &CB.ps);
         return 0;
     case WM_COMMAND://窗口下组件的事件
         switch(LOWORD(wParam))
@@ -133,6 +134,8 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             case MID_START:
                 if(!CB.Start)
                 {
+                    ShowWindow(CB.TurnToBlack, SW_SHOW);
+                    UpdateWindow (CB.TurnToBlack);
                     CB.PrintTime = true;
                     SendMessage((HWND)lParam, WM_SETTEXT, (WPARAM)NULL, LPARAM("正在游戏中"));
                     CB.Start = true;
@@ -169,6 +172,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
         CB.BlackChess = (HBITMAP)LoadImage(NULL, _T("Image/BlackChess.bmp"), IMAGE_BITMAP, 200, 200, LR_LOADFROMFILE);
         CB.WhiteChess = (HBITMAP)LoadImage(NULL, _T("Image/WhiteChess.bmp"), IMAGE_BITMAP, 200, 200, LR_LOADFROMFILE);//LR_LOADMAP3DCOLORS
         CB.Tips = (HBITMAP)LoadImage(NULL, _T("Image/Tips.bmp"), IMAGE_BITMAP, 126, 126, LR_LOADFROMFILE);
+        PostMessage(hwnd, WM_PAINT, (WPARAM)NULL, (LPARAM)NULL);
         break;
     case WM_MOUSEMOVE://鼠标移动消息
         CB.point.x = LOWORD(lParam);//获取鼠标位置
@@ -185,6 +189,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
         DeleteObject(CB.Board);
         DeleteObject(CB.BlackChess);
         DeleteObject(CB.WhiteChess);
+        DeleteObject(CB.Tips);
         PostQuitMessage (0) ;
         return 0 ;
     }
@@ -237,8 +242,8 @@ void TimerProc()
 void SelectFun()
 {
     CB.SelectAI = CreateWindow(_T("Select"), _T("请选择一个AI"), WS_MINIMIZEBOX | WS_SYSMENU, CB.RootWidth / 2 - 125, CB.RootHeight / 2 - 150, 250, 300, CB.RootHwnd, NULL, CB.hInst, NULL);
-    GetWindowRect(CB.RootHwnd, &MainWinRect);//获取主窗口在屏幕中的位置
-    MoveWindow(CB.SelectAI, MainWinRect.left + (CB.RootWidth - 250) / 2, MainWinRect.top + (CB.RootHeight - 300) / 2, 250, 300, false);//改变窗口位置和大小
+    GetWindowRect(CB.RootHwnd, &CB.MainWinRect);//获取主窗口在屏幕中的位置
+    MoveWindow(CB.SelectAI, CB.MainWinRect.left + (CB.RootWidth - 250) / 2, CB.MainWinRect.top + (CB.RootHeight - 300) / 2, 250, 300, false);//改变窗口位置和大小
     ShowWindow(CB.SelectAI, SW_SHOW);//设置窗口可视
     int line, column;//用于检查AI是否已完成（即可以进行下棋了）
     ///检查AI1

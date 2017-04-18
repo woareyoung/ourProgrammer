@@ -28,7 +28,9 @@ public:
     HWND SelectAI3;//选择AI3按钮，在选择AI窗口中
     HINSTANCE hInst;//应用程序实例句柄
     bool PrintTime;
-    ///重绘时需要用
+
+    RECT MainWinRect;//记录主窗口位置
+
     HDC hdcBuffer;//缓冲
     HBITMAP hBitMap;//内存位图
     RECT rect;//矩形坐标

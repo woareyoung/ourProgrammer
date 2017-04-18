@@ -642,7 +642,7 @@
 1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowsize.h
 	"windows.h"
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowhwnd.h
+1492529426 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowhwnd.h
 	"../stdafx.h"
 
 1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\playerinfo.h
@@ -659,10 +659,10 @@
 1492523394 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\painttimer.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492523394 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\repaint.cpp
+1492529730 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\repaint.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492523394 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\restart.cpp
+1492530024 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\restart.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492523630 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\util\int2string.cpp
@@ -671,7 +671,7 @@
 1492523630 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\util\recursion.cpp
 	"../../ChessBoard_Header/Chess.h"
 
-1492523393 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\main.cpp
+1492530134 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\main.cpp
 	"stdafx.h"
 	"ChessBoard_Header/ChessBoard.h"
 	"AI1_Header/AI1.h"

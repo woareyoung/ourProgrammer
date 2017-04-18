@@ -2,9 +2,13 @@
 ///游戏结束
 void ChessBoard::ReStart()
 {
-    if(Winner == isBlack) MessageBox(RootHwnd, "恭喜玩家1（黑子）胜出", "凯旋", MB_OK);
-    else MessageBox(RootHwnd, "恭喜玩家2（白子）胜出", "凯旋", MB_OK);
+    if(Winner == isBlack)
+        MessageBox(RootHwnd, _T("恭喜玩家1（黑子）胜出"), _T("凯旋"), MB_OK);
+    else MessageBox(RootHwnd, _T("恭喜玩家2（白子）胜出"), _T("凯旋"), MB_OK);
+
     Init_cross();
+    onTurn = 1;
+    Winner = 0;
     AllTime1 = 900;//总时长15分钟
     AllTime2 = 900;
     Round1 = 60;//步时60秒
@@ -14,4 +18,11 @@ void ChessBoard::ReStart()
     Player2isAI = false;
     line = 0;
     column = 0;
+
+    PostMessage(RootHwnd, WM_PAINT, (WPARAM)NULL, (LPARAM)NULL);
+
+    SendMessage(StartGame, WM_SETTEXT, (WPARAM)NULL, LPARAM("开始游戏"));
+    ShowWindow(TurnToWhite, SW_HIDE);
+    ShowWindow(TurnToBlack, SW_SHOW);
+
 }
