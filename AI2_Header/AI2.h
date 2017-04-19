@@ -77,6 +77,7 @@ public:
     // 初始化数组
     void copyArray(int isExist[10][10]);
     void initChessScore();
+    void initAllArray();
 
     //
 	bool isBesieged(int line, int column);

@@ -43,5 +43,4 @@ void ChessBoard::Init_cross()
             Cross[i][j] = 0;
         }
     }
-
 }

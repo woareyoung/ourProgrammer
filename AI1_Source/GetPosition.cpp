@@ -8,6 +8,7 @@ void AI1::GetPosition(int &line, int &column, int onTurn)
     {
         line++;
         column++;
+        InitializeD();
         return;
     }
     CalculatePerf(line, column);//先计算对手进攻性能

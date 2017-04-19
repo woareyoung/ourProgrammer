@@ -85,7 +85,7 @@ void AI2::JudgeCShape(int line,int column)
 
  	// 缺一形成十字围杀-- 白子-- 中间有棋子的情况
  	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
-/* 	if (cross[line][column] != noChess &&
+ 	if (cross[line][column] != noChess &&
  		cross[line - 1][column] == noChess && cross[line + 1][column] == isWhite
 		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
 		chessScore[line - 1][column] = min;
@@ -105,10 +105,10 @@ void AI2::JudgeCShape(int line,int column)
 		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == noChess) {
 		chessScore[line][column + 1] = min;
 		chessStatus[line][column + 1] = true;
- 	}*/
+ 	}
  	// 缺一形成十字围杀-- 黑子-- 中间有棋子的情况
  	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
-/* 	if (cross[line][column] != noChess &&
+ 	if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == noChess && cross[line + 1][column] == isBlack
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
 		chessScore[line - 1][column] = min;
@@ -128,7 +128,7 @@ void AI2::JudgeCShape(int line,int column)
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
 		chessScore[line][column + 1] = min;
 		chessStatus[line][column + 1] = true;
- 	}*/
+ 	}
 
  	// 缺二形成十字围杀-- 白子-- 中间没有棋子的情况
  	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准

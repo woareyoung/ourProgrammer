@@ -14,6 +14,7 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     {
         line++;
         column++;
+        initAllArray();
         return;
     }
     // 这里需要判断是否有正确传参数进来
