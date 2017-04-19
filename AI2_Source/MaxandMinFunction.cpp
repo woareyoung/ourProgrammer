@@ -35,16 +35,19 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     chessScore[line][column] = min;
     cross[line][column] = PlayerId;
 
-//    _cprintf("**************This is chess score********(%d,%d)**********\n",line,column);
-/*    for(int i = 1; i < 10; i++)
+    _cprintf("**************This is chess score*******(%d, %d)***********\n", line, column);
+    for(int i = 1; i < 10; i++)
     {
         for(int j = 1; j < 10; j++)
         {
-            _cprintf("%d\t",chessScore[i][j]);
+            if (chessScore[i][j] == min) {
+                _cprintf("%d\t",0);
+            } else {
+                _cprintf("%d\t",chessScore[i][j]);
+            }
         }
         _cprintf("\n");
     }
-*/
 }
 
 /**
@@ -89,8 +92,8 @@ int AI2::singleLayer()
 int AI2::MaxScore()
 {
     bool isFirst = true;
-    int tempLine;
-    int tempColumn;
+    int tempLine = 0;
+    int tempColumn = 0;
     for (int i = 1; i < 10; i++)
     {
         for (int j = 1; j < 10; j++)
@@ -112,7 +115,20 @@ int AI2::MaxScore()
             }
         }
     }
-    cross[tempLine][tempColumn] = turn2Who;
+    if (tempLine == 0 && tempLine == tempColumn) {
+        _cprintf("-------------no FOUND(%d, %d)-------------\n", tempLine, tempColumn);
+        for (int i = 1;i < 10;i++) {
+            for (int j = 1;j < 10;j++) {
+                if (cross[i][j] == noChess && !isGo2Dead(i ,j, turn2Who)) {
+                    tempLine = i;
+                    tempColumn = j;
+                    _cprintf("-------------FOUND(%d, %d)-------------\n", tempLine, tempColumn);
+                    goto B;
+                }
+            }
+        }
+    }
+B:    cross[tempLine][tempColumn] = turn2Who;
     return tempLine*100 + tempColumn;
 }
 

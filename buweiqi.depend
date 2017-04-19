@@ -731,7 +731,7 @@
 1492585507 source:d:\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
-1492578550 d:\buweiqi\ai2_header\ai2.h
+1492600037 d:\buweiqi\ai2_header\ai2.h
 	"../chessBoard_Header/AI.h"
 	"AIPlayer.h"
 	<vector>
@@ -740,13 +740,13 @@
 1491616661 d:\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492585907 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
+1492600201 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1491627658 source:d:\buweiqi\ai2_source\newscore\initdata.cpp
 	"../../AI2_Header/AI2.h"
 
-1492577750 source:d:\buweiqi\ai2_source\newscore\newevalution.cpp
+1492600072 source:d:\buweiqi\ai2_source\newscore\newevalution.cpp
 	"../../AI2_Header/AI2.h"
 
 1491628521 source:d:\buweiqi\ai2_source\score.cpp
@@ -758,13 +758,13 @@
 1492577912 source:d:\buweiqi\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492577750 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
+1492588007 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
 1492577750 source:d:\buweiqi\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
 
-1492586042 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
+1492586411 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1491626779 source:d:\buweiqi\ai3_source\getposition.cpp

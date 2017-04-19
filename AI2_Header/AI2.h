@@ -40,9 +40,6 @@ private:
     // 边角数组
 	int cornerArray[12];
 
-	void setStatus(int RivalLine,int RivalColumn);
-	void reduceRecursionTimes();
-
 	std::vector<int> vec;
 public:
     AI2();
@@ -66,6 +63,7 @@ public:
 
     // 是否构成死棋
 	void isGo2Dead(int type);
+	bool isGo2Dead(int line, int column, int type);
 	void AddDeadChessScore(int stack[][2], int len);
     bool IsDeadChess(int stack[][2], int len, int type);
 
@@ -89,6 +87,12 @@ public:
 	int MaxScore();
 	int MinScore();
 	int singleLayer();
+
+    ///判断是否是死棋位置   集中在DeadCheck.cpp文件中
+    bool DeadCheck(int line, int column, int who);
+    bool Besieg(int RivalLine, int RivalColumn, int player, int rival);
+    void reduceRecursionTimes();
+    void setStatus(int RivalLine,int RivalColumn);
 
 };
 

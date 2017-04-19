@@ -2,39 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="chessBoard_Source\WinOrLose.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="chessBoard_Source\InitData.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="530" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AI1_Source\GetPosition.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1466" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="AI2_Header\AI2.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="788" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AI2_Header\AIPlayer.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="221" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AI2_Source\MaxandMinFunction.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="179" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AI1_Source\Initialize.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2256" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="StdAfx.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="425" topLine="0" />
+			<Cursor1 position="532" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="AI2_Source\Score.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -42,44 +12,19 @@
 			<Cursor1 position="54" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="AI2_Source\score\cornerScan.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="chessBoard_Source\WinOrLose.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="809" topLine="13" />
+			<Cursor1 position="530" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="AI1_Source\FunctionPart.cpp" open="0" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="StdAfx.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1053" topLine="2" />
+			<Cursor1 position="425" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="AI2_Source\score\crossShapeScan.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1549" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="AI2_Source\score\isGo2Dead.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4025" topLine="75" />
-		</Cursor>
-	</File>
-	<File name="AI2_Source\score\tirangleScan.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="412" topLine="151" />
-		</Cursor>
-	</File>
-	<File name="AI2_Source\InitData.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="611" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AI3_Header\AI3.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="220" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AI2_Source\newScore\InitData.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="30" topLine="0" />
+			<Cursor1 position="275" topLine="72" />
 		</Cursor>
 	</File>
 	<File name="AI3_Source\GetPosition.cpp" open="0" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -92,14 +37,94 @@
 			<Cursor1 position="17808" topLine="363" />
 		</Cursor>
 	</File>
-	<File name="AI1_Header\AI1.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AI2_Header\AI2.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="206" topLine="0" />
+			<Cursor1 position="1753" topLine="48" />
 		</Cursor>
 	</File>
-	<File name="AI2_Source\newScore\newEvalution.cpp" open="0" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="chessBoard_Source\PaintBoard.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="203" topLine="0" />
+			<Cursor1 position="0" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="AI2_Header\AIPlayer.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="221" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AI1_Source\FunctionPart.cpp" open="0" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1053" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="AI1_Source\GetPosition.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2363" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\MaxandMinFunction.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3338" topLine="99" />
+		</Cursor>
+	</File>
+	<File name="AI1_Source\Initialize.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1402" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\InitData.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="129" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\newScore\InitData.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="30" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\newScore\newEvalution.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="388" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\score\cornerScan.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="809" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\score\crossShapeScan.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5041" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\score\isGo2Dead.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6144" topLine="144" />
+		</Cursor>
+	</File>
+	<File name="AI2_Source\score\tirangleScan.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6383" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AI1_Source\DeadCheck.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4789" topLine="96" />
+		</Cursor>
+	</File>
+	<File name="AI3_Header\AI3.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="220" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="chessBoard_Source\ReStart.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="310" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="AI1_Header\AI1.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="716" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
