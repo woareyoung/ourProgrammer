@@ -712,7 +712,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1492578595 source:d:\buweiqi\ai1_source\getposition.cpp
+1492578851 source:d:\buweiqi\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
@@ -728,7 +728,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491736552 source:d:\buweiqi\ai2_source\initdata.cpp
+1492585507 source:d:\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
 1492578550 d:\buweiqi\ai2_header\ai2.h
@@ -740,7 +740,7 @@
 1491616661 d:\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492578582 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
+1492585907 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1491627658 source:d:\buweiqi\ai2_source\newscore\initdata.cpp
@@ -764,7 +764,7 @@
 1492577750 source:d:\buweiqi\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
 
-1491628524 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
+1492586042 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1491626779 source:d:\buweiqi\ai3_source\getposition.cpp
@@ -773,7 +773,7 @@
 1492577750 d:\buweiqi\ai3_header\ai3.h
 	"../chessBoard_Header/AI.h"
 
-1492578219 source:d:\buweiqi\chessboard_source\initdata.cpp
+1492586125 source:d:\buweiqi\chessboard_source\initdata.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492577750 d:\buweiqi\chessboard_header\chessboard.h
