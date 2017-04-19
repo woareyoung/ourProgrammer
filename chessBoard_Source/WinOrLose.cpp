@@ -30,6 +30,7 @@ bool ChessBoard::WinOrLose()
         if(Besieged(line, column - 1, player, rival))
         {
             Winner = rival;
+            showChessBroadInfoOnDOS();
             return true;
         }
         Position[0] = true;
@@ -49,6 +50,7 @@ bool ChessBoard::WinOrLose()
         if(Besieged(line, column + 1, player, rival))
         {
             Winner = rival;
+            showChessBroadInfoOnDOS();
             return true;
         }
         Position[1] = true;
@@ -68,6 +70,7 @@ bool ChessBoard::WinOrLose()
         if(Besieged(line - 1, column, player, rival))
         {
             Winner = rival;
+            showChessBroadInfoOnDOS();
             return true;
         }
         Position[2] = true;
@@ -87,6 +90,7 @@ bool ChessBoard::WinOrLose()
         if(Besieged(line + 1, column, player, rival))
         {
             Winner = rival;
+            showChessBroadInfoOnDOS();
             return true;
         }
         Position[3] = true;
@@ -102,6 +106,7 @@ bool ChessBoard::WinOrLose()
     if(Position[0] && Position[1] && Position[2] && Position[3])
     {
         Winner = rival;
+        showChessBroadInfoOnDOS();
         return true;
     }
     return false;
@@ -116,7 +121,7 @@ bool ChessBoard::Besieged(int RivalLine, int RivalColumn, int player, int rival)
     setStatus(RivalLine,RivalColumn);
     //若对方棋子的上方有对方的棋子且未到上边缘
     if(cross[RivalLine - 1][RivalColumn] == rival && RivalLine - 1 > 0
-       && Cross[RivalLine - 1][RivalColumn] == false)
+            && Cross[RivalLine - 1][RivalColumn] == false)
         tie[0] = Besieged(RivalLine - 1, RivalColumn, player, rival);
     //若对方棋子的上方没有棋子，直接返回false
     else if(cross[RivalLine - 1][RivalColumn] == 0 && RivalLine - 1 > 0) return false;
@@ -124,7 +129,7 @@ bool ChessBoard::Besieged(int RivalLine, int RivalColumn, int player, int rival)
     else tie[0] = true;
     //若对方棋子的下方有对方的棋子且未到下边缘
     if(cross[RivalLine + 1][RivalColumn] == rival && RivalLine + 1 < 10
-       && Cross[RivalLine + 1][RivalColumn] == false)
+            && Cross[RivalLine + 1][RivalColumn] == false)
         tie[1] = Besieged(RivalLine + 1, RivalColumn, player, rival);
     //若对方棋子的下方没有棋子
     else if(cross[RivalLine + 1][RivalColumn] == 0 && RivalLine + 1 < 10) return false;
@@ -132,7 +137,7 @@ bool ChessBoard::Besieged(int RivalLine, int RivalColumn, int player, int rival)
     else tie[1] = true;
     //若对方棋子的右方有对方的棋子且未到右边缘
     if(cross[RivalLine][RivalColumn + 1] == rival && RivalColumn + 1 < 10
-       && Cross[RivalLine][RivalColumn + 1] == false)
+            && Cross[RivalLine][RivalColumn + 1] == false)
         tie[2] = Besieged(RivalLine, RivalColumn + 1, player, rival);
     //若对方棋子的右方没有棋子
     else if(cross[RivalLine][RivalColumn + 1] == 0 && RivalColumn + 1 < 10) return false;
@@ -140,7 +145,7 @@ bool ChessBoard::Besieged(int RivalLine, int RivalColumn, int player, int rival)
     else tie[2] = true;
     //若对方棋子的左方有对方的棋子且未到左边缘
     if(cross[RivalLine][RivalColumn - 1] == rival && RivalColumn - 1 > 0
-       && Cross[RivalLine][RivalColumn - 1] == false)
+            && Cross[RivalLine][RivalColumn - 1] == false)
         tie[3] = Besieged(RivalLine, RivalColumn - 1, player, rival);
     //若对方棋子的左方没有棋子
     else if(cross[RivalLine][RivalColumn - 1] == 0 && RivalColumn - 1 > 0) return false;

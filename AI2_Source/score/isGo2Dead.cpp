@@ -76,7 +76,7 @@ void AI2::isGo2Dead(int type)
 /**
  * [AI2::isGo2Dead 判断着子点是否有自杀倾向]
  */
-bool AI2::isGo2Dead(int line, int column ,int type)
+bool AI2::isGo2Dead(int line, int column,int type)
 {
     int stack[81][2] = {0}; //存储栈元素，0为x,1为y
     int top = 0;// 栈顶元素
@@ -145,15 +145,28 @@ bool AI2::isGo2Dead(int line, int column ,int type)
                 }
                 treated++;//处理下一个栈元素
             }
-            // 假如是自杀行为，就将这个着子点的分数设置为min
+            // 假如是自杀行为，就返回真
             if(top > 0 && IsDeadChess(stack,top,type))
             {
-                AddDeadChessScore(stack,top);
+                for(int i = 0; i < top; i++)
+                {
+                    if (stack[i][0] == line && stack[i][1] == column) {
+                        return true;
+                    } else if (stack[i][0] == line - 1 && stack[i][1] == column) {
+                        return true;
+                    } else if (stack[i][0] == line + 1 && stack[i][1] == column) {
+                        return true;
+                    } else if (stack[i][0] == line && stack[i][1] == column - 1) {
+                        return true;
+                    } else if (stack[i][0] == line && stack[i][1] == column + 1) {
+                        return true;
+                    }
+                }
             }
             top=treated=0;//清空
         }
     }
-    return chessScore[line][column] == min;
+    return false;
 }
 
 /**

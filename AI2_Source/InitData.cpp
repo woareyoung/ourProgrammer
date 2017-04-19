@@ -6,6 +6,7 @@ AI2::AI2()
 }
 
 void AI2::initAllArray() {
+    this->chessCount = 0;
     this->PlayerId = isWhite;
 	for (int i = 0;i < 10;i++) {
 		for (int j = 0;j < 10;j++) {

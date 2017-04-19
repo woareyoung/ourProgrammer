@@ -40,6 +40,7 @@ private:
     // ±ß½ÇÊý×é
 	int cornerArray[12];
 
+    int chessCount;
 	std::vector<int> vec;
 public:
     AI2();

@@ -32,3 +32,27 @@ void ChessBoard::PaintBoard()
         StretchBlt(hdc, CrossCross[column] - ChessDiameter / 5, CrossCross[line] - ChessDiameter / 5, ChessDiameter * 2 / 5, ChessDiameter * 2 / 5, hdcBuffer, 0, 0, 126, 126, SRCCOPY);//将兼容设备复制到显示设备上
     }
 }
+
+void ChessBoard::showChessBroadInfoOnDOS()
+{
+    int countB = 0;
+    int countW = 0;
+    _cprintf("------------------Chess Broad---------------------\n");
+    for(int i = 1; i < 10; i++)
+    {
+        for(int j = 1; j < 10; j++)
+        {
+            _cprintf("%d\t",cross[i][j]);
+            if (cross[i][j] == isWhite)
+            {
+                countW++;
+            }
+            else if (cross[i][j] == isBlack)
+            {
+                countB++;
+            }
+        }
+        _cprintf("\n");
+    }
+    _cprintf("----Black:%d,White:%d----\n",countB,countW);
+}

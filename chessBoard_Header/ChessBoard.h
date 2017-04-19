@@ -55,6 +55,7 @@ private:
     char string[2];//用于类型转换
     char* Int2String(int num);//整型换换为字符型
     void addChar(int mid);//用于辅助转换
+    void showChessBroadInfoOnDOS();
 
 };
 

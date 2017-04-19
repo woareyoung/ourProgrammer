@@ -40,9 +40,12 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     {
         for(int j = 1; j < 10; j++)
         {
-            if (chessScore[i][j] == min) {
+            if (chessScore[i][j] == min)
+            {
                 _cprintf("%d\t",0);
-            } else {
+            }
+            else
+            {
                 _cprintf("%d\t",chessScore[i][j]);
             }
         }
@@ -91,6 +94,7 @@ int AI2::singleLayer()
  */
 int AI2::MaxScore()
 {
+    this->chessCount++;
     bool isFirst = true;
     int tempLine = 0;
     int tempColumn = 0;
@@ -115,20 +119,30 @@ int AI2::MaxScore()
             }
         }
     }
-    if (tempLine == 0 && tempLine == tempColumn) {
-        _cprintf("-------------no FOUND(%d, %d)-------------\n", tempLine, tempColumn);
-        for (int i = 1;i < 10;i++) {
-            for (int j = 1;j < 10;j++) {
-                if (cross[i][j] == noChess && !isGo2Dead(i ,j, turn2Who)) {
+    bool f1;
+    if (tempLine == 0 && 0 == tempColumn)
+    {
+        //_cprintf("-------------no FOUND(%d, %d)-------------\n", tempLine, tempColumn);
+        for (int i = 1; i < 10; i++)
+        {
+            for (int j = 1; j < 10; j++)
+            {
+                if (cross[i][j] != noChess && chessScore[i][j] == min)
+                {
+                    continue;
+                }
+                if (!isGo2Dead(i,j, turn2Who) && cross[i][j] == noChess)
+                {
                     tempLine = i;
                     tempColumn = j;
-                    _cprintf("-------------FOUND(%d, %d)-------------\n", tempLine, tempColumn);
-                    goto B;
+                    //_cprintf("**-------------FOUND(%d, %d)-------------**\n", tempLine, tempColumn);
                 }
             }
         }
     }
-B:    cross[tempLine][tempColumn] = turn2Who;
+B:
+    _cprintf("-----------count = %d---(%d,%d)-----------\n",this->chessCount,tempLine,tempColumn);
+    cross[tempLine][tempColumn] = turn2Who;
     return tempLine*100 + tempColumn;
 }
 
