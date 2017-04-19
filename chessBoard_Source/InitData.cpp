@@ -37,7 +37,11 @@ ChessBoard::ChessBoard()
 void ChessBoard::Init_cross()
 {
     int i, j;
-    for(i = 0; i < 10; i++)
-        for(j = 0; j < 10; j++)
+    for(i = 0; i < 10; i++) {
+        for(j = 0; j < 10; j++) {
             cross[i][j] = 0;
+            Cross[i][j] = 0;
+        }
+    }
+
 }
