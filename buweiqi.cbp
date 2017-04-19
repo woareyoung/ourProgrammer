@@ -62,7 +62,6 @@
 		<Unit filename="AI2_Source/score/tirangleScan.cpp" />
 		<Unit filename="AI3_Header/AI3.h" />
 		<Unit filename="AI3_Source/GetPosition.cpp" />
-		<Unit filename="StdAfx.cpp" />
 		<Unit filename="StdAfx.h" />
 		<Unit filename="chessBoard_Header/AI.h" />
 		<Unit filename="chessBoard_Header/Chess.h" />
