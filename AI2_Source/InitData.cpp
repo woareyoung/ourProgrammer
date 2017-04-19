@@ -68,3 +68,4 @@ void AI2::copyArray(int isExist[10][10])
 		}
 	}
 }
+

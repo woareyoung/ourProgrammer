@@ -16,6 +16,9 @@ void ChessBoard::ReStart()
     Start = false;
     Player1isAI = false;
     Player2isAI = false;
+    ai1.GetPosition(line, column, 0);
+    ai2.GetPosition(line, column, 0);
+    ai3.GetPosition(line, column, 0);
     line = 0;
     column = 0;
 

@@ -325,28 +325,28 @@
 1491830662 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
-1492523630 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
+1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
 	"../chessBoard_Header/AI.h"
 	"AIPlayer.h"
 	<vector>
 	"../StdAfx.h"
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\aiplayer.h
+1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492522840 d:\codeblocksproject\codeblocksproject\ourprogrammer\stdafx.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\stdafx.h
 	<tchar.h>
 	<windows.h>
 	<conio.h>
 
-1492523834 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\functionpart.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\functionpart.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
+1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
 	<time.h>
 	<stdlib.h>
 	<conio.h>
@@ -354,16 +354,16 @@
 	"PointStyle.h"
 	"Arithmatic.h"
 
-1492523833 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1492523833 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 	"../AI1_Header/Arithmatic.h"
 
-1492523833 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\updatescore.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\updatescore.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
@@ -404,7 +404,7 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1492523394 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\recursion.cpp
@@ -419,16 +419,16 @@
 
 1491890367 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard\aimessage.h
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_header\ai3.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_header\ai3.h
 	"../chessBoard_Header/AI.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\deadcheck.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\deadcheck.cpp
 	"../AI1_Header/AI1.h"
 
 1491395484 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\getposition.cpp
 	"../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_source\getposition.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_source\getposition.cpp
 	"../AI3_Header/AI3.h"
 
 1491626779 source:c:\users\notzuonotdied\desktop\buweiqi\ai1_source\deadcheck.cpp
@@ -589,46 +589,46 @@
 1490525945 source:c:\users\super\desktop\buweiqi\util\recursion.cpp
 	"../chessBoard/Chess.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\initdata.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
 1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\newscore\initdata.cpp
 	"../../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\newscore\newevalution.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\newscore\newevalution.cpp
 	"../../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score.cpp
 	"../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\cornerscan.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\cornerscan.cpp
 	"../../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\crossshapescan.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\isgo2dead.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
-1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\tiranglescan.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1491890635 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\priority.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\pointstyle.h
+1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\pointstyle.h
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\arithmatic.h
+1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\arithmatic.h
 
-1492523834 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\rateresetscore.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\rateresetscore.cpp
 	"../AI1_Header/AI1.h"
 
-1492522840 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\ai.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\ai.h
 
-1492523393 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\initdata.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\initdata.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492522840 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chessboard.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chessboard.h
 	"../stdafx.h"
 	"WindowSize.h"
 	"WindowHwnd.h"
@@ -640,49 +640,49 @@
 	"../AI3_Header/AI3.h"
 	<tchar.h>
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowsize.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowsize.h
 	"windows.h"
 
-1492529426 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowhwnd.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\windowhwnd.h
 	"../stdafx.h"
 
-1492523041 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\playerinfo.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\playerinfo.h
 
-1492522840 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chess.h
+1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chess.h
 
-1492523393 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintboard.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintboard.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 	"../stdafx.h"
 
-1492523394 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintchess.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintchess.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492523394 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\painttimer.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\painttimer.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492529730 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\repaint.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\repaint.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492564519 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\restart.cpp
+1492603336 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\restart.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492523630 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\util\int2string.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\util\int2string.cpp
 	"../../ChessBoard_Header/ChessBoard.h"
 
-1492523630 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\util\recursion.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\util\recursion.cpp
 	"../../ChessBoard_Header/Chess.h"
 
-1492530134 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\main.cpp
+1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\main.cpp
 	"stdafx.h"
 	"ChessBoard_Header/ChessBoard.h"
 	"AI1_Header/AI1.h"
 	"AI2_Header/AI2.h"
 	"AI3_Header/AI3.h"
 
-1492523835 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\calculateperf.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\calculateperf.cpp
 	"../../AI1_Header/AI1.h"
 
-1492523835 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\forecast.cpp
+1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\forecast.cpp
 	"../../AI1_Header/AI1.h"
 
 1492577750 source:d:\buweiqi\ai1_source\arithmaticcore\calculateperf.cpp
@@ -712,7 +712,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1492578595 source:d:\buweiqi\ai1_source\getposition.cpp
+1492578851 source:d:\buweiqi\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
@@ -728,10 +728,10 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1491736552 source:d:\buweiqi\ai2_source\initdata.cpp
+1492585507 source:d:\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
-1492578550 d:\buweiqi\ai2_header\ai2.h
+1492600037 d:\buweiqi\ai2_header\ai2.h
 	"../chessBoard_Header/AI.h"
 	"AIPlayer.h"
 	<vector>
@@ -740,13 +740,13 @@
 1491616661 d:\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492578582 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
+1492600201 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1491627658 source:d:\buweiqi\ai2_source\newscore\initdata.cpp
 	"../../AI2_Header/AI2.h"
 
-1492577750 source:d:\buweiqi\ai2_source\newscore\newevalution.cpp
+1492600072 source:d:\buweiqi\ai2_source\newscore\newevalution.cpp
 	"../../AI2_Header/AI2.h"
 
 1491628521 source:d:\buweiqi\ai2_source\score.cpp
@@ -758,13 +758,13 @@
 1492577912 source:d:\buweiqi\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492577750 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
+1492588007 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
 1492577750 source:d:\buweiqi\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
 
-1491628524 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
+1492586411 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1491626779 source:d:\buweiqi\ai3_source\getposition.cpp
@@ -773,7 +773,7 @@
 1492577750 d:\buweiqi\ai3_header\ai3.h
 	"../chessBoard_Header/AI.h"
 
-1492578219 source:d:\buweiqi\chessboard_source\initdata.cpp
+1492586125 source:d:\buweiqi\chessboard_source\initdata.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492577750 d:\buweiqi\chessboard_header\chessboard.h

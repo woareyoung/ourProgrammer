@@ -53,7 +53,6 @@
 		<Unit filename="AI2_Source/InitData.cpp" />
 		<Unit filename="AI2_Source/MaxandMinFunction.cpp" />
 		<Unit filename="AI2_Source/Score.cpp" />
-		<Unit filename="AI2_Source/newScore/InitData.cpp" />
 		<Unit filename="AI2_Source/newScore/newEvalution.cpp" />
 		<Unit filename="AI2_Source/score/cornerScan.cpp" />
 		<Unit filename="AI2_Source/score/crossShapeScan.cpp" />
