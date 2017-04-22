@@ -22,7 +22,7 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     {
         cross[line][column] = onTurn == isWhite ? isBlack : isWhite;
         chessStatus[line][column] = true;
-        chessScore[line][column] = min;
+        chessScore[line][column] = minLimit;
         copyArray(cross);
     }
     turn2Who = onTurn;
@@ -32,7 +32,7 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     line = temp/100;
     column = temp%100;
     // 将计算出的位置的分数设为最小值
-    chessScore[line][column] = min;
+    chessScore[line][column] = minLimit;
     cross[line][column] = PlayerId;
 
     _cprintf("**************This is chess score*******(%d, %d)***********\n", line, column);
@@ -40,7 +40,7 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     {
         for(int j = 1; j < 10; j++)
         {
-            if (chessScore[i][j] == min)
+            if (chessScore[i][j] == minLimit)
             {
                 _cprintf("%d\t",0);
             }
@@ -102,7 +102,7 @@ int AI2::MaxScore()
     {
         for (int j = 1; j < 10; j++)
         {
-            if (chessScore[i][j] == min || cross[i][j] != noChess)
+            if (chessScore[i][j] == minLimit || cross[i][j] != noChess)
             {
                 continue;
             }
@@ -119,7 +119,6 @@ int AI2::MaxScore()
             }
         }
     }
-    bool f1;
     if (tempLine == 0 && 0 == tempColumn)
     {
         //_cprintf("-------------no FOUND(%d, %d)-------------\n", tempLine, tempColumn);
@@ -127,7 +126,7 @@ int AI2::MaxScore()
         {
             for (int j = 1; j < 10; j++)
             {
-                if (cross[i][j] != noChess && chessScore[i][j] == min)
+                if (cross[i][j] != noChess && chessScore[i][j] == minLimit)
                 {
                     continue;
                 }
@@ -152,7 +151,6 @@ B:
 int AI2::MinScore()
 {
     bool isFirst = true;
-    int temp;
     int tempLine;
     int tempColumn;
     // 输出分数
@@ -160,7 +158,7 @@ int AI2::MinScore()
     {
         for (int j = 1; j < 10; j++)
         {
-            if (chessScore[i][j] == min || cross[i][j] != noChess)
+            if (chessScore[i][j] == minLimit || cross[i][j] != noChess)
             {
                 continue;
             }

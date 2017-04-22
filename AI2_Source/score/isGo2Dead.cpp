@@ -73,100 +73,25 @@ void AI2::isGo2Dead(int type)
     }
 }
 
+DIRECTION direction_8[] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
 /**
  * [AI2::isGo2Dead 判断着子点是否有自杀倾向]
  */
 bool AI2::isGo2Dead(int line, int column,int type)
 {
-    int stack[81][2] = {0}; //存储栈元素，0为x,1为y
-    int top = 0;// 栈顶元素
-    int treated = 0;// 处理过的元素
-    int tempcross[10][10];
-    for (int i = 0; i < 10; i++)
+    resetStatus();
+    if(line > 0 && line < 10 && column > 0 && column < 10 &&
+        cross[line][column] == type && !chessStatus[line][column])
     {
-        for (int j = 0; j < 10; j++)
-        {
-            tempcross[i][j] = cross[i][j];
+        chessStatus[line][column] = true;
+        for(int i = 0; i < 4; i++) {
+            isGo2Dead(line + direction_8[i].x_offset, column + direction_8[i].y_offset, type);
         }
+    } else if (cross[line][column] == noChess) {
+        return true;
+    } else if (line < 1 && line > 9 && column < 1 && column > 9) {
+        return false;
     }
-    tempcross[line][column] = type;
-
-    // 重置所有的状态位
-    bool tempChess[10][10]= {0}; //用来存储当前位置的子是否被处理过
-    for (int i = 1; i < 10; i++)
-    {
-        for (int j = 1; j < 10; j++)
-        {
-            if (tempcross[i][j] != type || !tempChess[i][j])
-            {
-                continue;
-            }
-            tempChess[i][j] = true;
-            // 初始化栈顶元素
-            stack[top][0] = i;
-            stack[top][1] = j;
-            top++;
-            // 当栈顶元素的数量级小于处理过的元素的数量的时候，循环终止
-            while(treated < top)
-            {
-                int x = stack[treated][0];
-                int y = stack[treated][1];
-                //如果当前元素上边有未处理元素，且该元素与当前元素同类，则将其入栈
-                if(x > 0 && !tempChess[x-1][y] && type == tempcross[x-1][y])
-                {
-                    tempChess[x-1][y] = true;//标记当前位置的子已经被处理过
-                    stack[top][0] = x-1;
-                    stack[top][1] = y;
-                    top++;
-                }
-                //如果当前元素下边有未处理元素，且该元素与当前元素同类，则将其入栈
-                if(x < 10 && !tempChess[x+1][y] && type == tempcross[x+1][y])
-                {
-                    tempChess[x+1][y] = true;//标记当前位置的子已经被处理过
-                    stack[top][0] = x+1;
-                    stack[top][1] = y;
-                    top++;
-                }
-                //如果当前元素左边有未处理元素，且该元素与当前元素同类，则将其入栈
-                if(y > 0 && !tempChess[x][y-1] && type == tempcross[x][y-1])
-                {
-                    tempChess[x][y-1] = true;//标记当前位置的子已经被处理过
-                    stack[top][0] = x;
-                    stack[top][1] = y-1;
-                    top++;
-                }
-                //如果当前元素右边有未处理元素，且该元素与当前元素同类，则将其入栈
-                if(y < 10 && !tempChess[x][y+1] && type == tempcross[x][y+1])
-                {
-                    tempChess[x][y+1] = true;//标记当前位置的子已经被处理过
-                    stack[top][0] = x;
-                    stack[top][1] = y+1;
-                    top++;
-                }
-                treated++;//处理下一个栈元素
-            }
-            // 假如是自杀行为，就返回真
-            if(top > 0 && IsDeadChess(stack,top,type))
-            {
-                for(int i = 0; i < top; i++)
-                {
-                    if (stack[i][0] == line && stack[i][1] == column) {
-                        return true;
-                    } else if (stack[i][0] == line - 1 && stack[i][1] == column) {
-                        return true;
-                    } else if (stack[i][0] == line + 1 && stack[i][1] == column) {
-                        return true;
-                    } else if (stack[i][0] == line && stack[i][1] == column - 1) {
-                        return true;
-                    } else if (stack[i][0] == line && stack[i][1] == column + 1) {
-                        return true;
-                    }
-                }
-            }
-            top=treated=0;//清空
-        }
-    }
-    return false;
 }
 
 /**
@@ -259,7 +184,7 @@ void AI2::AddDeadChessScore(int stack[][2],int len)
 {
     for(int i=0; i<len; i++)
     {
-        chessScore[stack[i][0]][stack[i][1]] = min;
+        chessScore[stack[i][0]][stack[i][1]] = minLimit;
         chessStatus[stack[i][0]][stack[i][1]] = true;
         _cprintf("----------dead chess position:  line=%d, column=%d\n", stack[i][0], stack[i][1]);
     }

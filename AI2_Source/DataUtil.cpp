@@ -1,10 +1,5 @@
 #include "../AI2_Header/AI2.h"
 
-AI2::AI2()
-{
-	initAllArray();
-}
-
 void AI2::initAllArray() {
     this->chessCount = 0;
     this->PlayerId = isWhite;
@@ -70,3 +65,11 @@ void AI2::copyArray(int isExist[10][10])
 	}
 }
 
+
+void AI2::resetStatus() {
+    for (int i = 0; i < 10; i++){
+        for (int j = 0; j < 10; j++){
+           chessStatus[i][j] = false;
+        }
+    }
+}

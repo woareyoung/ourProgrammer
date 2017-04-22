@@ -28,12 +28,12 @@ void AI2::JudgeCShape(int line,int column)
 	// 已经形成了十字围杀了
 	if (cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
 		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
-		chessScore[line][column] = min;
+		chessScore[line][column] = minLimit;
 		chessStatus[line][column] = true;
  	}
  	if (cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
-		chessScore[line][column] = min;
+		chessScore[line][column] = minLimit;
 		chessStatus[line][column] = true;
  	}
  	// 缺一形成十字围杀-- 白子-- 中间没有棋子的情况
@@ -88,22 +88,22 @@ void AI2::JudgeCShape(int line,int column)
  	if (cross[line][column] != noChess &&
  		cross[line - 1][column] == noChess && cross[line + 1][column] == isWhite
 		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
-		chessScore[line - 1][column] = min;
+		chessScore[line - 1][column] = minLimit;
 		chessStatus[line - 1][column] = true;
  	} else if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == isWhite && cross[line + 1][column] == noChess
 		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == isWhite) {
-		chessScore[line + 1][column] = min;
+		chessScore[line + 1][column] = minLimit;
 		chessStatus[line + 1][column] = true;
  	} else if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
 		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isWhite) {
-		chessScore[line][column - 1] = min;
+		chessScore[line][column - 1] = minLimit;
 		chessStatus[line][column - 1] = true;
  	} else if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == isWhite && cross[line + 1][column] == isWhite
 		&& cross[line][column - 1] == isWhite && cross[line][column + 1] == noChess) {
-		chessScore[line][column + 1] = min;
+		chessScore[line][column + 1] = minLimit;
 		chessStatus[line][column + 1] = true;
  	}
  	// 缺一形成十字围杀-- 黑子-- 中间有棋子的情况
@@ -111,22 +111,22 @@ void AI2::JudgeCShape(int line,int column)
  	if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == noChess && cross[line + 1][column] == isBlack
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
-		chessScore[line - 1][column] = min;
+		chessScore[line - 1][column] = minLimit;
 		chessStatus[line - 1][column] = true;
  	} else if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == isBlack && cross[line + 1][column] == noChess
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == isBlack) {
-		chessScore[line + 1][column] = min;
+		chessScore[line + 1][column] = minLimit;
 		chessStatus[line + 1][column] = true;
  	} else if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
 		&& cross[line][column - 1] == noChess && cross[line][column + 1] == isBlack) {
-		chessScore[line][column - 1] = min;
+		chessScore[line][column - 1] = minLimit;
 		chessStatus[line][column - 1] = true;
  	} else if (cross[line][column] != noChess &&
  		 cross[line - 1][column] == isBlack && cross[line + 1][column] == isBlack
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
-		chessScore[line][column + 1] = min;
+		chessScore[line][column + 1] = minLimit;
 		chessStatus[line][column + 1] = true;
  	}
 

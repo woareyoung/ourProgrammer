@@ -62,7 +62,7 @@ void AI2::RTirangle()
             // 三角三子
             else
             {
-                cross[i+1][9] = min;
+                cross[i+1][9] = minLimit;
                 chessStatus[i+1][9] = true;
             }
         }
@@ -71,17 +71,17 @@ void AI2::RTirangle()
             // 三角双子
             if (cross[i][9] == turn2Who && cross[i][9] == cross[i+1][8] && cross[i+2][9] == noChess)
             {
-                chessScore[i+2][9] = min;
+                chessScore[i+2][9] = minLimit;
                 chessStatus[i+2][9] = true;
             }
             else if (cross[i][9] == turn2Who && cross[i+1][8] == noChess && cross[i][9]== cross[i+2][9] )
             {
-                chessScore[i+1][8] = min;
+                chessScore[i+1][8] = minLimit;
                 chessStatus[i+1][8] = true;
             }
             else if (cross[i][9] == noChess && cross[i+1][8] == turn2Who && cross[i+1][8] == cross[i+2][9])
             {
-                chessScore[i][9] = min;
+                chessScore[i][9] = minLimit;
                 chessStatus[i][9] = true;
             }
         }
@@ -139,7 +139,7 @@ void AI2::LTirangle()
             // 三角三子
             else
             {
-                cross[i+1][1] = min;
+                cross[i+1][1] = minLimit;
                 chessStatus[i+1][1] = true;
             }
         }
@@ -148,17 +148,17 @@ void AI2::LTirangle()
             // 三角双子
             if (cross[i][1] == turn2Who && cross[i][1] == cross[i+1][2] && cross[i+2][1] == noChess)
             {
-                chessScore[i+2][1] = min;
+                chessScore[i+2][1] = minLimit;
                 chessStatus[i+2][1] = true;
             }
             else if (cross[i][1] == turn2Who && cross[i+1][2] == noChess && cross[i][1] == cross[i+2][1])
             {
-                chessScore[i+1][2] = min;
+                chessScore[i+1][2] = minLimit;
                 chessStatus[i+1][2] = true;
             }
             else if (cross[i][1] == noChess && cross[i+1][2] == turn2Who && cross[i+1][2] == cross[i+2][1])
             {
-                chessScore[i][1] = min;
+                chessScore[i][1] = minLimit;
                 chessStatus[i][1]= true;
             }
         }
@@ -215,7 +215,7 @@ void AI2::UTirangle()
             } // 三角三子
             else
             {
-                cross[1][i+1] = min;
+                cross[1][i+1] = minLimit;
                 chessStatus[1][i+1] = true;
             }
         }
@@ -224,17 +224,17 @@ void AI2::UTirangle()
             // 三角双子
             if (cross[2][i+1] == turn2Who && cross[1][i] == cross[2][i+1] && cross[1][i+2] == noChess)
             {
-                chessScore[1][i+2] = min;
+                chessScore[1][i+2] = minLimit;
                 chessStatus[1][i+2] = true;
             }
             else if (cross[1][i] == turn2Who && cross[2][i+1] == noChess && cross[1][i] == cross[1][i+2])
             {
-                chessScore[2][i+1] = min;
+                chessScore[2][i+1] = minLimit;
                 chessStatus[2][i+1] = true;
             }
             else if (cross[1][i] == noChess && cross[2][i+1] == turn2Who && cross[1][i+2] == cross[2][i+1])
             {
-                chessScore[1][i] = min;
+                chessScore[1][i] = minLimit;
                 chessStatus[1][i] = true;
             }
         }
@@ -292,7 +292,7 @@ void AI2::DTirangle()
             // 三角三子
             else
             {
-                cross[9][i+1] = min;
+                cross[9][i+1] = minLimit;
                 chessStatus[9][i+1] = true;
             }
         }
@@ -302,19 +302,19 @@ void AI2::DTirangle()
             // 三角双子
             if (cross[9][i] == turn2Who && cross[9][i] == cross[8][i+1] && cross[9][i+2] == noChess)
             {
-                chessScore[9][i+2] = min;
+                chessScore[9][i+2] = minLimit;
                 chessStatus[9][i+2] = true;
                 _cprintf("**************DEAD TRI********(%d,%d)**********\n",9,i+2);
             }
             else if (cross[9][i] == turn2Who && cross[8][i+1] == noChess && cross[9][i] == cross[9][i+2])
             {
-                chessScore[8][i+1] = min;
+                chessScore[8][i+1] = minLimit;
                 chessStatus[8][i+1] = true;
                 _cprintf("**************DEAD TRI********(%d,%d)**********\n",8,i+1);
             }
             else if (cross[9][i] == noChess && cross[8][i+1] == turn2Who && cross[8][i+1] == cross[9][i+2])
             {
-                chessScore[9][i] = min;
+                chessScore[9][i] = minLimit;
                 chessStatus[9][i] = true;
                 _cprintf("**************DEAD TRI********(%d,%d)**********\n",9,i);
             }

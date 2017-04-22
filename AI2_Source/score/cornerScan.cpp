@@ -29,10 +29,10 @@ void AI2::ACScan(int line,int column, int line1,int column1,int line2,int column
 	if (cross[line][column] == noChess) {
 		// 边角已经形成包围圈的情况
 		if (cross[line1][column1] == isBlack && cross[line2][column2] == isBlack) {
-			chessScore[line][column] = min;
+			chessScore[line][column] = minLimit;
 			chessStatus[line][column] = true;
 		} else if (cross[line1][column1] == isWhite && cross[line2][column2] == isWhite) {
-			chessScore[line][column] = min;
+			chessScore[line][column] = minLimit;
 			chessStatus[line2][column2] = true;
 		}
 		// 边角两个位置单子的情况

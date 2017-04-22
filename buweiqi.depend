@@ -728,19 +728,18 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1492604770 source:d:\buweiqi\ai2_source\initdata.cpp
+1492783312 source:d:\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
-1492604759 d:\buweiqi\ai2_header\ai2.h
+1492784550 d:\buweiqi\ai2_header\ai2.h
 	"../chessBoard_Header/AI.h"
 	"AIPlayer.h"
-	<vector>
 	"../StdAfx.h"
 
 1491616661 d:\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492605540 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
+1492784498 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1491627658 source:d:\buweiqi\ai2_source\newscore\initdata.cpp
@@ -749,22 +748,22 @@
 1492600072 source:d:\buweiqi\ai2_source\newscore\newevalution.cpp
 	"../../AI2_Header/AI2.h"
 
-1491628521 source:d:\buweiqi\ai2_source\score.cpp
+1492782141 source:d:\buweiqi\ai2_source\score.cpp
 	"../AI2_Header/AI2.h"
 
-1491628524 source:d:\buweiqi\ai2_source\score\cornerscan.cpp
+1492783038 source:d:\buweiqi\ai2_source\score\cornerscan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492577912 source:d:\buweiqi\ai2_source\score\crossshapescan.cpp
+1492783070 source:d:\buweiqi\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492604337 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
+1492783101 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
-1492577750 source:d:\buweiqi\ai2_source\score\priority.cpp
+1492781417 source:d:\buweiqi\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
 
-1492586411 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
+1492783143 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1491626779 source:d:\buweiqi\ai3_source\getposition.cpp
@@ -773,7 +772,7 @@
 1492577750 d:\buweiqi\ai3_header\ai3.h
 	"../chessBoard_Header/AI.h"
 
-1492586125 source:d:\buweiqi\chessboard_source\initdata.cpp
+1492781489 source:d:\buweiqi\chessboard_source\initdata.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492602179 d:\buweiqi\chessboard_header\chessboard.h
@@ -798,11 +797,11 @@
 
 1492577750 d:\buweiqi\chessboard_header\chess.h
 
-1492602402 source:d:\buweiqi\chessboard_source\paintboard.cpp
+1492781527 source:d:\buweiqi\chessboard_source\paintboard.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 	"../stdafx.h"
 
-1492601687 source:d:\buweiqi\chessboard_source\paintchess.cpp
+1492781908 source:d:\buweiqi\chessboard_source\paintchess.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492577750 source:d:\buweiqi\chessboard_source\painttimer.cpp
@@ -820,7 +819,7 @@
 1492602508 source:d:\buweiqi\chessboard_source\winorlose.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492577750 source:d:\buweiqi\chessboard_source\restart.cpp
+1492606042 source:d:\buweiqi\chessboard_source\restart.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492577750 source:d:\buweiqi\main.cpp
@@ -829,4 +828,7 @@
 	"AI1_Header/AI1.h"
 	"AI2_Header/AI2.h"
 	"AI3_Header/AI3.h"
+
+1492784166 source:d:\buweiqi\ai2_source\datautil.cpp
+	"../AI2_Header/AI2.h"
 

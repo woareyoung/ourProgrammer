@@ -3,8 +3,6 @@
 
 #include "../chessBoard_Header/AI.h"
 #include "AIPlayer.h"
-#include <vector>
-using namespace std;
 #include "../StdAfx.h"
 
 #define cornerScore 120 // 边角分数
@@ -18,8 +16,8 @@ using namespace std;
 #define crossShaped4 160 // 十字分数
 #define goodTigersMouth 120  // 优虎口，表示被包围的敌方棋子中只有1~2个
 #define badTigersMouth -120 // 劣虎口，表示被包围圈内都是敌方棋子
-#define max 32767
-#define min -32767
+#define maxLimit 32767
+#define minLimit -32767
 
 #define isParent 1
 #define isSiblings 2
@@ -27,45 +25,54 @@ using namespace std;
 #define isMax 0
 #define isMin 1
 
+typedef struct tagDIRECTION
+{
+    int x_offset;
+    int y_offset;
+} DIRECTION;
+
 class AI2 : public AIPlayer, public AI
 {
 private:
-     //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
+    //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
     //“0”表示没有棋子，“1”表示黑子，“2”表示白子
-	int cross[10][10];
+    int cross[10][10];
     //判断胜负时用于标记有没有遍历过
-	bool chessStatus[10][10];
+    bool chessStatus[10][10];
     // 分数
-	int chessScore[10][10];
+    int chessScore[10][10];
     // 边角数组
-	int cornerArray[12];
+    int cornerArray[12];
 
     int chessCount;
-	std::vector<int> vec;
 public:
-    AI2();
+    AI2()
+    {
+        initAllArray();
+    }
     // 获取最后着子的位置
     void GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/);
 
     // 对角
-	void AcrossCorners();
-	void ACScan(int line,int column,int line1,int column1,int line2,int column2);
+    void AcrossCorners();
+    void ACScan(int line,int column,int line1,int column1,int line2,int column2);
 
-  	// 三角
-	void Tirangle();
-	void UTirangle();
-	void LTirangle();
-	void DTirangle();
-	void RTirangle();
+    // 三角
+    void Tirangle();
+    void UTirangle();
+    void LTirangle();
+    void DTirangle();
+    void RTirangle();
 
- 	// 十字
-	void chessStatusShaped();
-	void JudgeCShape(int line,int column);
+    // 十字
+    void chessStatusShaped();
+    void JudgeCShape(int line,int column);
 
     // 是否构成死棋
-	void isGo2Dead(int type);
-	bool isGo2Dead(int line, int column, int type);
-	void AddDeadChessScore(int stack[][2], int len);
+    void isGo2Dead(int type);
+    void resetStatus();
+    bool isGo2Dead(int line, int column, int type);
+    void AddDeadChessScore(int stack[][2], int len);
     bool IsDeadChess(int stack[][2], int len, int type);
 
     int priority_score(int scoreBase, int scorePRI, int type);
@@ -79,21 +86,12 @@ public:
     void initAllArray();
 
     //
-	bool isBesieged(int line, int column);
-	bool diffDirect(int line, int column);
-	void Revalute();
-	void JudgeScoreType();
-	void addREScore(int score);
-	int maxandmin(int depth);
-	int MaxScore();
-	int MinScore();
-	int singleLayer();
-
-    ///判断是否是死棋位置   集中在DeadCheck.cpp文件中
-    bool DeadCheck(int line, int column, int who);
-    bool Besieg(int RivalLine, int RivalColumn, int player, int rival);
-    void reduceRecursionTimes();
-    void setStatus(int RivalLine,int RivalColumn);
+    void Revalute();
+    void JudgeScoreType();
+    int maxandmin(int depth);
+    int MaxScore();
+    int MinScore();
+    int singleLayer();
 
 };
 
