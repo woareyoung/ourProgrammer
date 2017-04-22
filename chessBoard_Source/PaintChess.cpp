@@ -59,8 +59,9 @@ void ChessBoard::PaintChess()
         PaintAChess(isBlack);
         //若对方是电脑，则先判断有没有分出胜负
         bool win = WinOrLose();
-        if(Player2isAI == true && !win) PaintChess();//若对方是电脑，则递归
-        else if(win)
+        if(Player2isAI == true && !win && line != 0 && column != 0)
+            PaintChess();//若对方是电脑，则递归
+        else if(win || line == 0 || column == 0)
         {
             Winner = 2;
             ReStart();
@@ -81,9 +82,9 @@ void ChessBoard::PaintChess()
         PaintAChess(isWhite);
         //若对方是电脑，则先判断有没有分出胜负
         bool win = WinOrLose();
-        if(Player1isAI == true && !win)
+        if(Player1isAI == true && !win && line != 0 && column != 0)
             PaintChess();//若对方是电脑，则递归
-        else if(win)
+        else if(win || line == 0 || column == 0)
         {
             Winner = 1;
             ReStart();

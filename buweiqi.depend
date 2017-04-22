@@ -739,7 +739,7 @@
 1491616661 d:\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492837967 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
+1492838298 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1491627658 source:d:\buweiqi\ai2_source\newscore\initdata.cpp
@@ -763,7 +763,7 @@
 1492781417 source:d:\buweiqi\ai2_source\score\priority.cpp
 	"../../AI2_Header/AI2.h"
 
-1492837427 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
+1492838164 source:d:\buweiqi\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1491626779 source:d:\buweiqi\ai3_source\getposition.cpp
@@ -801,7 +801,7 @@
 	"../ChessBoard_Header/ChessBoard.h"
 	"../stdafx.h"
 
-1492781908 source:d:\buweiqi\chessboard_source\paintchess.cpp
+1492839101 source:d:\buweiqi\chessboard_source\paintchess.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492577750 source:d:\buweiqi\chessboard_source\painttimer.cpp
