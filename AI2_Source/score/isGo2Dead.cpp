@@ -79,17 +79,30 @@ DIRECTION direction_8[] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
  */
 bool AI2::isGo2Dead(int line, int column,int type)
 {
-    resetStatus();
-    if(line > 0 && line < 10 && column > 0 && column < 10 &&
-        cross[line][column] == type && !chessStatus[line][column])
-    {
-        chessStatus[line][column] = true;
-        for(int i = 0; i < 4; i++) {
-            isGo2Dead(line + direction_8[i].x_offset, column + direction_8[i].y_offset, type);
-        }
-    } else if (cross[line][column] == noChess) {
+    resetGo2DeadStatus();
+    if(FloodSeedFill(line,column, isBlack) && cross[line][column] == noChess /* || FloodSeedFill(i,j,isWhite)*/) {
         return true;
-    } else if (line < 1 && line > 9 && column < 1 && column > 9) {
+    }
+    return false;
+}
+
+bool AI2::FloodSeedFill(int line, int column,int type)
+{
+    if(line > 0 && line < 10 && column > 0 && column < 10 &&
+            cross[line][column] == type && !isGo2DeadStatus[line][column])
+    {
+        isGo2DeadStatus[line][column] = true;
+        for(int i = 0; i < 4; i++)
+        {
+            FloodSeedFill(line + direction_8[i].x_offset, column + direction_8[i].y_offset, type);
+        }
+    }
+    else if (cross[line][column] == noChess)
+    {
+        return true;
+    }
+    else
+    {
         return false;
     }
 }
@@ -185,7 +198,6 @@ void AI2::AddDeadChessScore(int stack[][2],int len)
     for(int i=0; i<len; i++)
     {
         chessScore[stack[i][0]][stack[i][1]] = minLimit;
-        chessStatus[stack[i][0]][stack[i][1]] = true;
         _cprintf("----------dead chess position:  line=%d, column=%d\n", stack[i][0], stack[i][1]);
     }
 }

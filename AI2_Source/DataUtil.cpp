@@ -6,7 +6,6 @@ void AI2::initAllArray() {
 	for (int i = 0;i < 10;i++) {
 		for (int j = 0;j < 10;j++) {
 			cross[i][j] = 0;
-			chessStatus[i][j] = false;
 		}
 	}
 	initChessScore();
@@ -40,36 +39,19 @@ void AI2::initChessScore()
 		{0,1,2,2,2,2,2,2,2,1},
 		{0,1,1,1,1,1,1,1,1,1}
 	};
-	for (int i = 1; i < 10; i++)
+	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 1; j < 10; j++)
+		for (int j = 0; j < 10; j++)
 		{
 			chessScore[i][j] = temp[i][j];
 		}
 	}
 }
 
-void AI2::copyArray(int isExist[10][10])
-{
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			//this->cross[i][j] = isExist[i][j];
-			if (isExist[i][j] != noChess) {
-				this->chessStatus[i][j] = true;
-			} else {
-				this->chessStatus[i][j] = false;
-			}
-		}
-	}
-}
-
-
-void AI2::resetStatus() {
+void AI2::resetGo2DeadStatus() {
     for (int i = 0; i < 10; i++){
         for (int j = 0; j < 10; j++){
-           chessStatus[i][j] = false;
+           isGo2DeadStatus[i][j] = false;
         }
     }
 }

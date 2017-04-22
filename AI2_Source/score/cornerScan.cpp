@@ -30,31 +30,23 @@ void AI2::ACScan(int line,int column, int line1,int column1,int line2,int column
 		// 边角已经形成包围圈的情况
 		if (cross[line1][column1] == isBlack && cross[line2][column2] == isBlack) {
 			chessScore[line][column] = minLimit;
-			chessStatus[line][column] = true;
 		} else if (cross[line1][column1] == isWhite && cross[line2][column2] == isWhite) {
 			chessScore[line][column] = minLimit;
-			chessStatus[line2][column2] = true;
 		}
 		// 边角两个位置单子的情况
 		else if (cross[line1][column1] == noChess && cross[line2][column2] == isWhite){
-			chessStatus[line1][column1] = true;
 			chessScore[line1][column1] += cornerScoreFull;
 		} else if (cross[line1][column1] == isWhite && cross[line2][column2] == noChess) {
-			chessStatus[line2][column2] = true;
 			chessScore[line2][column2] += cornerScoreFull;
 		} else if (cross[line1][column1] == isBlack && cross[line2][column2] == noChess) {
-			chessStatus[line2][column2] = true;
 			chessScore[line2][column2] += cornerScoreFull;
 		} else if (cross[line1][column1] == noChess && cross[line2][column2] == isBlack) {
-			chessStatus[line1][column1] = true;
 			chessScore[line1][column1] += cornerScoreFull;
 		}
 		// 边角构成的三角行上面一个棋子都没有，这种情况的话，需要加分
 		else if (cross[line1][column1] == noChess && cross[line2][column2] == noChess) {
-			chessStatus[line1][column1] = true;
 			chessScore[line1][column1] += cornerScore;
 			chessScore[line2][column2] += cornerScore;
-			chessStatus[line2][column2] = true;
 		}
 
     }// 注意：边角有子无意义

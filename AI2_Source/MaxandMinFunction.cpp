@@ -7,26 +7,24 @@
  * @param onTurn 		当前轮到的玩家的ID
  * @param isExist[10][10]		棋盘着子情况数组
  */
-void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
+void AI2::GetPosition(int& line,int& column,int onTurn)
 {
     //用于响应主窗口对AI的检查
     if(onTurn == 0)
     {
+        // 这里是重新开始游戏的数据重置过程
         line++;
         column++;
+        resetGo2DeadStatus();
         initAllArray();
         return;
     }
-    // 这里需要判断是否有正确传参数进来
-    if (line != 0 && column != 0)
-    {
-        cross[line][column] = onTurn == isWhite ? isBlack : isWhite;
-        chessStatus[line][column] = true;
-        chessScore[line][column] = minLimit;
-        copyArray(cross);
-    }
-    turn2Who = onTurn;
-    Rival = turn2Who == isBlack ? isWhite : isBlack;
+    // 注意传递进来的onTurn参数是对方的，而不是己方的。
+    Rival = (onTurn == isBlack || onTurn == isAI1onTurn) ? isBlack : isWhite;
+    turn2Who = (Rival == isWhite ? isBlack : isWhite);
+    cross[line][column] = Rival;
+    chessScore[line][column] = minLimit;
+
     // 设置遍历的深度
     int temp = maxandmin(1);
     line = temp/100;
@@ -35,19 +33,12 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     chessScore[line][column] = minLimit;
     cross[line][column] = PlayerId;
 
-    _cprintf("**************This is chess score*******(%d, %d)***********\n", line, column);
+    _cprintf("**************This is chess cross*******(%d, %d)***********\n", line, column);
     for(int i = 1; i < 10; i++)
     {
         for(int j = 1; j < 10; j++)
         {
-            if (chessScore[i][j] == minLimit)
-            {
-                _cprintf("%d\t",0);
-            }
-            else
-            {
-                _cprintf("%d\t",chessScore[i][j]);
-            }
+            _cprintf("%d\t",cross[i][j]);
         }
         _cprintf("\n");
     }
@@ -102,7 +93,7 @@ int AI2::MaxScore()
     {
         for (int j = 1; j < 10; j++)
         {
-            if (chessScore[i][j] == minLimit || cross[i][j] != noChess)
+            if (chessScore[i][j] == minLimit || !isGo2Dead(i, j , turn2Who))
             {
                 continue;
             }
@@ -126,7 +117,7 @@ int AI2::MaxScore()
         {
             for (int j = 1; j < 10; j++)
             {
-                if (cross[i][j] != noChess && chessScore[i][j] == minLimit)
+                if (chessScore[i][j] == minLimit || !isGo2Dead(i, j , turn2Who))
                 {
                     continue;
                 }
@@ -140,8 +131,7 @@ int AI2::MaxScore()
         }
     }
 B:
-    _cprintf("-----------count = %d---(%d,%d)-----------\n",this->chessCount,tempLine,tempColumn);
-    cross[tempLine][tempColumn] = turn2Who;
+    //_cprintf("-----------count = %d---(%d,%d)-----------\n",this->chessCount,tempLine,tempColumn);
     return tempLine*100 + tempColumn;
 }
 
@@ -175,7 +165,6 @@ int AI2::MinScore()
             }
         }
     }
-    cross[tempLine][tempColumn] = turn2Who;
     return tempLine*100 + tempColumn;
 }
 /**

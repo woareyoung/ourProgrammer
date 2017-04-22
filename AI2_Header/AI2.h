@@ -37,14 +37,15 @@ private:
     //记录各交叉点的值，数组访问从“1”开始，访问顺序为“先行后列”，
     //“0”表示没有棋子，“1”表示黑子，“2”表示白子
     int cross[10][10];
-    //判断胜负时用于标记有没有遍历过
-    bool chessStatus[10][10];
     // 分数
     int chessScore[10][10];
+    // isGo2Dead标志数组
+    bool isGo2DeadStatus[10][10];
     // 边角数组
     int cornerArray[12];
-
     int chessCount;
+
+    void resetGo2DeadStatus();
 public:
     AI2()
     {
@@ -70,7 +71,7 @@ public:
 
     // 是否构成死棋
     void isGo2Dead(int type);
-    void resetStatus();
+    bool FloodSeedFill(int line, int column,int type);
     bool isGo2Dead(int line, int column, int type);
     void AddDeadChessScore(int stack[][2], int len);
     bool IsDeadChess(int stack[][2], int len, int type);
@@ -81,7 +82,6 @@ public:
     void GoodTigersMouth();
 
     // 初始化数组
-    void copyArray(int isExist[10][10]);
     void initChessScore();
     void initAllArray();
 
@@ -92,7 +92,6 @@ public:
     int MaxScore();
     int MinScore();
     int singleLayer();
-
 };
 
 #endif // AI2_H_INCLUDED
