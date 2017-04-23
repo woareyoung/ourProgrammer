@@ -35,22 +35,22 @@ void AI2::GetPosition(int& line,int& column,int onTurn/*, int isExist[10][10]*/)
     chessScore[line][column] = minLimit;
     cross[line][column] = PlayerId;
 
-    _cprintf("**************This is chess score*******(%d, %d)***********\n", line, column);
-    for(int i = 1; i < 10; i++)
-    {
-        for(int j = 1; j < 10; j++)
-        {
-            if (chessScore[i][j] == minLimit)
-            {
-                _cprintf("%d\t",0);
-            }
-            else
-            {
-                _cprintf("%d\t",chessScore[i][j]);
-            }
-        }
-        _cprintf("\n");
-    }
+//    _cprintf("**************This is chess score*******(%d, %d)***********\n", line, column);
+//    for(int i = 1; i < 10; i++)
+//    {
+//        for(int j = 1; j < 10; j++)
+//        {
+//            if (chessScore[i][j] == minLimit)
+//            {
+//                _cprintf("%d\t",0);
+//            }
+//            else
+//            {
+//                _cprintf("%d\t",chessScore[i][j]);
+//            }
+//        }
+//        _cprintf("\n");
+//    }
 }
 
 /**
@@ -139,8 +139,7 @@ int AI2::MaxScore()
             }
         }
     }
-B:
-    _cprintf("-----------count = %d---(%d,%d)-----------\n",this->chessCount,tempLine,tempColumn);
+//    _cprintf("-----------count = %d---(%d,%d)-----------\n",this->chessCount,tempLine,tempColumn);
     cross[tempLine][tempColumn] = turn2Who;
     return tempLine*100 + tempColumn;
 }

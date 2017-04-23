@@ -28,7 +28,9 @@ public:
 
     ///在WinOrLose.cpp文件中
     bool WinOrLose();//判断胜负
+    bool Check(int OriLine, int OriColumn, int line, int column, int player, int i);//
     bool Besieged(int RivalLine, int RivalColumn, int player, int rival);//判断是否被围死
+    bool CheBesie(int RivalLine, int RivalColumn, int player, int rival, bool &tie);
     ///在ReStart.cpp文件中
     void ReStart();
     ///在RePaint.cpp文件中
@@ -49,6 +51,8 @@ public:
     int column;//下棋位置的列数
 private:
     int CrossCross[10];//画棋盘用的坐标值
+
+    bool Position[4];
 
     ///类型转换 在int2String.cpp文件中
     bool TheFirstNumber;

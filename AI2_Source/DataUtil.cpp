@@ -51,18 +51,18 @@ void AI2::initChessScore()
 
 void AI2::copyArray(int isExist[10][10])
 {
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			//this->cross[i][j] = isExist[i][j];
-			if (isExist[i][j] != noChess) {
-				this->chessStatus[i][j] = true;
-			} else {
-				this->chessStatus[i][j] = false;
-			}
-		}
-	}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		for (int j = 0; j < 10; j++)
+//		{
+//			//this->cross[i][j] = isExist[i][j];
+//			if (isExist[i][j] != noChess) {
+//				this->chessStatus[i][j] = true;
+//			} else {
+//				this->chessStatus[i][j] = false;
+//			}
+//		}
+//	}
 }
 
 

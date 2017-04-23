@@ -101,7 +101,7 @@ void ChessBoard::PaintAChess(int type)
         ShowWindow(TurnToBlack, SW_HIDE);
         ShowWindow(TurnToWhite, SW_SHOW);
         UpdateWindow (TurnToWhite);
-        Round2 = 60;StretchBlt(hdc, CrossCross[column] - ChessDiameter / 2, CrossCross[line] - ChessDiameter / 2, ChessDiameter, ChessDiameter, hdcBuffer, 0, 0, 200, 200, SRCCOPY);//将兼容设备复制到显示设备上
+        Round2 = 60;
     }
     else if (type == isWhite)
     {
