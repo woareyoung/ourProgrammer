@@ -111,7 +111,7 @@ void AI2::JudgeCShape(int line,int column)
 		&& cross[line][column - 1] == isBlack && cross[line][column + 1] == noChess) {
 		chessScore[line][column + 1] = minLimit;
  	}
-
+/*
  	// 缺二形成十字围杀-- 白子-- 中间没有棋子的情况
  	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
  	if (cross[line][column] == noChess &&
@@ -178,6 +178,7 @@ void AI2::JudgeCShape(int line,int column)
 		chessScore[line][column - 1] += priority_score(crossShaped2, crossShaped3, isBlack);
 		chessScore[line][column + 1] += priority_score(crossShaped2, crossShaped3, isBlack);
  	}
+ 	*/
  	// 缺三形成十字围杀
  	// ----------------------这里需要添加优先级，应该是以博弈树为阶层未标准
  	// 这玩意没有意义了吧，感觉

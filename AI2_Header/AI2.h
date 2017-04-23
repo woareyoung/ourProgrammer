@@ -44,6 +44,7 @@ private:
     // 边角数组
     int cornerArray[12];
     int chessCount;
+    bool isFinal;
 
     void resetGo2DeadStatus();
 public:
@@ -72,9 +73,14 @@ public:
     // 是否构成死棋
     void isGo2Dead(int type);
     bool FloodSeedFill(int line, int column,int type);
+    bool hasKill(int line, int column, int type);
     bool isGo2Dead(int line, int column, int type);
     void AddDeadChessScore(int stack[][2], int len);
     bool IsDeadChess(int stack[][2], int len, int type);
+
+    void setStatus(int RivalLine,int RivalColumn);
+    void reduceRecursionTimes();
+    bool Besieg(int RivalLine, int RivalColumn, int player, int rival);
 
     int priority_score(int scoreBase, int scorePRI, int type);
 
@@ -90,7 +96,9 @@ public:
     void JudgeScoreType();
     int maxandmin(int depth);
     int MaxScore();
+    int getMaxScore(int& tempLine, int& tempColumn);
     int MinScore();
+    int getMinScore(int& tempLine, int& tempColumn);
     int singleLayer();
 };
 

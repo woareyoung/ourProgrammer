@@ -28,9 +28,7 @@ void AI2::ACScan(int line,int column, int line1,int column1,int line2,int column
 {
 	if (cross[line][column] == noChess) {
 		// 边角已经形成包围圈的情况
-		if (cross[line1][column1] == isBlack && cross[line2][column2] == isBlack) {
-			chessScore[line][column] = minLimit;
-		} else if (cross[line1][column1] == isWhite && cross[line2][column2] == isWhite) {
+		if (cross[line1][column1] == Rival && cross[line2][column2] == Rival) {
 			chessScore[line][column] = minLimit;
 		}
 		// 边角两个位置单子的情况
