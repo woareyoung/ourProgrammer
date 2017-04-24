@@ -49,6 +49,7 @@ AI1::AI1()
 
     a = 0;
     b = 0;
+    Step = new STEP;
 }
 ///初始化数据
 void AI1::InitializeD()
@@ -84,7 +85,7 @@ void AI1::InitializeD()
             p = Step->next;
         }
     }
-    Step = new STEP;
+    if(Step == NULL) Step = new STEP;
     Step->Number = 1;
     Step->ScoreRate = 0;
     Step->next = NULL;
