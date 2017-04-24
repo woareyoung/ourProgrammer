@@ -325,13 +325,12 @@
 1491830662 source:c:\users\notzuonotdied\desktop\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
+1492831579 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
-1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
+1492831284 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\ai2.h
 	"../chessBoard_Header/AI.h"
 	"AIPlayer.h"
-	<vector>
 	"../StdAfx.h"
 
 1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_header\aiplayer.h
@@ -354,7 +353,7 @@
 	"PointStyle.h"
 	"Arithmatic.h"
 
-1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
+1492831664 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
@@ -404,7 +403,7 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
+1492952099 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\recursion.cpp
@@ -601,16 +600,16 @@
 1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score.cpp
 	"../AI2_Header/AI2.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\cornerscan.cpp
+1492831284 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\cornerscan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\crossshapescan.cpp
+1492831284 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\isgo2dead.cpp
+1492831284 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\tiranglescan.cpp
+1492831284 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\tiranglescan.cpp
 	"../../AI2_Header/AI2.h"
 
 1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\score\priority.cpp
@@ -628,7 +627,7 @@
 1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\initdata.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chessboard.h
+1492952748 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chessboard.h
 	"../stdafx.h"
 	"WindowSize.h"
 	"WindowHwnd.h"
@@ -650,11 +649,11 @@
 
 1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_header\chess.h
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintboard.cpp
+1492831284 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintboard.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 	"../stdafx.h"
 
-1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintchess.cpp
+1492872738 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\paintchess.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492603237 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\painttimer.cpp
@@ -712,7 +711,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1492578851 source:d:\buweiqi\ai1_source\getposition.cpp
+1492971518 source:d:\buweiqi\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
@@ -731,15 +730,15 @@
 1492783312 source:d:\buweiqi\ai2_source\initdata.cpp
 	"../AI2_Header/AI2.h"
 
-1492867936 d:\buweiqi\ai2_header\ai2.h
+1492999927 d:\buweiqi\ai2_header\ai2.h
 	"../chessBoard_Header/AI.h"
 	"AIPlayer.h"
 	"../StdAfx.h"
 
-1491616661 d:\buweiqi\ai2_header\aiplayer.h
+1492915269 d:\buweiqi\ai2_header\aiplayer.h
 	"../StdAfx.h"
 
-1492911617 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
+1492972703 source:d:\buweiqi\ai2_source\maxandminfunction.cpp
 	"../AI2_Header/AI2.h"
 
 1491627658 source:d:\buweiqi\ai2_source\newscore\initdata.cpp
@@ -757,7 +756,7 @@
 1492912015 source:d:\buweiqi\ai2_source\score\crossshapescan.cpp
 	"../../AI2_Header/AI2.h"
 
-1492862563 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
+1492972500 source:d:\buweiqi\ai2_source\score\isgo2dead.cpp
 	"../../AI2_Header/AI2.h"
 
 1492781417 source:d:\buweiqi\ai2_source\score\priority.cpp
@@ -775,7 +774,7 @@
 1492781489 source:d:\buweiqi\chessboard_source\initdata.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
-1492602179 d:\buweiqi\chessboard_header\chessboard.h
+1492971518 d:\buweiqi\chessboard_header\chessboard.h
 	"../stdafx.h"
 	"WindowSize.h"
 	"WindowHwnd.h"
@@ -801,7 +800,7 @@
 	"../ChessBoard_Header/ChessBoard.h"
 	"../stdafx.h"
 
-1492839298 source:d:\buweiqi\chessboard_source\paintchess.cpp
+1492971518 source:d:\buweiqi\chessboard_source\paintchess.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492577750 source:d:\buweiqi\chessboard_source\painttimer.cpp
@@ -816,7 +815,7 @@
 1492577750 source:d:\buweiqi\chessboard_source\util\recursion.cpp
 	"../../ChessBoard_Header/Chess.h"
 
-1492602508 source:d:\buweiqi\chessboard_source\winorlose.cpp
+1492971518 source:d:\buweiqi\chessboard_source\winorlose.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1492606042 source:d:\buweiqi\chessboard_source\restart.cpp
@@ -829,6 +828,12 @@
 	"AI2_Header/AI2.h"
 	"AI3_Header/AI3.h"
 
-1492871130 source:d:\buweiqi\ai2_source\datautil.cpp
+1493000080 source:d:\buweiqi\ai2_source\datautil.cpp
+	"../AI2_Header/AI2.h"
+
+1492915541 source:d:\buweiqi\ai2_source\getposition.cpp
+	"../AI2_Header/AI2.h"
+
+1492832081 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\datautil.cpp
 	"../AI2_Header/AI2.h"
 

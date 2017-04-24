@@ -44,8 +44,7 @@ private:
     // ±ß½ÇÊý×é
     int cornerArray[12];
     int chessCount;
-    bool isFinal;
-
+    bool Position[4];
     void resetGo2DeadStatus();
 public:
     AI2()
@@ -77,6 +76,7 @@ public:
     bool isGo2Dead(int line, int column, int type);
     void AddDeadChessScore(int stack[][2], int len);
     bool IsDeadChess(int stack[][2], int len, int type);
+    int isFinal();
 
     void setStatus(int RivalLine,int RivalColumn);
     void reduceRecursionTimes();

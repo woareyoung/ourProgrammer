@@ -79,8 +79,9 @@ DIRECTION direction_8[] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1},{-1, 1},{1, 1}, {1,
  */
 bool AI2::isGo2Dead(int line, int column,int type)
 {
-    /*
-    bool Position[4] = {false, false, false, false};
+    int player = type;//记录己方的编号（是1还是2）
+    int rival = player == 1 ? 2 : 1;//记录对方的编号（是1还是2）
+    for(int i = 0; i < 4; i++) Position[i] = false;
     for(int i = 0; i < 4; i++)
     {
         if(cross[line + direction_8[i].x_offset][column + direction_8[i].y_offset] == Rival)
@@ -101,81 +102,7 @@ bool AI2::isGo2Dead(int line, int column,int type)
             Position[i] = Besieg(line, column, Rival, turn2Who);
         }
     }
-    if(Position[0] && Position[1] && Position[2] && Position[3])
-        return true;
-    return false;
-    */
-    bool Position[4] = {false, false, false, false};
-    int player = type;//记录己方的编号（是1还是2）
-    int rival = player == 1 ? 2 : 1;//记录对方的编号（是1还是2）
-    //判断棋子四周有没有棋子
-    //若左方有对方的一个棋子
-    if(cross[line][column - 1] == rival)
-    {
-        reduceRecursionTimes();
-        if(Besieg(line, column - 1, player, rival))
-            return true;
-        Position[0] = true;
-    }
-    //若己方棋子已到左边缘
-    else if(column - 1 == 0) Position[0] = true;
-    //若左方有己方的棋子
-    else if(cross[line][column - 1] == player)
-    {
-        reduceRecursionTimes();
-        Position[0] = Besieg(line, column, rival, player);
-    }
-    //若右方有对方的一个棋子
-    if(cross[line][column + 1] == rival)
-    {
-        reduceRecursionTimes();
-        if(Besieg(line, column + 1, player, rival))
-            return true;
-        Position[1] = true;
-    }
-    //若己方的棋子已到右边缘
-    else if(column + 1 == 10) Position[1] = true;
-    //若右方有己方的棋子
-    else if(cross[line][column + 1] == player)
-    {
-        reduceRecursionTimes();
-        Position[1] = Besieg(line, column, rival, player);
-    }
-    //若上方有对方的一个棋子
-    if(cross[line - 1][column] == rival)
-    {
-        reduceRecursionTimes();
-        if(Besieg(line - 1, column, player, rival))
-            return true;
-        Position[2] = true;
-    }
-    //若己方的棋子已到上边缘
-    else if(line - 1 == 0) Position[2] = true;
-    //若上方有己方的棋子
-    else if(cross[line - 1][column] == player)
-    {
-        reduceRecursionTimes();
-        Position[2] = Besieg(line, column, rival, player);
-    }
-    //若下方有对方的一个棋子
-    if(cross[line + 1][column] == rival)
-    {
-        reduceRecursionTimes();
-        if(Besieg(line + 1, column, player, rival))
-            return true;
-        Position[3] = true;
-    }
-    //若己方的棋子已到下边缘
-    else if(line + 1 == 10) Position[3] = true;
-    //若下方有己方的棋子
-    else if(cross[line + 1][column] == player)
-    {
-        reduceRecursionTimes();
-        Position[3] = Besieg(line, column, rival, player);
-    }
-    if(Position[0] && Position[1] && Position[2] && Position[3])
-        return true;
-    return false;
+    return Position[0] && Position[1] && Position[2] && Position[3];
 }
 
 bool AI2::Besieg(int RivalLine, int RivalColumn, int player, int rival)
@@ -331,3 +258,4 @@ void AI2::AddDeadChessScore(int stack[][2],int len)
         _cprintf("----------dead chess position:  line=%d, column=%d\n", stack[i][0], stack[i][1]);
     }
 }
+

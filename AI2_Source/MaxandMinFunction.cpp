@@ -1,57 +1,4 @@
 #include "../AI2_Header/AI2.h"
-
-/**
- * [AI2::GetPosition AI对外接口]
- * @param line 			着子位置的行坐标
- * @param column 		着子位置的行坐标
- * @param onTurn 		上一步敌方的ID
- * @param isExist[10][10]		棋盘着子情况数组
- */
-void AI2::GetPosition(int& line,int& column,int onTurn)
-{
-    //用于响应主窗口对AI的检查
-    if(onTurn == 0)
-    {
-        // 这里是重新开始游戏的数据重置过程
-        line++;
-        column++;
-        resetGo2DeadStatus();
-        initAllArray();
-        return;
-    }
-    // 注意传递进来的onTurn参数是对方的，而不是己方的。
-    Rival = (onTurn == isBlack || onTurn == isAI1onTurn) ? isBlack : isWhite;
-    turn2Who = (Rival == isWhite ? isBlack : isWhite);
-    PlayerId = turn2Who;
-    cross[line][column] = Rival;
-    chessScore[line][column] = minLimit;
-
-    // 设置遍历的深度
-    int temp = maxandmin(1);
-    line = temp/100;
-    column = temp%100;
-    // 将计算出的位置的分数设为最小值
-    chessScore[line][column] = minLimit;
-    cross[line][column] = turn2Who;
-
-    _cprintf("**************This is chess score*******(%d, %d)***********\n", line, column);
-    for(int i = 1; i < 10; i++)
-    {
-        for(int j = 1; j < 10; j++)
-        {
-            if (chessScore[i][j] < 10 && chessScore[i][j] > 0)
-            {
-                _cprintf("0\t");
-            }
-            else
-            {
-                _cprintf("%d\t",chessScore[i][j]);
-            }
-        }
-        _cprintf("\n");
-    }
-}
-
 /**
  * [AI2::maxandmin 极大极小函数]
  * @param depth 		执行的深度
@@ -66,7 +13,7 @@ int AI2::maxandmin(int depth)
     for (int i = 0; i < depth; i++)
     {
         turn2Who = tempArray[i];
-        Rival = (tempArray[i] == isWhite ? isBlack : isWhite);
+        Rival = (tempArray[i] == isWhite ?  isBlack : isWhite);
         temp = singleLayer();
     }
     return temp;
@@ -77,7 +24,7 @@ int AI2::maxandmin(int depth)
  */
 int AI2::singleLayer()
 {
-    Revalute();// 进行估值
+    Revalute();
     if (turn2Who == PlayerId)
     {
         return MaxScore();
@@ -94,24 +41,57 @@ int AI2::singleLayer()
 int AI2::MaxScore()
 {
     this->chessCount++;
+    bool isFirst = true;
     int tempLine = 0;
     int tempColumn = 0;
     int changePoint = 0;
+    int RivalKillCount = 0;
+    int endCount = 81 - chessCount;
+    int minNum = isFinal();
+    bool no = minNum == chessCount;
     while (true)
     {
-        getMaxScore(tempLine, tempColumn);// 获取最大值
-        if (tempLine*100 + tempColumn == changePoint)
+        _cprintf("**************chessStatusShaped******************\n");
+        for(int i = 1; i < 10; i++)
         {
-            isFinal == true;
+            for(int j = 1; j < 10; j++)
+            {
+                if (chessScore[i][j] < 10 && chessScore[i][j] > 0)
+                {
+                    _cprintf("0\t");
+                }
+                else
+                {
+                    _cprintf("%d\t",chessScore[i][j]);
+                }
+            }
+            _cprintf("\n");
+        }
+        _cprintf("**************chessStatusShaped cross******************\n");
+        for(int i = 1; i < 10; i++)
+        {
+            for(int j = 1; j < 10; j++)
+                _cprintf("%d\t",cross[i][j]);
+            _cprintf("\n");
+        }
+
+        getMaxScore(tempLine, tempColumn);// 获取最大值
+        if (no && changePoint == tempLine*100 + tempColumn && endCount > 0)
+        {
+            --endCount;
         }
         changePoint = tempLine*100 + tempColumn;
-        _cprintf("max score is (%d, %d)\n",tempLine, tempColumn);
         // 临时设置当前获得的位置为敌方着子点，判断是否是对方的自杀点
         cross[tempLine][tempColumn] = Rival;
         if (tempLine != 0 && 0 != tempColumn && isGo2Dead(tempLine, tempColumn, Rival))
         {
-            if (isFinal)
+            if (no)
+            {
                 chessScore[tempLine][tempColumn] = 23;
+                RivalKillCount++;
+                _cprintf("----------(%d, %d)\n",tempLine,tempColumn);
+                break;
+            }
             else
                 chessScore[tempLine][tempColumn] = -23;
             cross[tempLine][tempColumn] = noChess;
@@ -125,12 +105,14 @@ int AI2::MaxScore()
             cross[tempLine][tempColumn] = noChess;
             continue;
         }
-        else if (isFinal && tempLine == 0 && 0 == tempColumn)
-        {
-            initChessScore();
-        }
         else
         {
+            break;
+        }
+        if (RivalKillCount == 0)
+        {
+            tempLine = 0;
+            tempColumn =0;
             break;
         }
     }
@@ -160,7 +142,7 @@ int AI2::MinScore()
                 tempColumn = j;
                 isFirst = false;
             }
-            else if (!isFirst && chessScore[tempLine][tempColumn] > chessScore[i][j])
+            else if (!isFirst && chessScore[tempLine][tempColumn] < chessScore[i][j])
             {
                 tempLine = i;
                 tempColumn = j;
@@ -194,30 +176,6 @@ int AI2::getMaxScore(int& tempLine, int& tempColumn)
     }
 }
 
-int AI2::getMinScore(int& tempLine, int& tempColumn)
-{
-    bool isFirst = true;
-    for (int i = 1; i < 10; i++)
-    {
-        for (int j = 1; j < 10; j++)
-        {
-            if (chessScore[i][j] == minLimit || cross[i][j] != noChess)
-                continue;
-            if (isFirst)
-            {
-                tempLine = i;
-                tempColumn = j;
-                isFirst = false;
-            }
-            else if (!isFirst && chessScore[tempLine][tempColumn] > chessScore[i][j])
-            {
-                tempLine = i;
-                tempColumn = j;
-            }
-        }
-    }
-}
-
 /**
  * [AI2::Revalute 估值函数]
  */
@@ -227,58 +185,6 @@ void AI2::Revalute()
     initChessScore();
     // 估值并加分
     chessStatusShaped();// 十字围杀
-     _cprintf("**************chessStatusShaped******************\n");
-    for(int i = 1; i < 10; i++)
-    {
-        for(int j = 1; j < 10; j++)
-        {
-            if (chessScore[i][j] < 10 && chessScore[i][j] > 0)
-            {
-                _cprintf("0\t");
-            }
-            else
-            {
-                _cprintf("%d\t",chessScore[i][j]);
-            }
-        }
-        _cprintf("\n");
-    }
-
     AcrossCorners();// 边角围杀
-
-    _cprintf("**************AcrossCorners******************\n");
-    for(int i = 1; i < 10; i++)
-    {
-        for(int j = 1; j < 10; j++)
-        {
-            if (chessScore[i][j] < 10 && chessScore[i][j] > 0)
-            {
-                _cprintf("0\t");
-            }
-            else
-            {
-                _cprintf("%d\t",chessScore[i][j]);
-            }
-        }
-        _cprintf("\n");
-    }
-
     Tirangle();// 三角围杀
-
-    _cprintf("**************Tirangle******************\n");
-    for(int i = 1; i < 10; i++)
-    {
-        for(int j = 1; j < 10; j++)
-        {
-            if (chessScore[i][j] < 10 && chessScore[i][j] > 0)
-            {
-                _cprintf("0\t");
-            }
-            else
-            {
-                _cprintf("%d\t",chessScore[i][j]);
-            }
-        }
-        _cprintf("\n");
-    }
 }
