@@ -11,7 +11,7 @@ struct SPECIALPOINTAMOUNT
 struct STEP
 {
     int Number;//第几步
-    int ScoreRate;//该位置的分值百分比（与最大分值的比值）
+    float ScoreRate;//该位置的分值百分比（与最大分值的比值）
     STEP *next;//指向下一步
 };
 ///记录预测到的可能性链条

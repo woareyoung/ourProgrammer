@@ -43,13 +43,15 @@ AI1::AI1()
 
     BoundryRate = 0.3;//预测界限
     MaxStepNumber = 15;//构建回归方程的出发条件
-    CorrectRate = 0.15;
+    CorrectRate = 0.15;//进攻性能修正系数
+
+    Step = new STEP;
 
     InitializeD();
 
     a = 0;
     b = 0;
-    Step = new STEP;
+
 }
 ///初始化数据
 void AI1::InitializeD()

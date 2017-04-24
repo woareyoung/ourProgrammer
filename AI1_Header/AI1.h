@@ -45,9 +45,10 @@ private:
 
     ///判断是否是死棋位置   集中在DeadCheck.cpp文件中
     bool DeadCheck(int line, int column, int who);
+    bool CheckPosition(int OriLine, int OriColumn, int CLine, int CColumn, int player, bool &Position);
     bool Besieg(int RivalLine, int RivalColumn, int player, int rival);
+    bool BesiegePosition(int RivalLine, int RivalColumn, int player, int rival, bool &tie);
     void reduceRecursionTimes();
-    void setStatus(int RivalLine,int RivalColumn);
 
     ///在RateResetScore.cpp文件中
     void RateResetScore(float ResetRate);//按比例缩小分值，减少分差，精确定位

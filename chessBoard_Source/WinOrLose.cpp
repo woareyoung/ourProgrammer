@@ -107,11 +107,13 @@ bool ChessBoard::Besieged(int RivalLine, int RivalColumn, int player, int rival)
 }
 bool ChessBoard::CheBesie(int RivalLine, int RivalColumn, int player, int rival, bool &tie)
 {
-    //若对方棋子的某方向有对方的棋子且未到上边缘
-    if(cross[RivalLine][RivalColumn] == rival && RivalLine > 0 && Cross[RivalLine][RivalColumn] == false)
+    //若对方棋子的某方向有对方的棋子且未到边缘
+    if(cross[RivalLine][RivalColumn] == rival && RivalLine > 0 && RivalColumn > 0
+       && Cross[RivalLine][RivalColumn] == false && RivalLine < 10 && RivalColumn < 10)
         tie = Besieged(RivalLine, RivalColumn, player, rival);
     //若对方棋子的某方向没有棋子，直接返回false
-    else if(cross[RivalLine][RivalColumn] == 0 && RivalLine > 0) return false;
+    else if(cross[RivalLine][RivalColumn] == 0 && RivalLine > 0 && RivalColumn > 0 && RivalLine < 10 && RivalColumn < 10)
+        return false;
     //若对方棋子的某方向有己方的棋子或已到边缘
     else tie = true;
     return true;

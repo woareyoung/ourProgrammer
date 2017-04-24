@@ -345,7 +345,7 @@
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1493036596 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
+1493043377 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\ai1.h
 	<time.h>
 	<stdlib.h>
 	<conio.h>
@@ -353,11 +353,11 @@
 	"PointStyle.h"
 	"Arithmatic.h"
 
-1493036596 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
+1493043413 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\getposition.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 
-1493036990 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
+1493037090 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\initialize.cpp
 	"../stdafx.h"
 	"../AI1_Header/AI1.h"
 	"../AI1_Header/Arithmatic.h"
@@ -403,7 +403,7 @@
 	"../stdafx.h"
 	"../buweiqi.h"
 
-1492953080 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
+1493043377 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\chessboard_source\winorlose.cpp
 	"../ChessBoard_Header/ChessBoard.h"
 
 1491890367 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\util\recursion.cpp
@@ -421,7 +421,7 @@
 1492603237 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai3_header\ai3.h
 	"../chessBoard_Header/AI.h"
 
-1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\deadcheck.cpp
+1493043377 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\deadcheck.cpp
 	"../AI1_Header/AI1.h"
 
 1493012362 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai2_source\getposition.cpp
@@ -617,7 +617,7 @@
 
 1492603236 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\pointstyle.h
 
-1493036596 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\arithmatic.h
+1493043377 d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_header\arithmatic.h
 
 1492603236 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\rateresetscore.cpp
 	"../AI1_Header/AI1.h"
@@ -840,6 +840,6 @@
 1493036596 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\buildequation.cpp
 	"../../AI1_Header/AI1.h"
 
-1493036596 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\record.cpp
+1493043377 source:d:\codeblocksproject\codeblocksproject\ourprogrammer\ai1_source\arithmaticcore\record.cpp
 	"../../AI1_Header/AI1.h"
 
