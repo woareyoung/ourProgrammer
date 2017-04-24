@@ -5,7 +5,6 @@
 ///初始化数据
 AI1::AI1()
 {
-    InitializeD();
     ///初始化特别点分值
     PointStyle[1] = -3;//死棋点设置为-3分
     PointStyle[2] = 8;//填充对方虎口，并向外跳级降低
@@ -43,6 +42,13 @@ AI1::AI1()
     MyFormatEyePoor = 1;//己方形成眼
 
     BoundryRate = 0.3;//预测界限
+    MaxStepNumber = 15;//构建回归方程的出发条件
+    CorrectRate = 0.15;
+
+    InitializeD();
+
+    a = 0;
+    b = 0;
 }
 ///初始化数据
 void AI1::InitializeD()
@@ -65,4 +71,22 @@ void AI1::InitializeD()
         spa[i].TigerMouth = 0;
         spa[i].Eye = 0;
     }
+    AttackPerformance = 1;//初始化对手进攻性能
+    ///清空链表
+    if(Step->Number > 0)
+    {
+        STEP *p = Step->next;
+        delete Step;
+        while(p != NULL)
+        {
+            delete Step;
+            Step = p;
+            p = Step->next;
+        }
+    }
+    Step = new STEP;
+    Step->Number = 1;
+    Step->ScoreRate = 0;
+    Step->next = NULL;
+    SSS = Step;
 }

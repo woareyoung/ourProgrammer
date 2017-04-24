@@ -11,7 +11,7 @@ void AI1::GetPosition(int &line, int &column, int onTurn)
         InitializeD();
         return;
     }
-//    CalculatePerf(line, column);//先计算对手进攻性能
+    CalculatePerf(line, column);//分析对手并预测
     OT = (onTurn == 1 || onTurn == -1) ? 1 : 2;
     PlayerNumber = OT == 1 ? 2 : 1;//设置该AI的玩家编号
     cross[line][column] = OT;//先更新棋盘信息数组

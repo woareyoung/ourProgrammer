@@ -40,8 +40,10 @@
 		<Unit filename="AI1_Header/AI1.h" />
 		<Unit filename="AI1_Header/Arithmatic.h" />
 		<Unit filename="AI1_Header/PointStyle.h" />
+		<Unit filename="AI1_Source/ArithmaticCore/BuildEquation.cpp" />
 		<Unit filename="AI1_Source/ArithmaticCore/CalculatePerf.cpp" />
 		<Unit filename="AI1_Source/ArithmaticCore/Forecast.cpp" />
+		<Unit filename="AI1_Source/ArithmaticCore/Record.cpp" />
 		<Unit filename="AI1_Source/DeadCheck.cpp" />
 		<Unit filename="AI1_Source/FunctionPart.cpp" />
 		<Unit filename="AI1_Source/GetPosition.cpp" />

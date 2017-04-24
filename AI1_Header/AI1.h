@@ -54,9 +54,17 @@ private:
 
     /* 预测系统 */
     ///在CalculatePerf.cpp文件中
-    void CalculatePerf(int line, int column);//计算对手进攻性能
+    void CalculatePerf(int line, int column);//分析对手并预测
+    ///在BuildEquation.cpp文件中
+    void BulidRegressionEquation();//构造回归方程
+    void CalculateX();//计算x的平均值
+    void CalculateY();//计算y的平均值
+    void CalculateA();//计算回归方程常数项
+    void CalculateB();//计算回归方程斜率
     ///在Forecast.cpp文件中
-    void Forecast(int player);
+    void Forecast(int player);//构造预测链条
+    ///在Record.cpp文件中
+    void RecordStep(int line, int column);//用于记录对手数据
 };
 
 
